@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main | Kean Ngooi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kean Ngooi</h1>
+          <nav>
+             <a href="index.html">Home</a>
+             <a href="about.html">About</a>
+             <a href="contact.html">Contact</a>
+         </nav>
+    </header>
+
+    <main>
+
+
+
+
+        <section id="projects">
+            <h2>Projects</h2>
+		 <div class="masonry-grid" style="--columns: 3;">
+
+                  <!-- Project 1 -->
+              <div class="project" onclick="openModal('modal1')">
+                   <div class="image-container">
+                         <img src="images/ROAM/dino_roam_keyart_web_lowres.png" alt="banner">
+                             <div class="overlay">
+                             <h3>ROAM</h3>
+                            </div>
+                        </div>
+                   </div>
+              <!-- End of Project 1 -->
+
+                  <!-- Project 2 -->
+              <div class="project" onclick="openModal('modal2')">
+                <div class="image-container">
+                    <img src="images\ConceptArtA03\keyart_00.png" alt="banner">
+                        <div class="overlay">
+                            <h3>Concept Art</h3>
+                        </div>
+                </div>     
+              </div>
+              <!-- End of Project 2 -->
+
+                  <!-- Project 3 -->
+             <div class="project" onclick="openModal('modal3')">
+                <div class="image-container">
+                <img src="images/RamenHustle/banner.png" alt="banner">
+                    <div class="overlay">
+                        <h3>Ramen Hustle in Tomi City</h3>
+                    </div>
+                </div>
+             </div>
+             <!-- End of Project 3 -->
+
+
+             <!-- Project 4 -->
+            <div class="project" onclick="openModal('modal4')">
+                <div class="image-container">
+                <img src="images/TechArt01/banner.png" alt="banner">
+                    <div class="overlay">
+                        <h3>Tech Art</h3>
+                    </div>
+                </div>
+           </div>
+           <!-- End of Project 4 -->
+
+
+           <!-- End of masonry grid -->
+        </div>
+
+        </div>
+        </section>
+
+<!-- Modals for Projects -->
+
+<!-- Modal 1 -->
+<!-- ROAM -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>ROAM</h2>
+        <p><em>An atmospheric exploration game following a small dinosaur through a stylised birch forest.</em></p>
+
+        <img src="images/ROAM/dino_roam_keyart_01.png" alt="Key art 1 of ROAM">
+
+        <div class="masonry-grid" style="--columns: 2;">
+        <img src="images/ROAM/screenshot_00.png" alt="Screenshot 1 of ROAM">
+        <img src="images/ROAM/screenshot_01.png" alt="Screenshot 1 of ROAM">
+        <img src="images/ROAM/screenshot_02.png" alt="Screenshot 2 of ROAM">
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<!-- Concept Art -->
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Concept Art</h2>
+        <p><em>My concept art project for an RMIT University elective</em></p>
+        <img src="images/ConceptArtA03/keyart_01.png" alt="Key art 2">
+
+        <div class="masonry-grid" style="--columns: 2;">
+        <img src="images/ConceptArtA03/CA_00.png">
+        <img src="images/ConceptArtA03/CA_01.png">
+        <img src="images/ConceptArtA03/CA_02.png">
+        <img src="images/ConceptArtA03/CA_03.png">
+        <img src="images/ConceptArtA03/CA_04.png">
+        <img src="images/ConceptArtA03/CA_05.png">
+        <img src="images/ConceptArtA03/CA_06.png">
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<!-- Ramen Hustle in Tomi City -->  
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Ramen Hustle in Tomi City</h2>
+        <p><em>Group project in RMIT.</em></p>
+    </div>
+</div>
+
+<!-- Modal 4 -->
+<!-- Tech Art -->
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Tech Art</h2>
+        <p><em>Technical art project in Unity.</em></p>
+        <div class="masonry-grid" style="--columns: 2;">
+        <img src="images/TechArt01/TechArt_01.png" alt="Tech Art 1">
+        <img src="images/TechArt01/TechArt_02.png" alt="Tech Art 2">
+        <img src="images/TechArt01/TechArt_03.png" alt="Tech Art 3">
+        <img src="images/TechArt01/TechArt_04.png" alt="Tech Art 4">
+        </div>
+    </div>
+</div>
+<!-- End of Modals -->
+
+
+    </main>
+
+    <footer>
+        <p>© 2025 Kean Ngooi</p>
+    </footer>
+
+<!-- Modal Functionality Script -->
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+// Optional: close modal when clicking outside the box
+window.onclick = function(event) {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
+</script>
+
+
+
+</body>
+</html>
