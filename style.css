@@ -101,6 +101,13 @@ section h2 {
     margin-top: 1.5rem;
 }
 
+.masonry-grid > img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
 @media (max-width: 900px) {
     .masonry-grid {
         column-count: 2; /* fewer columns on tablets */
@@ -318,4 +325,54 @@ footer {
   height: 100%;
   object-fit: cover;
   border: none;
+}
+
+/* Base grid images */
+.zoomable {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.zoomable:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox overlay */
+.lightbox {
+  display: none;              /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+/* Centered content */
+.lightbox-content {
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Image styling */
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Caption styling */
+#lightbox-caption {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-style: italic;
+  opacity: 0.85;
 }
