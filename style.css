@@ -50,7 +50,7 @@ nav a {
     transition: color 0.3s ease;
     font-size: 1.5rem;
     font-family: 'PackyGreat', sans-serif;  
-    margin: 0 1rem;
+    margin: 0.5rem;
 }
 
 nav a:hover {
@@ -212,13 +212,13 @@ section h2 {
 }
 
 /* Optional: subtle title overlay effect */
+
 .project h3 {
     text-align: center;
     font-size: 1rem;
     margin-top: 0.5rem;
     color: #fff;
 }
-
 
 /* --- Modal (pop-up window) --- */
 .modal {
@@ -273,6 +273,14 @@ section h2 {
     font-size: 1.8rem;
     font-family: 'PackyGreat', sans-serif;
 }
+
+.modal-content h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    font-family: 'Akira Expanded', sans-serif;  
+}
+
 
 /* Close button */
 .close {
@@ -430,4 +438,19 @@ footer {
     display: block;
     border-radius: inherit;
     transition: border-radius 0.5s ease, opacity 1s ease;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
