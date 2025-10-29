@@ -603,26 +603,28 @@ lightbox.addEventListener('click', (e) => {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Select all videos you want to control (e.g. all <video> tags)
-  const videos = document.querySelectorAll('video');
+  const elements = document.querySelectorAll('video',);
 
-  // Set up the observer
+  // IntersectionObserver to auto play/pause based on visibility
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const element = entry.target;
       if (entry.isIntersecting) {
-        // Play the video if it's visible
-        entry.target.play();
+        element.play();
+        element.classList.remove('dimmed');
       } else {
-        // Pause the video if it's not visible
-        entry.target.pause();
+        element.pause();
+        element.classList.add('dimmed');
       }
+
     });
   }, {
     threshold: 0.80 // Play when at least 25% of the video is visible
   });
 
   // Observe each video
-  videos.forEach(video => {
-    observer.observe(video);
+  elements.forEach(element => {
+    observer.observe(element);
   });
 });
 </script>
