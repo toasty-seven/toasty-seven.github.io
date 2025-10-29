@@ -26,7 +26,7 @@
 		 <div class="masonry-grid" style="--columns: 3;">
 
                   <!-- Project 1 -->
-              <div class="project" onclick="openModal('modal1')">
+              <div class="project" onclick="openModal('modal1', event)">
                    <div class="image-container">
                          <img src="images/ROAM/dino_roam_keyart_web_lowres.webp" alt="banner">
                              <div class="overlay">
@@ -37,7 +37,7 @@
               <!-- End of Project 1 -->
 
                   <!-- Project 2 -->
-              <div class="project" onclick="openModal('modal2')">
+              <div class="project" onclick="openModal('modal2', event)">
                 <div class="image-container">
                     <img src="images\ConceptArtA03\banner.webp" alt="banner">
                         <div class="overlay">
@@ -48,7 +48,7 @@
               <!-- End of Project 2 -->
 
                   <!-- Project 3 -->
-             <div class="project" onclick="openModal('modal3')">
+             <div class="project" onclick="openModal('modal3', event)">
                 <div class="image-container">
                 <img src="images/RamenHustle/banner.webp" alt="banner">
                     <div class="overlay">
@@ -60,7 +60,7 @@
 
 
              <!-- Project 4 -->
-            <div class="project" onclick="openModal('modal4')">
+            <div class="project" onclick="openModal('modal4', event)">
                 <div class="image-container">
                 <img src="images/TechArt01/banner.webp" alt="banner">
                     <div class="overlay">
@@ -71,7 +71,7 @@
            <!-- End of Project 4 -->
 
            <!-- Project 5 -->
-           <div class="project" onclick="openModal('modal5')">
+           <div class="project" onclick="openModal('modal5', event)">
                 <div class="image-container">
                 <img src="images/TopArts/banner.webp" alt="banner">
                     <div class="overlay">
@@ -83,7 +83,7 @@
 
            <!-- Project 6 -->
 
-           <div class="project" onclick="openModal('modal6')">
+           <div class="project" onclick="openModal('modal6', event)">
                 <div class="image-container">
                 <img src="images/WorldBuilding/banner.webp" alt="banner">
                     <div class="overlay">
@@ -93,7 +93,15 @@
            </div>
 
 
-
+            <!-- Project 7 -->
+            <div class="project" onclick="openModal('modal7', event)">
+                <div class="image-container">
+                <img src="images/3DModelElective/banner.webp" alt="banner">
+                    <div class="overlay">
+                        <h3>Shrimp Island - 3D Modeling (2025)</h3>
+                    </div>
+                </div>
+            </div>
 
            <!-- End of masonry grid -->
         </div>
@@ -129,16 +137,39 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal1')">&times;</span>
         <h2>ROAM</h2>
-        <p><em>An atmospheric exploration game following a small dinosaur through a stylised birch forest.</em></p>
-
+        <p><em>ROAM follows Nuggets – a small, feathered Sinosauropteryx prima – on a heartfelt journey to find its elusive mate’s nest. Watch as Nuggets travels through a beautifully stylised Cretaceous birch forest, painted in hues of gold and amber.<br></br>
+                Help Nuggets explore an environment where they will jump, crouch and weave through dense forest, feast on fruits and insects and encounter other dinosaurs along the way</em>
+                <br></br>
+                I worked as the main Artist and Game Designer on this project - I handled the 3D modeling, rigging and texturing of characters, did the 2D artwork including the Key art and programmed the interactions in the game in Unity using C#
+                </p>
+        <iframe frameborder="0" src="https://itch.io/embed/3984154?bg_color=202024&amp;fg_color=ffffff&amp;border_color=000000" width="552" height="167"><a href="https://toasteeer.itch.io/dino-roam-game">ROAM by toasty, Bison987, Saito, Kaguya7258, Tommy0712</a></iframe>
         <img src="images/ROAM/dino_roam_keyart_01.webp" alt="Key art 1 of ROAM">
+        <h2> Screenshots </h2>
 
-        <div class="masonry-grid" style="--columns: 2;">
+        <div class="masonry-grid" style="--columns: 2;">      
         <img src="images/ROAM/screenshot_00.webp" alt="Screenshot 1 of ROAM" class="zoomable">
         <img src="images/ROAM/screenshot_01.webp" alt="Screenshot 1 of ROAM" class="zoomable">
         <img src="images/ROAM/screenshot_02.webp" alt="Screenshot 2 of ROAM" class="zoomable">
         <img src="images/ROAM/screenshot_03.webp" alt="Screenshot 3 of ROAM" class="zoomable">
         </div>
+        <h2> Character Models </h2>
+        <div class="masonry-grid" style="--columns: 2;">
+            <div class="video-container">
+                <video autoplay muted loop playsinline>
+                     <source src="images/ROAM/Sino Spin 01.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+             </div>
+
+             <div class="video-container">
+                 <video autoplay muted loop playsinline>
+                 <source src="images/ROAM/Sino Spin Clay.mp4" type="video/mp4">
+                 Your browser does not support the video tag.
+                 </video>
+             </div>
+        </div>
+
+        
     </div>
 </div>
 
@@ -175,6 +206,8 @@
         <span class="close" onclick="closeModal('modal3')">&times;</span>
         <h2>Ramen Hustle in Tomi City</h2>
         <p><em>Group project in RMIT. I did the 2D animations, 3D modeling and visual effects in this for Unity.</em></p>
+
+        <iframe frameborder="0" src="https://itch.io/embed/3060570?bg_color=202024&amp;fg_color=ffffff&amp;border_color=000000" width="552" height="167"><a href="https://hotroddest.itch.io/ramen-hustle">Ramen Hustle in Tomi City by HotRoddest, Raunix, toasty, Morgan3225, Bison987</a></iframe>
 
         <div class="masonry-grid" style="--columns: 2;">
         <img src="images/RamenHustle/sc_1.webp" alt="Ramen Hustle 1" class="zoomable">
@@ -228,7 +261,7 @@
         <p><em>Technical art project in Unity - the project is a 3D rendition of artworks by Blanche McManus for Alice In Wonderland</em></p>
 
         <div class="video-container">
-            <video controls>
+            <video autoplay muted loop playsinline>
                 <source src="images/TechArt01/tech_art_showcase.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -261,7 +294,7 @@
         <p>My exhibited piece in the National Gallery of Victoria for their 2023 Top Arts Exhibition. This piece was done for my Studio Arts VCE subject in 2023. It was chosen as the main 'hero' artwork for the exhibition.<p>
         
         <div class="video-container">
-            <video controls>
+            <video autoplay muted loop playsinline>
                 <source src="images/TopArts/top_arts_showcase.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -315,7 +348,56 @@
     </div>
 </div>
 
+<!-- modal 7 -->
+<!-- 3D Modeling -->
+<div id="modal7" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal7')">&times;</span>
+        <h2>Shrimp Island - 3D Modeling</h2>
+             <p><em>3D modeling project for an RMIT University elective. The theme is an island that is only accessible through cable car - in a flooded world. This island is known for shrimp fishing and produces them.</em></p>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/sc_00.webp" alt="Main" class="zoomable">
+                    <img src="images/3DModelElective/sc_01.webp" alt="3D Model 1" class="zoomable">
+                    <img src="images/3DModelElective/sc_02.webp" alt="3D Model 2" class="zoomable">
+             </div>
+             <h2> Blockout Models </h2>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/sc_blockout_01.webp" alt="3D Model 3" class="zoomable">
+                    <img src="images/3DModelElective/sc_blockout_02.webp" alt="3D Model 3" class="zoomable">
+                    <img src="images/3DModelElective/sc_blockout_03.webp" alt="3D Model 3" class="zoomable">
+             </div>
 
+             <h2> Cable Car Model </h2>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/sc_cablecar.webp" alt="3D Model" class="zoomable">
+                    <img src="images/3DModelElective/sc_cablecar_sculpt.webp" alt="3D Model" class="zoomable">
+                    <img src="images/3DModelElective/sc_cablecar_model.webp" alt="3D Model" class="zoomable">
+                    <img src="images/3DModelElective/sc_blockout_cablecar.webp" alt="3D Model" class="zoomable">"
+                    
+             </div>
+             <h2> Rock Models </h2>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/sc_rock_sculpt_01.webp" alt="Rock 3D Model 1" class="zoomable">
+                    <img src="images/3DModelElective/sc_rock_sculpt_02.webp" alt="Rock 3D Model 2" class="zoomable">
+                    <img src="images/3DModelElective/sc_rock_sculpt_03.webp" alt="Rock 3D Model 3" class="zoomable">
+                    <img src="images/3DModelElective/sc_rock_sculpt_04.webp" alt="Rock 3D Model 4" class="zoomable">
+                    <img src="images/3DModelElective/sc_rock_tex_01.webp" alt="Rock Texture 1" class="zoomable">
+                    <img src="images/3DModelElective/sc_rock_tex_02.webp" alt="Rock Texture 2" class="zoomable">
+             </div>
+             <h2> Shrimp Model </h2>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/sc_shrimp.webp" alt="Shrimp 3D Model 1" class="zoomable">
+                    <img src="images/3DModelElective/sc_shrimp_sculpt.webp" alt="Shrimp 3D Model 2" class="zoomable">
+             </div>
+             <h2> Renders </h2>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/render_00.webp" alt="Render 1" class="zoomable">
+                    <img src="images/3DModelElective/render_01.webp" alt="Render 2" class="zoomable">
+                    <img src="images/3DModelElective/render_02.webp" alt="Render 2" class="zoomable">
+                    <img src="images/3DModelElective/render_03.webp" alt="Render 2" class="zoomable">
+             </div>
+    </div>
+</div>
 
 
 <!-- End of Modals -->
@@ -338,47 +420,131 @@
 
 <!-- Modal Functionality Script -->
 <script>
-function openModal(id) {
-    document.getElementById(id).style.display = "flex";
+function openModal(id, event) {
+  const project = event.currentTarget;
+  const img = project.querySelector('img');
+  const rect = img.getBoundingClientRect();
+
+  const overlay = document.getElementById('morph-overlay');
+  const overlayImg = document.getElementById('morph-overlay-img');
+  const modal = document.getElementById(id);
+  const modalContent = modal.querySelector('.modal-content');
+
+  // Morph overlay logic (unchanged)
+  overlayImg.src = img.src;
+  overlay.style.display = 'block';
+  overlay.style.left = rect.left + 'px';
+  overlay.style.top = rect.top + 'px';
+  overlay.style.width = rect.width + 'px';
+  overlay.style.height = rect.height + 'px';
+  overlay.style.backgroundColor = '#202024';
+  overlay.style.opacity = '1';
+
+  // Show modal, reset opacity and transition
+  modal.style.display = 'flex';
+  modal.style.opacity = '1';
+  modal.style.transition = '';
+  modalContent.classList.remove('visible');
+
+  void overlay.offsetWidth; // force reflow
+
+  setTimeout(() => {
+    const modalRect = modalContent.getBoundingClientRect();
+    const padding = 16;
+    const visibleTop = Math.max(modalRect.top + padding, 0);
+    const visibleBottom = Math.min(modalRect.bottom - padding, window.innerHeight);
+    const visibleHeight = visibleBottom - visibleTop;
+    overlay.style.left = modalRect.left + 'px';
+    overlay.style.top = visibleTop + 'px';
+    overlay.style.width = modalRect.width + 'px';
+    overlay.style.height = visibleHeight + 'px';
+    overlay.style.borderRadius = '12px';
+  }, 200);
+
+  setTimeout(() => {
+    overlay.style.opacity = '0';
+    modalContent.classList.add('visible');
+  }, 700);
+
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    overlayImg.style.opacity = '1';
+  }, 1100);
+
+  // Attach click-outside handler only once
+  function handleClickOutside(e) {
+    if (e.target === modal) {
+      closeModal(id);
+    }
+  }
+  modal._handleClickOutside = handleClickOutside;
+  modal.addEventListener('click', handleClickOutside);
 }
 
 function closeModal(id) {
-    document.getElementById(id).style.display = "none";
+  const modal = document.getElementById(id);
+  const modalContent = modal.querySelector('.modal-content');
+
+  // Fade out modal-content
+  modalContent.classList.remove('visible');
+
+  // Remove click-outside handler
+  if (modal._handleClickOutside) {
+    modal.removeEventListener('click', modal._handleClickOutside);
+    delete modal._handleClickOutside;
+  }
+
+  // After fade, hide modal container
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 100); // match the CSS transition duration
 }
 
-// Optional: close modal when clicking outside the box
-window.onclick = function(event) {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-};
 </script>
+
+
+
+
+
 
 <!-- Lightbox Functionality Script -->
 <script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const zoomables = document.querySelectorAll('.zoomable');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const zoomables = document.querySelectorAll('.zoomable');
 
-  zoomables.forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = img.src;
-      lightboxCaption.textContent = img.dataset.caption || ''; // set caption text
-    });
+zoomables.forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.dataset.caption || '';
+
+    // Always set display before adding .show for fade-in
+    lightbox.style.display = 'flex';
+    // Force reflow to ensure transition works
+    void lightbox.offsetWidth;
+    lightbox.classList.add('show');
   });
+});
 
-  // Close when clicking outside the image
-  lightbox.addEventListener('click', (e) => {
-    if (e.target !== lightboxImg) {
+// Close when clicking outside the image
+lightbox.addEventListener('click', (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.classList.remove('show');
+    // Wait for fade-out transition, then hide
+    setTimeout(() => {
       lightbox.style.display = 'none';
-    }
-  });
+      lightboxImg.src = '';
+      lightboxCaption.textContent = '';
+    }, 400); // match the CSS transition duration
+  }
+});
 </script>
+
+
+<div id="morph-overlay">
+  <img id="morph-overlay-img" alt="">
+</div>
 
 
 </body>
