@@ -102,6 +102,17 @@
                     </div>
                 </div>
             </div>
+            <!-- End of Project 7 -->
+
+            <!-- Project 8 -->
+            <div class="project" onclick="openModal('modal8', event)">
+                <div class="image-container">
+                <img src="images/geonodecity/banner.webp" alt="banner">
+                    <div class="overlay">
+                        <h3>Geo Node City (2023)</h3>
+                    </div>
+                </div>
+
 
            <!-- End of masonry grid -->
         </div>
@@ -331,6 +342,14 @@
              <h1>Sleepy Fish Town</h1>
              <p><em>World building project for an RMIT University elective</em></p>
 
+             <div class="video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="images/WorldBuilding/worldbuilding_showcase.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+
              <div class="masonry-grid" style="--columns: 2;">
                     <img src="images/WorldBuilding/sc_01.webp" alt="World Building 1" class="zoomable">
                     <img src="images/WorldBuilding/sc_02.webp" alt="World Building 2" class="zoomable">
@@ -412,6 +431,28 @@
 </div>
 
 
+<!-- Modal 8 -->
+<!-- Geo Node City -->
+<div id="modal8" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal8')">&times;</span>
+        <h1>Geo Node City</h1>
+             <p><em>Procedural city generation project using Geometry Nodes in Blender. The project focuses on creating modular assets that can be reused to create a sprawling cityscape.</em></p>
+             
+             <div class="video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="images/geonodecity/geonode_showcase.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+             </div>
+
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/geonodecity/banner.webp" alt="Geo Node City 1" class="zoomable">
+                    <img src="images/geonodecity/sc_02.webp" alt="Geo Node City 2" class="zoomable">
+             </div>
+    </div>
+</div>
+
 <!-- End of Modals -->
 
 
@@ -454,6 +495,7 @@ function openModal(id, event) {
 
   // Show modal, reset opacity and transition
   modal.style.display = 'flex';
+  modal.scrollTop = 0;
   modal.style.opacity = '1';
   modal.style.transition = '';
   modalContent.classList.remove('visible');
@@ -511,7 +553,6 @@ function closeModal(id) {
     modal.style.display = 'none';
   }, 100); // match the CSS transition duration
 }
-
 </script>
 
 
@@ -552,6 +593,37 @@ lightbox.addEventListener('click', (e) => {
   }
 });
 </script>
+
+<!-- Video Auto Play/Pause Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all videos you want to control (e.g. all <video> tags)
+  const videos = document.querySelectorAll('video');
+
+  // Set up the observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Play the video if it's visible
+        entry.target.play();
+      } else {
+        // Pause the video if it's not visible
+        entry.target.pause();
+      }
+    });
+  }, {
+    threshold: 0.80 // Play when at least 25% of the video is visible
+  });
+
+  // Observe each video
+  videos.forEach(video => {
+    observer.observe(video);
+  });
+});
+</script>
+
+
+
 
 
 <div id="morph-overlay">
