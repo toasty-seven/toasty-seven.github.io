@@ -349,7 +349,7 @@
                 </video>
             </div>
 
-
+            <h2> Final Screenshots </h2>
              <div class="masonry-grid" style="--columns: 2;">
                     <img src="images/WorldBuilding/sc_01.webp" alt="World Building 1" class="zoomable">
                     <img src="images/WorldBuilding/sc_02.webp" alt="World Building 2" class="zoomable">
@@ -478,6 +478,10 @@ function openModal(id, event) {
   const img = project.querySelector('img');
   const rect = img.getBoundingClientRect();
 
+  const morphDuration = 200;
+  const fadeDelay = 500;
+  const fadeDuration = 1000;
+
   const overlay = document.getElementById('morph-overlay');
   const overlayImg = document.getElementById('morph-overlay-img');
   const modal = document.getElementById(id);
@@ -513,17 +517,17 @@ function openModal(id, event) {
     overlay.style.width = modalRect.width + 'px';
     overlay.style.height = visibleHeight + 'px';
     overlay.style.borderRadius = '12px';
-  }, 200);
+  }, morphDuration);
 
   setTimeout(() => {
     overlay.style.opacity = '0';
     modalContent.classList.add('visible');
-  }, 700);
+  }, fadeDelay);
 
   setTimeout(() => {
     overlay.style.display = 'none';
     overlayImg.style.opacity = '1';
-  }, 1100);
+  }, fadeDelay + fadeDuration);
 
   // Attach click-outside handler only once
   function handleClickOutside(e) {
@@ -554,6 +558,7 @@ function closeModal(id) {
   }, 100); // match the CSS transition duration
 }
 </script>
+
 
 
 

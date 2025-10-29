@@ -68,7 +68,7 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 99999;     /* ✅ ensures it is above images */
+    z-index: 2000;     /* ✅ ensures it is above images */
 }
 
 header h1 {
@@ -224,7 +224,7 @@ section h2 {
 .modal {
     display: none; /* hidden by default */
     position: fixed;
-    z-index: 10;
+    z-index: 9997;
     left: 0;
     top: 0;
     width: 100%;
@@ -272,13 +272,16 @@ section h2 {
     margin-bottom: 1rem;
     font-size: 1.8rem;
     font-family: 'PackyGreat', sans-serif;
+    border-bottom: 2px solid #ddd;
+    
 }
 
 .modal-content h1 {
     text-align: center;
     margin-bottom: 1rem;
-    font-size: 3.5rem;
-    font-family: 'Akira Expanded', sans-serif;  
+    font-size: 3rem;
+    font-family: 'Akira Expanded', sans-serif; 
+    
 }
 
 
@@ -421,8 +424,8 @@ footer {
   overflow: hidden;
   transition:
     all 0.5s ease,
-    background-color 0.3s ease,
-    opacity 0.4s ease;
+    background-color 1s ease,
+    opacity 1s ease;
 }
 
 #morph-overlay.active {
