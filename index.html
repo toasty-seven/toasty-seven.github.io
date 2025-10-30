@@ -10,17 +10,19 @@
     <header>
         <h1>Kean Ngooi</h1>
           <nav>
-             <a href="index.html">Home</a>
-             <a href="about.html">About</a>
-             <a href="contact.html">Contact</a>
+             <div class='navlink'>
+                    <a href="index.html">Home</a>
+             </div>
+             <div class='navlink'>
+                    <a href="about.html">About</a>
+             </div>
+             <div class='navlink'>
+                    <a href="contact.html">Contact</a>
+             </div>
          </nav>
     </header>
 
     <main>
-
-    
-
-
         <section id="projects">
             <h2>My Portfolio</h2>
 		 <div class="masonry-grid" style="--columns: 3;">
@@ -31,6 +33,7 @@
                          <img src="images/ROAM/dino_roam_keyart_web_lowres.webp" alt="banner">
                              <div class="overlay">
                              <h3>ROAM (2025)</h3>
+                             <p class="caption"> Game Project </p>
                             </div>
                         </div>
                    </div>
@@ -41,7 +44,8 @@
                 <div class="image-container">
                     <img src="images\ConceptArtA03\banner.webp" alt="banner">
                         <div class="overlay">
-                            <h3>Homesick at Space Camp - Concept Art (2025)</h3>
+                            <h3>Homesick at Space Camp(2025)</h3>
+                            <p class="caption"> Concept Art </p>
                         </div>
                 </div>     
               </div>
@@ -53,6 +57,7 @@
                 <img src="images/RamenHustle/banner.webp" alt="banner">
                     <div class="overlay">
                         <h3>Ramen Hustle in Tomi City (2024)</h3>
+                        <p class="caption"> Game Project </p>
                     </div>
                 </div>
              </div>
@@ -64,7 +69,8 @@
                 <div class="image-container">
                 <img src="images/TechArt01/banner.webp" alt="banner">
                     <div class="overlay">
-                        <h3>Tea Party - Tech Art (2025)</h3>
+                        <h3>Tea Party (2025)</h3>
+                        <p class="caption"> Technical Art </p>
                     </div>
                 </div>
            </div>
@@ -76,6 +82,7 @@
                 <img src="images/TopArts/banner.webp" alt="banner">
                     <div class="overlay">
                         <h3>Top Arts 2023</h3>
+                        <p class="caption"> Exhibition </p>
                     </div>
                 </div>
            </div>
@@ -87,7 +94,8 @@
                 <div class="image-container">
                 <img src="images/WorldBuilding/banner.webp" alt="banner">
                     <div class="overlay">
-                        <h3>Sleepy Fish Town - World Building (2025)</h3>
+                        <h3>Sleepy Fish Town(2025)</h3>
+                        <p class="caption"> World Building </p>
                     </div>
                 </div>
            </div>
@@ -98,7 +106,8 @@
                 <div class="image-container">
                 <img src="images/3DModelElective/banner.webp" alt="banner">
                     <div class="overlay">
-                        <h3>Shrimp Island - 3D Modeling (2024)</h3>
+                        <h3>Shrimp Island (2024)</h3>
+                        <p class="caption"> 3D Modeling </p>
                     </div>
                 </div>
             </div>
@@ -110,6 +119,7 @@
                 <img src="images/geonodecity/banner.webp" alt="banner">
                     <div class="overlay">
                         <h3>Geo Node City (2023)</h3>
+                        <p class="caption"> Procedural Modeling </p>
                     </div>
                 </div>
 
@@ -164,10 +174,10 @@
         <h2> Screenshots </h2>
 
         <div class="masonry-grid" style="--columns: 2;">      
-        <img src="images/ROAM/screenshot_00.webp" alt="Screenshot 1 of ROAM" class="zoomable">
-        <img src="images/ROAM/screenshot_01.webp" alt="Screenshot 1 of ROAM" class="zoomable">
-        <img src="images/ROAM/screenshot_02.webp" alt="Screenshot 2 of ROAM" class="zoomable">
-        <img src="images/ROAM/screenshot_03.webp" alt="Screenshot 3 of ROAM" class="zoomable">
+        <img src="images/ROAM/screenshot_00.webp" alt="Screenshot 1 of ROAM" class="zoomable" data-caption='Screenshot of the opening scene'>
+        <img src="images/ROAM/screenshot_01.webp" alt="Screenshot 1 of ROAM" class="zoomable" data-caption='Screenshot featuring an Ichthyovenator'>
+        <img src="images/ROAM/screenshot_02.webp" alt="Screenshot 2 of ROAM" class="zoomable" data-caption='Screenshot of the game environment'>
+        <img src="images/ROAM/screenshot_03.webp" alt="Screenshot 3 of ROAM" class="zoomable" data-caption='Screenshot featuring a Borealopelta'>
         </div>
         <h2> Character Models </h2>
         <div class="masonry-grid" style="--columns: 2;">
@@ -196,20 +206,23 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal2')">&times;</span>
         <h1>Homesick at Space Camp</h1>
-        <p><em>My concept art project for an RMIT University elective. The concept revolves around the protagonist who has been stranded on an alien planet. The character design takes inspiration from retro-futurism and the world is largely inspired by mushrooms and fungus. </em></p>
-        <img src="images/ConceptArtA03/keyart_01.webp" alt="Key art 1">
-        <img src="images/ConceptArtA03/keyart_02.webp" alt="Key art 2">
+        <p>My Concept Art project for an RMIT University elective - the project centers around exploring world-building for a hypothetical game. The concept revolves around the protagonist who has been stranded on an alien planet.<br></br> The character design inspiration comes from retro-futurism and the world is largely inspired by mushrooms and fungus. </p>
 
+        <h2> Key Art </h2>
+        <div class="masonry-grid" style="--columns: 2;">
+             <img src="images/ConceptArtA03/keyart_01.webp" alt="Key art 1" class='zoomable' data-caption='First Key Art'>
+             <img src="images/ConceptArtA03/keyart_02.webp" alt="Key art 2" class='zoomable' data-caption='Second Key Art'>
+        </div>
 
         <h2> Concept pages </h2>
         <div class="masonry-grid" style="--columns: 2;">
-        <img src="images/ConceptArtA03/CA_00.webp" class="zoomable">
-        <img src="images/ConceptArtA03/CA_01.webp" class="zoomable">
-        <img src="images/ConceptArtA03/CA_02.webp" class="zoomable">
-        <img src="images/ConceptArtA03/CA_03.webp" class="zoomable">
-        <img src="images/ConceptArtA03/CA_04.webp" class="zoomable">
-        <img src="images/ConceptArtA03/CA_05.webp" class="zoomable">
-        <img src="images/ConceptArtA03/CA_06.webp" class="zoomable">
+                <img src="images/ConceptArtA03/CA_00.webp" class="zoomable" data-caption='Planning sketches for the Key art'>
+                <img src="images/ConceptArtA03/CA_01.webp" class="zoomable" data-caption='Planning composition for Key art'>
+                <img src="images/ConceptArtA03/CA_02.webp" class="zoomable" data-caption='Sketches showcasing coral-like lifeforms'>
+                <img src="images/ConceptArtA03/CA_03.webp" class="zoomable" data-caption='Sketches showcasing a game mechanic - roots that interlock and are targets for the player to attack'>
+                <img src="images/ConceptArtA03/CA_04.webp" class="zoomable" data-caption='Sketches showcasing the retrofuturist Vespa scooter the protagonist uses'>
+                <img src="images/ConceptArtA03/CA_05.webp" class="zoomable" data-caption='Sketches showcasing the flora in the world - inspired by Exobiotica and other strange looking flora'>
+                <img src="images/ConceptArtA03/CA_06.webp" class="zoomable" data-caption='Blockout of a hypothetical game level within the world'>
         </div>
 
 
@@ -228,48 +241,51 @@
              <iframe frameborder="0" src="https://itch.io/embed/3060570?bg_color=202024&amp;fg_color=ffffff&amp;border_color=000000" width="552" height="167"><a href="https://hotroddest.itch.io/ramen-hustle">Ramen Hustle in Tomi City by HotRoddest, Raunix, toasty, Morgan3225, Bison987</a></iframe>
         </div>
 
+        <h2> Screenshots </h2>
         <div class="masonry-grid" style="--columns: 2;">
-        <img src="images/RamenHustle/sc_1.webp" alt="Ramen Hustle 1" class="zoomable">
-        <img src="images/RamenHustle/sc_2.webp" alt="Ramen Hustle 2" class="zoomable">
-        <img src="images/RamenHustle/sc_3.webp" alt="Ramen Hustle 3" class="zoomable">
-        <img src="images/RamenHustle/sc_4.webp" alt="Ramen Hustle 4" class="zoomable">
+        <img src="images/RamenHustle/sc_1.webp" alt="Ramen Hustle 1" class="zoomable" data-caption='Screenshot of the in-game mall'>
+        <img src="images/RamenHustle/sc_2.webp" alt="Ramen Hustle 2" class="zoomable" data-caption='Screenshot of the opening street'>
+        <img src="images/RamenHustle/sc_3.webp" alt="Ramen Hustle 3" class="zoomable" data-caption='Screenshot of the titular Ramen store'>
+        <img src="images/RamenHustle/sc_4.webp" alt="Ramen Hustle 4" class="zoomable" data-caption='Screenshot of a cutscene'>
         </div>
 
         <h2> Boss Character Spritesheets </h2>
         <div class="masonry-grid" style="--columns: 2;">
-        <img src="images/RamenHustle/boss_MORE_preview.gif" alt="Boss Character">
-        <img src="images/RamenHustle/boss_More.gif" alt="Boss Character">
-        <img src="images/RamenHustle/boss_Rhino.gif" alt="Boss Character">
-        <img src="images/RamenHustle/boss_Rhino_Stomp.gif" alt="Boss Character">
+        <img src="images/RamenHustle/boss_MORE_preview.gif" alt="Boss Character" class='zoomable' data-caption='Initial rough animation of the Boss yelling for more Ramen'>
+        <img src="images/RamenHustle/boss_More.gif" alt="Boss Character" class='zoomable' data-caption='Rendered animation of the Boss yelling for more ramen'>
+        <img src="images/RamenHustle/boss_Rhino.gif" alt="Boss Character" class='zoomable' data-caption='Rendered idle animation for the Boss customer'>
+        <img src="images/RamenHustle/boss_Rhino_Stomp.gif" alt="Boss Character" class='zoomable' data-caption='Rendered walking animation for the Boss customer'>
         </div>
 
         <h2> Player Character Spritesheets </h2>
         <div class="masonry-grid" style="--columns: 2;">
-        <img src="images/RamenHustle/01_JohnHustler_mixing.gif" alt="Player sketch gif">
-        <img src="images/RamenHustle/01_JohnHustler_Cook.gif" alt="Player Character">
-        <img src="images/RamenHustle/idle_JohnHustler_sketch.gif" alt="Player Character">
-        <img src="images/RamenHustle/idle_JohnHustler.gif" alt="Player Character">
+        <img src="images/RamenHustle/01_JohnHustler_mixing.gif" alt="Player sketch gif" class='zoomable' data-caption='Rough animation of player cooking - includes colour palette'>
+        <img src="images/RamenHustle/01_JohnHustler_Cook.gif" alt="Player Character" class='zoomable' data-caption='Rendered animation of the player cooking'>
+        <img src="images/RamenHustle/idle_JohnHustler_sketch.gif" alt="Player Character" class='zoomable' data-caption="Rough animation of player's idle">
+        <img src="images/RamenHustle/idle_JohnHustler.gif" alt="Player Character" class='zoomable' data-caption="Rendered animation of the player's idle">
         </div>
 
         <h2> NPC Characters </h2>
+        
+        <div class="masonry-grid" style="--columns: 2;">
+            <img src="images/RamenHustle/SirWalksAlot.gif" alt="NPC Character" class='zoomable' data-caption='Rough animation for the Wolf NPC walking'>
+            <img src="images/RamenHustle/SirWolfsalot.gif" alt="NPC Character" class='zoomable' data-caption='Rough animation for the Wolf NPC idling'>
+            <img src="images/RamenHustle/SirWolfsAlot_Idle.gif" alt="NPC Character" class='zoomable' data-caption='Rendered animation for the Wolf NPC idling'>
+            <img src="images/RamenHustle/SirWolfsAlot_Walk.gif" alt="NPC Character" class='zoomable' data-caption='Rendered animation for the Wolf NPC walking'>
+
+        </div>
         <p> Business Wolf NPC for the game - "Sir Wolfsalot" </p>
+        
         <div class="masonry-grid" style="--columns: 2;">
-            <img src="images/RamenHustle/SirWalksAlot.gif" alt="NPC Character">
-            <img src="images/RamenHustle/SirWolfsalot.gif" alt="NPC Character">
-            <img src="images/RamenHustle/SirWolfsAlot_Idle.gif" alt="NPC Character">
-            <img src="images/RamenHustle/SirWolfsAlot_Walk.gif" alt="NPC Character">
-
+            <img src="images/RamenHustle/idle_dino.gif" alt="NPC Character" class='zoomable' data-caption='Idle animation for the dinosaur NPC'>
+            <img src="images/RamenHustle/dino.gif" alt="NPC Character" class='zoomable' data-caption='Rough animation for the dinosaur NPC'>
         </div>
-
         <p>Racer Dinosaur - owns the street racing car behind the store </p>
-        <div class="masonry-grid" style="--columns: 2;">
-            <img src="images/RamenHustle/idle_dino.gif" alt="NPC Character">
-            <img src="images/RamenHustle/dino.gif" alt="NPC Character">
-        </div>
+
         <h2> 3D Models </h2>
         <div class="masonry-grid" style="--columns: 2;">
-            <img src="images/RamenHustle/ramen_bowls.webp" alt="3D Model 1" class="zoomable">
-            <img src="images/RamenHustle/modular_assets.webp" alt="3D Model 2" class="zoomable">
+            <img src="images/RamenHustle/ramen_bowls.webp" alt="3D Model 1" class='zoomable' data-caption='Textured 3D models for the Ramen bowls the player serves'>
+            <img src="images/RamenHustle/modular_assets.webp" alt="3D Model 2" class='zoomable' data-caption="Modular assets to construct the player's apartment">
         </div>
 
     </div>
@@ -281,8 +297,8 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal4')">&times;</span>
         <h1>Tea Party</h1>
-        <p><em>Technical art project in Unity - the project is a 3D rendition of artworks by Blanche McManus for Alice In Wonderland</em></p>
-
+        <p>Technical art project in Unity - the project is a 3D rendition of artworks by Blanche McManus for Alice In Wonderland</p>
+        <p> This project explored using Shader Graph in Unity and getting a stylized look that mimics the works of Blanche McManus</p>
         <div class="video-container">
             <video autoplay muted loop playsinline>
                 <source src="images/TechArt01/tech_art_showcase.mp4" type="video/mp4">
@@ -291,16 +307,16 @@
         </div>
 
         <div class="masonry-grid" style="--columns: 2;">
-             <img src="images/TechArt01/sc_1.webp" alt="Tech Art 1" class="zoomable">
-             <img src="images/TechArt01/sc_2.webp" alt="Tech Art 2" class="zoomable">
-             <img src="images/TechArt01/sc_3.webp" alt="Tech Art 3" class="zoomable">
-             <img src="images/TechArt01/sc_4.webp" alt="Tech Art 4" class="zoomable">
+             <img src="images/TechArt01/sc_1.webp" alt="Tech Art 1" class='zoomable' data-caption="Screenshot showcasing the Caterpillar">
+             <img src="images/TechArt01/sc_2.webp" alt="Tech Art 2" class='zoomable' data-caption="Screenshot showcasing the pouring teapot">
+             <img src="images/TechArt01/sc_3.webp" alt="Tech Art 3" class='zoomable' data-caption="Screenshot showcasing the shelf">
+             <img src="images/TechArt01/sc_4.webp" alt="Tech Art 4" class='zoomable' data-caption="Screenshot showcasing the table">
         </div>
 
         <h2> Wireframes </h2>
         <div class="masonry-grid" style="--columns: 2;">
-             <img src="images/TechArt01/sc_wire_1.webp" alt="Tech Art Wireframe 1" class="zoomable">
-             <img src="images/TechArt01/sc_wire_2.webp" alt="Tech Art Wireframe 2" class="zoomable">
+             <img src="images/TechArt01/sc_wire_1.webp" alt="Tech Art Wireframe 1" class='zoomable' data-caption="Wireframe of the scene">
+             <img src="images/TechArt01/sc_wire_2.webp" alt="Tech Art Wireframe 2" class='zoomable' data-caption="Wireframe of the scene">
         </div>
 
     </div>
@@ -315,7 +331,7 @@
         <span class="close" onclick="closeModal('modal5')">&times;</span>
         <h1>Top Arts 2023</h1>
         <p>My exhibited piece in the National Gallery of Victoria for their 2023 Top Arts Exhibition. This piece was done for my Studio Arts VCE subject in 2023. It was chosen as the main 'hero' artwork for the exhibition.<p>
-        
+        <p> The animation was made in Blender and highly leveraged using my 3D scans taken in Melbourne, Australia</p>
         <div class="video-container">
             <video autoplay muted loop playsinline>
                 <source src="images/TopArts/top_arts_showcase.mp4" type="video/mp4">
@@ -323,6 +339,7 @@
             </video>
         </div>
 
+        <h2> Work in progress </h2>
         <div class="masonry-grid" style="--columns: 2;">
              <img src="images/TopArts/early_wip.webp" alt="Top Arts Early WIP" class="zoomable" data-caption="Early Work in progress">
              <img src="images/TopArts/wireframe.webp" alt="Top Arts Wireframe" class="zoomable" data-caption="Wireframe of the finished project">
@@ -340,7 +357,8 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal6')">&times;</span>
              <h1>Sleepy Fish Town</h1>
-             <p><em>World building project for an RMIT University elective</em></p>
+             <p>World building project for an RMIT University elective.</p>
+             <p> This project focused on 3D modeling and shader work to create a comic-book style environment, the environment centers upon a sushi truck operated by a robotic chef that comedically is controlled by a fish as well</p>
 
              <div class="video-container">
                 <video autoplay muted loop playsinline>
@@ -351,30 +369,30 @@
 
             <h2> Final Screenshots </h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/WorldBuilding/sc_01.webp" alt="World Building 1" class="zoomable">
-                    <img src="images/WorldBuilding/sc_02.webp" alt="World Building 2" class="zoomable">
-                    <img src="images/WorldBuilding/sc_03.webp" alt="World Building 3" class="zoomable">
-                    <img src="images/WorldBuilding/sc_04.webp" alt="World Building 4" class="zoomable">
-                    <img src="images/WorldBuilding/sc_05.webp" alt="World Building 5" class="zoomable">
+                    <img src="images/WorldBuilding/sc_01.webp" alt="World Building 1" class='zoomable' data-caption="Screenshot showcasing the environment">
+                    <img src="images/WorldBuilding/sc_02.webp" alt="World Building 2" class='zoomable' data-caption="Screenshot showcasing a vending machine">
+                    <img src="images/WorldBuilding/sc_03.webp" alt="World Building 3" class='zoomable' data-caption="Screenshot showcasing the environment">
+                    <img src="images/WorldBuilding/sc_04.webp" alt="World Building 4" class='zoomable' data-caption="Screenshot showcasing the robot-chef">
+                    <img src="images/WorldBuilding/sc_05.webp" alt="World Building 5" class='zoomable' data-caption="In-editor screenshot">
              </div>
              <h2>Blockout and Work in progress</h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/WorldBuilding/sc_blockout_01.webp" alt="World Building WIP 1" class="zoomable">
-                    <img src="images/WorldBuilding/sc_blockout_02.webp" alt="World Building WIP 2" class="zoomable">
-                    <img src="images/WorldBuilding/sc_wip_layot.webp" alt="World Building WIP 3" class="zoomable">
+                    <img src="images/WorldBuilding/sc_blockout_01.webp" alt="World Building WIP 1" class='zoomable' data-caption="Initial blockout of the sushi truck">
+                    <img src="images/WorldBuilding/sc_blockout_02.webp" alt="World Building WIP 2" class='zoomable' data-caption="Initial blockout of the environment">
+                    <img src="images/WorldBuilding/sc_wip_layot.webp" alt="World Building WIP 3" class='zoomable' data-caption="Work in progress of the environment">
              </div>
 
              <h2>3D modeling</h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/WorldBuilding/sc_aircon.webp" alt="3D Model 1" class="zoomable">
-                    <img src="images/WorldBuilding/sc_fish.webp" alt="3D Model 2" class="zoomable">
-                    <img src="images/WorldBuilding/sc_food_clay.webp" alt="3D Model 3" class="zoomable">
-                    <img src="images/WorldBuilding/sc_food_render.webp" alt="3D Model 4" class="zoomable">
-                    <img src="images/WorldBuilding/sc_knives.webp" alt="3D Model 5" class="zoomable">
-                    <img src="images/WorldBuilding/sc_sushi.webp" alt="3D Model 6" class="zoomable">
-                    <img src="images/WorldBuilding/sc_sushiplate.webp" alt="3D Model 7" class="zoomable">
-                    <img src="images/WorldBuilding/sc_table.webp" alt="3D Model 8" class="zoomable">
-                    <img src="images/WorldBuilding/sc_truck.webp" alt="3D Model 9" class="zoomable">
+                    <img src="images/WorldBuilding/sc_aircon.webp" alt="3D Model 1" class="zoomable" data-caption="3D model of an Air Conditioning Unit">
+                    <img src="images/WorldBuilding/sc_fish.webp" alt="3D Model 2" class="zoomable" data-caption="3D model of the fish on the truck">
+                    <img src="images/WorldBuilding/sc_food_clay.webp" alt="3D Model 3" class="zoomable" data-caption="Wireframe view of several food-related models">
+                    <img src="images/WorldBuilding/sc_food_render.webp" alt="3D Model 4" class="zoomable" data-caption="3D model of several food-related items">
+                    <img src="images/WorldBuilding/sc_knives.webp" alt="3D Model 5" class="zoomable" data-caption="3D models of kitchen knives">
+                    <img src="images/WorldBuilding/sc_sushi.webp" alt="3D Model 6" class="zoomable" data-caption="3D models of the sushi">
+                    <img src="images/WorldBuilding/sc_sushiplate.webp" alt="3D Model 7" class="zoomable" data-caption="3D model of the plate the sushi is served on">
+                    <img src="images/WorldBuilding/sc_table.webp" alt="3D Model 8" class="zoomable" data-caption="3D model of the table and chair used throughout">
+                    <img src="images/WorldBuilding/sc_truck.webp" alt="3D Model 9" class="zoomable" data-caption="3D model of the truck">
             </div>
     </div>
 </div>
@@ -385,48 +403,53 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal7')">&times;</span>
         <h1>Shrimp Island</h1>
-             <p><em>3D modeling project for an RMIT University elective. The theme is an island that is only accessible through cable car - in a flooded world. This island is known for shrimp fishing and produces them.</em></p>
+             <p>>3D modeling project for an RMIT University elective. The theme is an island that is only accessible through cable car - in a flooded world. This island is known for shrimp fishing and produces them.</p>
+             <p> This project saw the use of Unreal Engine, ZBrush and Adobe Substance Painter to create the models and environment</p>
+             
+             <h2> Renders </h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/3DModelElective/sc_00.webp" alt="Main" class="zoomable">
-                    <img src="images/3DModelElective/sc_01.webp" alt="3D Model 1" class="zoomable">
-                    <img src="images/3DModelElective/sc_02.webp" alt="3D Model 2" class="zoomable">
+                    <img src="images/3DModelElective/render_00.webp" alt="Render 1" class="zoomable" data-caption="Render featuring the cable car">
+                    <img src="images/3DModelElective/render_01.webp" alt="Render 2" class="zoomable" data-caption="Render featuring the Shrimp statue">
+                    <img src="images/3DModelElective/render_02.webp" alt="Render 2" class="zoomable" data-caption="Render featuring the platform">
+                    <img src="images/3DModelElective/render_03.webp" alt="Render 2" class="zoomable" data-caption="Render of another view of the cable car">
+             </div>
+
+             <h2> Unreal Engine screenshots </h2>
+             <div class="masonry-grid" style="--columns: 2;">
+                    <img src="images/3DModelElective/sc_00.webp" alt="Main" class="zoomable" data-caption="In-editor screenshot of the scene">
+                    <img src="images/3DModelElective/sc_01.webp" alt="3D Model 1" class="zoomable" data-caption="In-editor screenshot of the island">
+                    <img src="images/3DModelElective/sc_02.webp" alt="3D Model 2" class="zoomable" data-caption="In-editor screenshot of the platform">
              </div>
              <h2> Blockout Models </h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/3DModelElective/sc_blockout_01.webp" alt="3D Model 3" class="zoomable">
-                    <img src="images/3DModelElective/sc_blockout_02.webp" alt="3D Model 3" class="zoomable">
-                    <img src="images/3DModelElective/sc_blockout_03.webp" alt="3D Model 3" class="zoomable">
+                    <img src="images/3DModelElective/sc_blockout_01.webp" alt="3D Model 3" class="zoomable" data-caption="Block-out of the scene">
+                    <img src="images/3DModelElective/sc_blockout_02.webp" alt="3D Model 3" class="zoomable" data-caption="Block-out of the platform">
+                    <img src="images/3DModelElective/sc_blockout_03.webp" alt="3D Model 3" class="zoomable"data-caption="Blockout of the top of the island">
              </div>
 
              <h2> Cable Car Model </h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/3DModelElective/sc_cablecar.webp" alt="3D Model" class="zoomable">
-                    <img src="images/3DModelElective/sc_cablecar_sculpt.webp" alt="3D Model" class="zoomable">
-                    <img src="images/3DModelElective/sc_cablecar_model.webp" alt="3D Model" class="zoomable">
-                    <img src="images/3DModelElective/sc_blockout_cablecar.webp" alt="3D Model" class="zoomable">"
+                    <img src="images/3DModelElective/sc_cablecar.webp" alt="3D Model" class="zoomable" data-caption="Cable Car texturing done in Adobe Substance Painter">
+                    <img src="images/3DModelElective/sc_cablecar_sculpt.webp" alt="3D Model" class="zoomable" data-caption="Sculpted model of the Cable Car">
+                    <img src="images/3DModelElective/sc_cablecar_model.webp" alt="3D Model" class="zoomable" data-caption="Cable Car 3D model">
+                    <img src="images/3DModelElective/sc_blockout_cablecar.webp" alt="3D Model" class="zoomable" data-caption="Initial block-out of the Cable Car">
                     
              </div>
              <h2> Rock Models </h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/3DModelElective/sc_rock_sculpt_01.webp" alt="Rock 3D Model 1" class="zoomable">
-                    <img src="images/3DModelElective/sc_rock_sculpt_02.webp" alt="Rock 3D Model 2" class="zoomable">
-                    <img src="images/3DModelElective/sc_rock_sculpt_03.webp" alt="Rock 3D Model 3" class="zoomable">
-                    <img src="images/3DModelElective/sc_rock_sculpt_04.webp" alt="Rock 3D Model 4" class="zoomable">
-                    <img src="images/3DModelElective/sc_rock_tex_01.webp" alt="Rock Texture 1" class="zoomable">
-                    <img src="images/3DModelElective/sc_rock_tex_02.webp" alt="Rock Texture 2" class="zoomable">
+                    <img src="images/3DModelElective/sc_rock_sculpt_01.webp" alt="Rock 3D Model 1" class="zoomable" data-caption="ZBrush sculpt of a rock">
+                    <img src="images/3DModelElective/sc_rock_sculpt_02.webp" alt="Rock 3D Model 2" class="zoomable" data-caption="ZBrush sculpt of a rock">
+                    <img src="images/3DModelElective/sc_rock_sculpt_03.webp" alt="Rock 3D Model 3" class="zoomable" data-caption="ZBrush sculpt of the main island">
+                    <img src="images/3DModelElective/sc_rock_sculpt_04.webp" alt="Rock 3D Model 4" class="zoomable" data-caption="Zbrush sculpt of a rock">
+                    <img src="images/3DModelElective/sc_rock_tex_01.webp" alt="Rock Texture 1" class="zoomable" data-caption="Texturing of a rock done in Substance Painter">
+                    <img src="images/3DModelElective/sc_rock_tex_02.webp" alt="Rock Texture 2" class="zoomable" data-caption="Texturing of a rock done in Substance Painter">
              </div>
              <h2> Shrimp Model </h2>
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/3DModelElective/sc_shrimp.webp" alt="Shrimp 3D Model 1" class="zoomable">
-                    <img src="images/3DModelElective/sc_shrimp_sculpt.webp" alt="Shrimp 3D Model 2" class="zoomable">
+                    <img src="images/3DModelElective/sc_shrimp.webp" alt="Shrimp 3D Model 1" class="zoomable" data-caption="Low poly model of the Shrimp">
+                    <img src="images/3DModelElective/sc_shrimp_sculpt.webp" alt="Shrimp 3D Model 2" class="zoomable" data-caption="High-poly sculpt of the shrimp">
              </div>
-             <h2> Renders </h2>
-             <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/3DModelElective/render_00.webp" alt="Render 1" class="zoomable">
-                    <img src="images/3DModelElective/render_01.webp" alt="Render 2" class="zoomable">
-                    <img src="images/3DModelElective/render_02.webp" alt="Render 2" class="zoomable">
-                    <img src="images/3DModelElective/render_03.webp" alt="Render 2" class="zoomable">
-             </div>
+
     </div>
 </div>
 
@@ -436,9 +459,10 @@
 <div id="modal8" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal8')">&times;</span>
-        <h1>Geo Node City</h1>
-             <p><em>Procedural city generation project using Geometry Nodes in Blender. The project focuses on creating modular assets that can be reused to create a sprawling cityscape.</em></p>
-             
+        <h1>Geometry Node City</h1>
+             <p>Procedural city generation project using Geometry Nodes in Blender. The project focuses on creating modular assets that can be reused to create a sprawling cityscape.</p>
+             <p>The main city is randomly generated with a few modular pieces and renders in real-time with Blender's EEVEE</p>
+
              <div class="video-container">
                 <video autoplay muted loop playsinline>
                     <source src="images/geonodecity/geonode_showcase.mp4" type="video/mp4">
@@ -446,14 +470,51 @@
                 </video>
              </div>
 
+
              <div class="masonry-grid" style="--columns: 2;">
-                    <img src="images/geonodecity/banner.webp" alt="Geo Node City 1" class="zoomable">
-                    <img src="images/geonodecity/sc_02.webp" alt="Geo Node City 2" class="zoomable">
+                    <img src="images/geonodecity/banner.webp" alt="Geo Node City 1" class="zoomable" data-caption="Render">
+                    <img src="images/geonodecity/sc_02.webp" alt="Geo Node City 2" class="zoomable" data-caption="Clay model">
              </div>
     </div>
 </div>
 
 <!-- End of Modals -->
+
+
+<!-- contact section -->
+        <section id="contact">
+        
+            <h2>Links</h2>
+        
+        <!-- email link with icon -->
+        <div class="link">
+                <p class="caption"> EMAIL </p>
+		        <a href="mailto:keanngooi@gmail.com"><img src="images/Icons/mail_icon.webp"></a>
+
+        </div>
+
+        <!-- social media links -->
+        <div class='link'>
+                <p class="caption"> INSTAGRAM </p>
+		        <p><a href="https://instagram.com/toaste7"><img src="images/Icons/inst_icon.webp"></a></p>
+        </div>
+
+        <div class='link'>
+                <p class="caption"> ARTSTATION </p>
+		        <p><a href="https://toaste7.artstation.com"><img src="images/Icons/art_icon.webp"></a></p>
+        </div>
+
+        <div class='link'>
+                <p class="caption"> ITCH.IO </p>
+		        <p><a href="https://toasteeer.itch.io/"><img src="images/Icons/itch_icon.webp"></a></p>
+        </div>
+
+        </section>
+
+
+
+
+
 
 
 <!-- ✅ Lightbox overlay -->
@@ -464,12 +525,12 @@
   </div>
 </div>
 
-
-    </main>
+</main>
 
     <footer>
         <p>© 2025 Kean Ngooi</p>
     </footer>
+
 
 <!-- Modal Functionality Script -->
 <script>
@@ -599,32 +660,63 @@ lightbox.addEventListener('click', (e) => {
 });
 </script>
 
-<!-- Video Auto Play/Pause Script -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all videos you want to control (e.g. all <video> tags)
-  const elements = document.querySelectorAll('video',);
+  // Select all images inside the masonry grid
+  const images = document.querySelectorAll('.masonry-grid img');
+  // Select all videos inside the video container
+  const videos = document.querySelectorAll('.video-container video');
 
-  // IntersectionObserver to auto play/pause based on visibility
-  const observer = new IntersectionObserver((entries) => {
+  // Shared observer options
+  const observerOptions = {
+    threshold: [0, 0.5, 0.8, 1.0] // Triggers when visibility changes
+  };
+
+  // Image observer — dims when not mostly visible
+  const imageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const element = entry.target;
-      if (entry.isIntersecting) {
-        element.play();
-        element.classList.remove('dimmed');
+      const img = entry.target;
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        img.classList.remove('dimmed');
       } else {
-        element.pause();
-        element.classList.add('dimmed');
+        img.classList.add('dimmed');
       }
-
     });
-  }, {
-    threshold: 0.80 // Play when at least 25% of the video is visible
+  }, observerOptions);
+
+  // Video observer — dims and pauses when not mostly visible
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        video.classList.remove('dimmed');
+        const p = video.play();
+        if (p !== undefined) {
+          p.catch(() => {
+            video.muted = true;
+            video.play().catch(() => {});
+          });
+        }
+      } else {
+        video.classList.add('dimmed');
+        video.pause();
+      }
+    });
+  }, observerOptions);
+
+  // Observe all images
+  images.forEach(img => {
+    imageObserver.observe(img);
+    img.classList.add('dimmed'); // start dimmed
   });
 
-  // Observe each video
-  elements.forEach(element => {
-    observer.observe(element);
+  // Observe all videos
+  videos.forEach(video => {
+    videoObserver.observe(video);
+    video.classList.add('dimmed');
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.preload = 'metadata';
   });
 });
 </script>
