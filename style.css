@@ -32,7 +32,7 @@
 
 @font-face
 {
-    font-family: 'Roboto Bold';
+    font-family: 'Roboto';
     src: url('fonts/Roboto-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
@@ -40,7 +40,7 @@
 
 @font-face
 {
-    font-family: 'Roboto Italic';
+    font-family: 'Roboto';
     src: url('fonts/Roboto-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
@@ -48,12 +48,19 @@
 
 @font-face
 {
-    font-family: 'Roboto Thin';
-    src: url('fonts/Roboto-Thin.ttf') format('truetype');
-    font-weight: 100;
+    font-family: 'LEMONMILK';
+    src: url('fonts/LEMONMILK-Bold.otf') format('opentype');
+    font-weight: bold;
     font-style: normal;
 }
 
+@font-face
+{
+    font-family: 'LEMONMILK';
+    src: url('fonts/LEMONMILK-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* --- General page setup --- */
 body {
@@ -87,6 +94,11 @@ body {
 
 .link:hover {
     transform:translateY(-10%);
+}
+
+.link:active {
+    transform:translateY(0%);
+    filter: brightness(80%);
 }
 
 .link::after{
@@ -131,7 +143,7 @@ nav a {
     color: #fff;           /* default link color */
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: 'PackyGreat', sans-serif;  
+    font-family: 'LEMONMILK', sans-serif;  
     margin: 0.5rem;
 }
 
@@ -142,13 +154,18 @@ nav a:hover {
 }
 
 .navlink {
-    transition: all .3s ease-in-out;
+    transition: all .15s ease-in-out;
     display: inline-block;              /* allows transform to work */
 }
 
 
 .navlink:hover {
     transform:scale(1.1);
+}
+
+.navlink:active {
+    transform:scale(0.95);
+    filter: brightness(80%);
 }
 
 
@@ -168,7 +185,8 @@ header {
 
 header h1 {
     font-size: 2rem;
-    font-family: 'Akira Expanded', sans-serif;  
+    font-family: 'LEMONMILK', sans-serif;
+    font-weight: bold;
 }
 
 /* --- Sections --- */
@@ -188,7 +206,7 @@ section h2 {
     border-bottom: 4px solid #ddd;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    font-family: 'PackyGreat', sans-serif;
+    font-family: 'LEMONMILK', sans-serif;
 }
 
 /* --- Masonry Layout --- */
@@ -263,7 +281,7 @@ section h2 {
     background: rgba(0, 0, 0, 0.6); /* translucent black */
     color: #fff;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -277,6 +295,10 @@ section h2 {
     opacity: 1;
 }
 
+.image-container:active .overlay {
+    opacity: 0.8;
+}
+
 .image-container:hover img {
     filter: brightness(70%);
     transform: scale(1.03);
@@ -287,10 +309,13 @@ section h2 {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
     color: #fff;
-    font-family: 'PackyGreat', sans-serif;
+    font-family: 'LEMONMILK', sans-serif;
 }
 
 .overlay .caption {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: italic;
     font-size: 0.9rem;
     color: #ddd;
 }
@@ -363,6 +388,8 @@ section h2 {
     margin-top: 1rem;
     line-height: 1.5;
     font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
 }
 
 .modal-content h2 {
@@ -370,7 +397,8 @@ section h2 {
     margin-bottom: 2rem;
     margin-top: 2rem;
     font-size: 1.8rem;
-    font-family: 'PackyGreat', sans-serif;
+    font-family: 'LEMONMILK', sans-serif;
+    font-weight: normal;
     border-bottom: 2px solid #ddd;
     
 }
@@ -380,7 +408,7 @@ section h2 {
     margin-bottom: 4rem;
     margin-top: 1rem;
     font-size: 3rem;
-    font-family: 'Akira Expanded', sans-serif; 
+    font-family: 'LEMONMILK', sans-serif; 
     
 }
 
