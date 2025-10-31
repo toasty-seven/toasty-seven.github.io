@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header class="hero-header">
   <!-- header link -->
   <a href="index.html" class="header-link">
   <h1>Kean Ngooi</h1>
@@ -162,6 +162,18 @@
     <footer>
         <p>© 2025 | Kean Ngooi</p>
     </footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.hero-header');
+  if (window.scrollY > 100) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
+</script>
+
 
 </body>
 </html>

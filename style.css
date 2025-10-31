@@ -181,9 +181,13 @@ nav a:hover {
 
 
 /* --- Header --- */
-header {
-    background: #501000;
-    padding: 1.5rem 2rem;
+.hero-header {
+    background: linear-gradient(to top, #501000, #ffffff00),
+    url('images/ConceptArtA03/keyart_01.webp');
+    background-position: center top 25%;
+    transition: all 0.5s ease;
+    background-size: cover;
+    padding: 5rem 2rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
@@ -191,6 +195,11 @@ header {
     position: sticky;
     top: 0;
     z-index: 2000;     /* ✅ ensures it is above images */
+}
+
+.hero-header.shrink {
+    padding: 1.5rem 2rem;
+    background-position: center top 20%;
 }
 
 header h1 {
