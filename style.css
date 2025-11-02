@@ -185,10 +185,10 @@ nav a:hover {
     background: linear-gradient(to top, #501000, #ffffff00),
     url('images/ConceptArtA03/keyart_01.webp');
     background-position: center top 25%;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
     background-size: cover;
     padding: 5rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -199,7 +199,7 @@ nav a:hover {
 
 .hero-header.shrink {
     padding: 1.5rem 2rem;
-    background-position: center top 20%;
+    background-position: center top 26%;
 }
 
 header h1 {
@@ -253,7 +253,7 @@ section h4 {
 
 .masonry-grid > img {
     width: 100%;
-    display: block;
+    display: inline-block;
     border-radius: 10px;
     margin-bottom: 1rem;
 }
