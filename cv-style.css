@@ -1,0 +1,238 @@
+
+
+/* Nav Bar */
+:root {
+
+    --textColor: #fff;
+    --bgColor: #101014;
+    --panelColor: #202024;
+    --linkColor: #ffd257;
+    --max-width: 900px;
+
+
+}
+@font-face
+{
+    font-family: 'PackyGreat';
+    src: url('fonts/PackyGreat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Akira Expanded';
+    src: url('fonts/Akira Expanded Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face
+{
+    font-family: 'LEMONMILK';
+    src: url('fonts/LEMONMILK-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'LEMONMILK';
+    src: url('fonts/LEMONMILK-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: #fff;
+    font-family: 'Roboto';
+}
+
+header {
+    background-color: var(--panelColor);
+    border-radius: 12px;
+    margin-top: 0rem;
+}
+
+
+nav {
+    color: var(--textColor);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+nav h1 {
+    font-family: 'LEMONMILK', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+nav p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: var(--linkColor);
+    text-decoration: underline;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+/* --- Sections --- */
+main {
+    max-width: 1200px;
+    margin: auto auto;
+    padding: auto auto;
+}
+
+b {
+    color: var(--linkColor);
+    font-weight:bold;
+}
+
+section h2 {
+    margin-top: 5rem;
+    color: var(--linkColor);
+    font-family: 'LEMONMILK';
+
+
+}
+
+section p {
+    color: var(--textColor);
+    font-family: 'Roboto';
+
+}
+
+#about {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    text-align: left;
+    padding: 0 1rem;
+
+}
+
+#skills,
+#experience {
+    max-width: 900px;
+    text-align:left;
+    padding: 0 1rem;
+}
+
+
+
+#about a {
+    color: var(--linkColor);
+    font-weight: bold;
+}
+
+
+.text {
+    margin-right: 5rem;
+}
+
+.profile-picture img {
+    max-width: 250px;
+    border-radius: 150px;
+}
+
+.subheading {
+    font-size: 1.2rem;
+    font-family: 'LEMONMILK';
+    font-weight: normal;
+    font-style: normal;
+    color: var(--linkColor);
+}
+
+li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* nav a:hover {
+    color: var(--linkColor);
+    text-decoration: underline;
+
+} */
+
+/* Expertise Box */
+.expertise-box {
+    background: #301800;
+    border-radius: 10px;
+    padding: 0.5rem 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    color: var(--textColor);
+}
+
+.expertise-box:hover h4 {
+    text-decoration: underline;
+
+}
+
+.expertise-box p {
+    font-size: 0.8rem;
+    color: #ddd;
+}
+
+.expertise-box:hover p {
+    color: #000;
+}
+
+
+.expertise-box:hover {
+    background: #ffd257;
+    transform: translateY(-5px);
+    cursor: default;
+    color: #000;
+}
+
+.expertise-box ul {
+    font-size: 1rem;
+    margin: 1rem;
+    text-align:left;
+    list-style-type: square;
+    list-style-position: outside;
+
+}
+
+.expertise-box li {
+    margin-bottom: 1rem;
+}
+
+.expertise-box a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+}
