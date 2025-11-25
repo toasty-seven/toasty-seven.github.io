@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --textColor: #fff;
+    --bgColor: #101014;
+    --panelColor: #202024;
+    --linkColor: #ffdf87;
+    --linkColor2: #e8980f;
+
+}
+
 /* Title fonts */
 @font-face
 {
@@ -65,7 +74,7 @@
 /* --- General page setup --- */
 body {
     font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    color: #fff;
+    color: var(--textColor);
     background-color: #101014;
     line-height: 1.6;
     --slideIn_duration: 1s;
@@ -83,12 +92,12 @@ body {
 }
 
 .link a {
-    color: #fff;           /* default link color */
+    color: var(--textColor);           /* default link color */
     text-decoration: underline;   
 }
 
 .link a:hover {
-    color: #ffd257;           /* hover color */
+    color: var(--linkColor);           /* hover color */
     transition: color .3s ease-in-out;
 }
 
@@ -159,10 +168,25 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffd257;           /* hover color */
-    border-radius: 8px;
+  --bg-size: 400%;
+  --color-one: var(--linkColor2);
+  --color-two: var(--linkColor);
+  background: linear-gradient(
+                90deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation-name: slideBG;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 
 }
+
 
 .navlink {
     transition: all .15s ease-in-out;
@@ -465,8 +489,22 @@ section h4 {
 }
 
 .modal-content a:hover {
-    text-decoration: underline;
-    font-weight: bold;
+  --bg-size: 400%;
+  --color-one: var(--linkColor2);
+  --color-two: var(--linkColor);
+  background: linear-gradient(
+                90deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation-name: slideBG;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 /* Close button */
@@ -499,6 +537,15 @@ section h4 {
         opacity: 1;
     }
 
+}
+
+@keyframes slideBG {
+    0% {
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 100% 0;
+    }
 }
 
 
