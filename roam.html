@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kean Ngooi | ROAM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="section-header" style="background:url(gradient-bgs/gradient-3.webp);">
+    <div class="container">
+      <a href="index.html">
+        <h1 class="site-title" style="font-size: 3rem;">Kean Ngooi</h1>
+      </a>
+    </div>
+    <div class="container">
+      <nav>
+        <div class='navlink'>
+          <a href="index.html">Home</a>
+        </div>
+
+        <div class='navlink'>
+          <a href="about.html">About</a>
+        </div>
+
+        <div class='navlink'>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Main Video -->
+  <section class="wavy-video-showcase">
+    <video src="images/ROAM/roam-video-showcase.mp4" autoplay muted loop></video>
+  </section>
+
+  <!-- About  game section -->
+  <section class="fade-section">
+    <div class="wrapper">
+      <h2>About the game</h2>
+
+      <div class="text-img">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ea, architecto minima hic error obcaecati unde
+          velit minus ipsum voluptas adipisci sequi vero ab ipsa, ducimus earum quod dignissimos impedit.</p>
+        <img src="images/ROAM/screenshot_00.webp" class="zoomable" data-caption="Screenshot of the game">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="wrapper">
+      <div class="text-img">
+        <img src="images/ROAM/screenshot_01.webp" class="zoomable" data-caption="Screenshot of the game">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatum cumque, doloribus exercitationem
+          blanditiis, dolor sed soluta numquam illo eos magnam, vero suscipit fugit voluptatem tempore temporibus
+          voluptatibus recusandae vel!</p>
+      </div>
+      <!-- Tags -->
+      <section id="skill-box">
+        <div class="skill">
+          <img src="images/Icons/unity_icon.webp">
+          <p>Unity</p>
+        </div>
+
+        <div class="skill">
+          <img src="images/Icons/blend_icon.webp">
+          <p>Blender</p>
+        </div>
+
+        <div class="skill">
+          <img src="images/Icons/ps_icon.webp">
+          <p>Photoshop</p>
+        </div>
+
+        <div class="skill">
+          <p>Modelling</p>
+        </div>
+
+        <div class="skill">
+          <p>Animation</p>
+        </div>
+
+        <div class="skill">
+          <p>TECH ART</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Key art fade in -->
+  <section class="fade-section">
+    <div class="wrapper">
+      <div class="masonry-grid" style="--columns:1;">
+        <img src="images/ROAM/dino_roam_keyart_01.webp" class="zoomable">
+      </div>
+    </div>
+  </section>
+
+  <!-- Display for Main characters -->
+  <section class="wavy-both"
+    style="background:url('gradient-bgs/gradient-6-rev.webp'); color:var(--base-color); background-size:cover;">
+    <div class="wrapper">
+      <h2>Content</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aliquid totam, enim provident voluptatibus
+        reprehenderit! Nemo vel, provident aut, exercitationem in tenetur magnam sed placeat ratione autem hic dolor
+        illo!</p>
+
+
+
+      <h3>Sinosauropteryx</h3>
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="images/ROAM/sino_render.webp" class="zoomable">
+        <img src="images/ROAM/sino_wire.webp" class="zoomable">
+      </div>
+
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="images/ROAM/sino-spin-clay.gif" class="zoomable">
+        <img src="images/ROAM/sino-spin-render.gif" class="zoomable">
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section class="fade-section">
+    <div class="wrapper">
+      <h2>NPC Characters</h2>
+      <h3>Microraptor</h3>
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="images/ROAM/microraptor_fly_render.webp" class="zoomable">
+        <img src="images/ROAM/microraptor_fly_wire.webp" class="zoomable">
+        <img src="images/ROAM/microraptor_sit_render.webp" class="zoomable">
+        <img src="images/ROAM/microraptor_sit_wire.webp" class="zoomable">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- ✅ Lightbox overlay -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <img src="" alt="Zoomed image" id="lightbox-img">
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+
+  <!-- Lightbox Functionality Script -->
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const zoomables = document.querySelectorAll('.zoomable');
+
+    zoomables.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = img.dataset.caption || '';
+
+        // Always set display before adding .show for fade-in
+        lightbox.style.display = 'flex';
+        // Force reflow to ensure transition works
+        void lightbox.offsetWidth;
+        lightbox.classList.add('show');
+      });
+    });
+
+    // Close when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) {
+        lightbox.classList.remove('show');
+        // Wait for fade-out transition, then hide
+        setTimeout(() => {
+          lightbox.style.display = 'none';
+          lightboxImg.src = '';
+          lightboxCaption.textContent = '';
+        }, 400); // match the CSS transition duration
+      }
+    });
+  </script>
+  <!-- fade section script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".fade-section");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            // If you only want it to fade in once:
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.3 // trigger when 10% of section is visible
+      });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+
+  <!-- contact section -->
+  <section id="contact">
+
+    <h2>Links</h2>
+
+    <!-- email link with icon -->
+    <div class="link">
+      <a href="mailto:keanngooi@gmail.com"><img src="images/Icons/mail_icon.webp"></a>
+      <p class="caption"> EMAIL </p>
+    </div>
+
+    <!-- social media links -->
+    <div class='link'>
+      <a href="https://instagram.com/toaste7"><img src="images/Icons/inst_icon.webp"></a>
+      <p class="caption"> INSTAGRAM </p>
+    </div>
+    <div class='link'>
+      <p><a href="https://toaste7.artstation.com"><img src="images/Icons/art_icon.webp"></a>
+      <p class="caption"> ARTSTATION </p>
+    </div>
+
+    <div class='link'>
+
+      <a href="https://toasteeer.itch.io/"><img src="images/Icons/itch_icon.webp"></a>
+      <p class="caption"> ITCH.IO </p>
+    </div>
+    <div class="link">
+
+      <a href="https://sketchfab.com/toaste76"><img src="images/Icons/sketch_icon.webp"></a>
+      <p class='caption'> SKETCHFAB </p>
+
+    </div>
+  </section>
+
+  <section class="wavy-end">
+    <div class="iframe-container">
+      <iframe frameborder="0"
+        src="https://itch.io/embed/3984154?border_width=0&amp;bg_color=32302f&amp;fg_color=f1dede&amp;link_color=643240&amp;border_color=32302f"
+        width="550" height="165"><a href="https://toasteeer.itch.io/dino-roam-game">ROAM by toasty, Bison987, Asher Goh,
+          Kaguya7258, Tommy0712</a></iframe>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <p>© 2025 | Kean Ngooi</p>
+  </footer>
+
+</body>
+
+</html>

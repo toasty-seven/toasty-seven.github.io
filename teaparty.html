@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kean Ngooi | ROAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="section-header" style="background:url(gradient-bgs/gradient-8.webp);">
+        <div class="container">
+            <a href="index.html">
+                <h1 class="site-title" style="font-size: 3rem;">Kean Ngooi</h1>
+            </a>
+        </div>
+        <div class="container">
+            <nav>
+                <div class='navlink'>
+                    <a href="index.html">Home</a>
+                </div>
+
+                <div class='navlink'>
+                    <a href="about.html">About</a>
+                </div>
+
+                <div class='navlink'>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="title-img-container">
+            <img src="images/TechArt01/title_text.webp">
+        </div>
+    </header>
+
+    <section class="wavy-video-showcase">
+        <video src="images/TechArt01/tech_art_showcase.mp4" autoplay muted loop></video>
+    </section>
+
+
+
+
+    <section class="fade-section">
+        <div class="wrapper">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dicta nostrum, optio voluptatem totam quo
+                provident nam voluptate distinctio quaerat eveniet fugit dignissimos commodi autem voluptas beatae ipsa
+                fugiat consequuntur.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dicta nostrum, optio voluptatem totam quo
+                provident nam voluptate distinctio quaerat eveniet fugit dignissimos commodi autem voluptas beatae ipsa
+                fugiat consequuntur.</p>
+        </div>
+
+    </section>
+
+    <section class="wavy-both" style="background-color:var(--color-3); color:var(--base-color);">
+        <div class="wrapper">
+            <h2>Hello</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nisi facilis recusandae quam totam laborum
+                aperiam in consectetur tenetur laboriosam quos optio quod asperiores, reprehenderit illum ea assumenda
+                debitis nobis!</p>
+        </div>
+    </section>
+
+
+
+    <!-- ✅ Lightbox overlay -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Zoomed image" id="lightbox-img">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+
+    <!-- Lightbox Functionality Script -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const zoomables = document.querySelectorAll('.zoomable');
+
+        zoomables.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.dataset.caption || '';
+
+                // Always set display before adding .show for fade-in
+                lightbox.style.display = 'flex';
+                // Force reflow to ensure transition works
+                void lightbox.offsetWidth;
+                lightbox.classList.add('show');
+            });
+        });
+
+        // Close when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('show');
+                // Wait for fade-out transition, then hide
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                    lightboxImg.src = '';
+                    lightboxCaption.textContent = '';
+                }, 400); // match the CSS transition duration
+            }
+        });
+    </script>
+    <!-- fade section script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-section");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        // If you only want it to fade in once:
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3 // trigger when 10% of section is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+    <!-- contact section -->
+    <section id="contact">
+
+        <h2>Links</h2>
+
+        <!-- email link with icon -->
+        <div class="link">
+            <a href="mailto:keanngooi@gmail.com"><img src="images/Icons/mail_icon.webp"></a>
+            <p class="caption"> EMAIL </p>
+        </div>
+
+        <!-- social media links -->
+        <div class='link'>
+            <a href="https://instagram.com/toaste7"><img src="images/Icons/inst_icon.webp"></a>
+            <p class="caption"> INSTAGRAM </p>
+        </div>
+        <div class='link'>
+            <p><a href="https://toaste7.artstation.com"><img src="images/Icons/art_icon.webp"></a>
+            <p class="caption"> ARTSTATION </p>
+        </div>
+
+        <div class='link'>
+
+            <a href="https://toasteeer.itch.io/"><img src="images/Icons/itch_icon.webp"></a>
+            <p class="caption"> ITCH.IO </p>
+        </div>
+        <div class="link">
+
+            <a href="https://sketchfab.com/toaste76"><img src="images/Icons/sketch_icon.webp"></a>
+            <p class='caption'> SKETCHFAB </p>
+
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>© 2025 | Kean Ngooi</p>
+    </footer>
+
+</body>
+
+</html>
