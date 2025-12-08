@@ -240,9 +240,6 @@ nav a {
 
 
 .wavy-both {
-    background-size: cover;
-    background-color: var(--color-2);
-
     --mask:
         radial-gradient(59.44px at 50% 83.85px, #000 99%, #0000 101%) calc(50% - 78px) 0/156px 51% repeat-x,
         radial-gradient(59.44px at 50% -44.85px, #0000 99%, #000 101%) 50% 39px/156px calc(51% - 39px) repeat-x,
@@ -255,11 +252,19 @@ nav a {
 }
 
 .spiky-both {
-    background-size: cover;
-    background-color: var(--color-2-dark);
     color: var(--base-color);
     mask: repeating-conic-gradient(from 135deg at 50% 30px, #0000 0, #000 1deg 89deg, #0000 90deg 180deg) 50% -30px/60px
 }
+
+
+.wavy-both,
+.spiky-both {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
 
 .wavy-video-showcase {
     position: relative;
@@ -534,6 +539,10 @@ footer {
     transition: all 0.3s ease;
 }
 
+.zoomable:hover {
+    cursor: pointer;
+}
+
 .zoomable:active {
     transform: translateY(3%);
 }
@@ -603,8 +612,10 @@ footer {
     margin-top: .2rem;
     margin-bottom: .2rem;
     border-radius: 12px;
+    margin-inline: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    white-space: nowrap;
     transition: background 0.6s ease, color 0.6s ease;
 }
 
@@ -632,8 +643,10 @@ footer {
     cursor: default;
 }
 
-.skill-box {
-    display: block;
+#skill-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 1rem 1rem;
     padding-top: 2rem;
     padding-bottom: 4rem;
