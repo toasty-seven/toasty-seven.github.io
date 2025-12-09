@@ -518,10 +518,8 @@ footer {
 
 .text-img img {
     width: 30rem;
-    /* control image size */
     height: auto;
-
-
+    /* control image size */
 }
 
 
@@ -532,8 +530,13 @@ footer {
     /* horizontal center */
     align-items: center;
     /* vertical center */
+}
 
-
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 
@@ -946,12 +949,16 @@ footer {
 
         .wrapper 
     {
-        max-width: 900px;
+        max-width: 80%;
     }
 
     .text-img {
         display: inline-block;
         text-align:center;
+    }
+
+    .text-img img {
+        width: 90%;
     }
 
     nav a {
@@ -979,13 +986,8 @@ footer {
         height: 15rem;
     }
 
-    .wrapper 
-    {
-        max-width: 600px;
-    }
-
     nav a {
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding-inline: 0.5rem;
     }
 
