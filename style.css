@@ -970,6 +970,10 @@ footer {
         width: 90%;
     }
 
+    h2 {
+        font-size: 2.5rem;
+    }
+
     nav a {
         font-size: 1.5rem;
         padding-inline: 0.7rem;
@@ -993,6 +997,10 @@ footer {
     .site-title {
         font-size: 2.5rem;
 
+    }
+
+    h2 {
+        font-size: 2rem;
     }
 
     .wavy-header {

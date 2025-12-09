@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kean Ngooi | ROAM</title>
+    <title>Kean Ngooi | Top Arts 2023</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/Icons/web_icon.webp">
 </head>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="title-img-container">
-            <h1>Top Arts</h1>
+            <h1>Top Arts 2023</h1>
         </div>
     </header>
 
@@ -47,46 +47,76 @@
     <section class="fade-section">
         <div class="wrapper">
             <h2>About</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dicta nostrum, optio voluptatem totam quo
-                provident nam voluptate distinctio quaerat eveniet fugit dignissimos commodi autem voluptas beatae ipsa
-                fugiat consequuntur.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dicta nostrum, optio voluptatem totam quo
-                provident nam voluptate distinctio quaerat eveniet fugit dignissimos commodi autem voluptas beatae ipsa
-                fugiat consequuntur.</p>
+            <div class="text-img">
+                <p>
+                    This was a 3D animation done using Blender in 2022 for VCE Studio Arts. The animation features a cyberpunk sci-fi environment that takes elements from Melbourne's city center and reimagines them into a different setting. I leveraged use of photo textures and 3D scanning to replicate the city's environment.
+                </p>
+                <img src="images/TopArts/SpecialDeliveryStill2 copy.webp" class="zoomable">
+            </div>
         </div>
-
     </section>
 
-    <section class="wavy-both" style="background-color:var(--color-3); color:var(--base-color);">
+        <section class="fade-section">
         <div class="wrapper">
-            <h2>Hello</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nisi facilis recusandae quam totam laborum
-                aperiam in consectetur tenetur laboriosam quos optio quod asperiores, reprehenderit illum ea assumenda
-                debitis nobis!</p>
+            <h2>Exhibition</h2>
+            <div class="text-img">
+                <p>My animation was featured in the National Gallery of Victoria, Melbourne as part of the Top Arts 2023 exhibition. Inside the gallery, it was projected onto the wall where the animation would play. </p>
+                <img src="./images/TopArts/Screenshot 2025-11-01 003907.webp" class="zoomable">
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-section">
+        <div class="wrapper">
+            <div class="text-img">
+                <img src="images/TopArts/IMG_4123.webp">
+                <p>Additionally, stills of my artwork were used for the promotional material for the exhibition - it was mainly featured for posters as well as website and other promotional material.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="wavy-both" style="background-image:url(gradient-bgs/gradient-3.webp); color:var(--base-color);">
+        <div class="wrapper">
+            <h2>Early Progress</h2>
+            <div class="text-img">
+                <img src="./images/TopArts/early_wip_00.webp" class="zoomable">
+                <p>The environment was constructed in Blender and mainly used 3D models with realistic photo textures and a realistic rendering workflow to get a gritty look. It uses many 3D scans and photo textures of buildings from Melbourne to capture the realistic look to the animation. Additional short renders were made for the background advertisements that play throughout the short animation.</p>
+            </div>
+            <div class="masonry-grid" style="--columns:2;">
+                <img src="./images/TopArts/early_wip.webp" class="zoomable">
+                <img src="./images/TopArts/sc-01.webp" class="zoomable">
+                <img src="./images/TopArts/TheNewCyberHotness4.jpg" class="zoomable">
+                <img src="./images/TopArts/sc-03.webp" class="zoomable">
+            </div>
+            <div class="masonry-grid" style="--columns:2;">
+                <img src="images/TopArts/wireframe.webp" class="zoomable">
+                <img src="images/TopArts/sc-02.webp" class="zoomable">
+                <img src="images/TopArts/sc-04.webp" class="zoomable">
+            </div>
         </div>
     </section>
 
 
-<!-- Scroll to top -->
-<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
+
+    <!-- Scroll to top -->
+    <a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
 
 
-<script>
-height = 1500;
+    <script>
+        height = 1500;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollBtn = document.getElementById("scrollToTop");
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollBtn = document.getElementById("scrollToTop");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > height) {
-      scrollBtn.classList.add("visible");
-    } else {
-      scrollBtn.classList.remove("visible");
-    }
-  });
-});
-</script>
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > height) {
+                    scrollBtn.classList.add("visible");
+                } else {
+                    scrollBtn.classList.remove("visible");
+                }
+            });
+        });
+    </script>
     <!-- ✅ Lightbox overlay -->
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
@@ -129,51 +159,51 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     </script>
-  <!-- fade section script v2-->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".fade-section");
+    <!-- fade section script v2-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-section");
 
-  // Pick a threshold based on screen width
-  function getThreshold() {
-    if (window.innerWidth < 600) return 0.1;   // phones
-    if (window.innerWidth < 1024) return 0.2;  // tablets
-    return 0.5;                                // desktops
-  }
+            // Pick a threshold based on screen width
+            function getThreshold() {
+                if (window.innerWidth < 600) return 0.1;   // phones
+                if (window.innerWidth < 1024) return 0.2;  // tablets
+                return 0.5;                                // desktops
+            }
 
-  let observer = createObserver();
+            let observer = createObserver();
 
-  function createObserver() {
-    return new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: getThreshold() });
-  }
+            function createObserver() {
+                return new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: getThreshold() });
+            }
 
-  // Observe all sections
-  sections.forEach(section => observer.observe(section));
+            // Observe all sections
+            sections.forEach(section => observer.observe(section));
 
-  // Optional: Re-create observer on resize
-  window.addEventListener("resize", () => {
-    const newThreshold = getThreshold();
+            // Optional: Re-create observer on resize
+            window.addEventListener("resize", () => {
+                const newThreshold = getThreshold();
 
-    // Rebuild observer only if threshold changed
-    if (observer.threshold !== newThreshold) {
-      observer.disconnect();
-      observer = createObserver();
-      sections.forEach(section => {
-        if (!section.classList.contains("visible")) {
-          observer.observe(section);
-        }
-      });
-    }
-  });
-});
-</script>
+                // Rebuild observer only if threshold changed
+                if (observer.threshold !== newThreshold) {
+                    observer.disconnect();
+                    observer = createObserver();
+                    sections.forEach(section => {
+                        if (!section.classList.contains("visible")) {
+                            observer.observe(section);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 
     <!-- contact section -->
     <section id="contact">

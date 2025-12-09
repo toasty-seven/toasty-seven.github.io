@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kean Ngooi | ROAM</title>
+    <title>Kean Ngooi | Tea Party</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/Icons/web_icon.webp">
 </head>
@@ -48,64 +48,93 @@
         <div class="wrapper">
             <h2>About</h2>
             <div class="text-img">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia dicta nostrum, optio voluptatem totam quo
-                provident nam voluptate distinctio quaerat eveniet fugit dignissimos commodi autem voluptas beatae ipsa
-                fugiat consequuntur.</p>
+                <p>Technical art project in Unity - the project is a 3D rendition of artworks by Blanche McManus for
+                    Alice In Wonderland.
+                    This project explored using Shader Graph in Unity and getting a stylized look that mimics the works
+                    of Blanche McManus.
+                    <br><br>I used Shader Graph to create the flowing tea, wind blowing table-cloth, floating paintings
+                    and the caterpillar's pipe - as well as the custom
+                    lighting used to apply the pencil shading texture to achieve a similar look to the original.
+                </p>
                 <img src="images/TechArt01/banner.webp" class="zoomable">
             </div>
-        <section id="skill-box">
+            <section id="skill-box">
 
-          <div class="skill">
-            <img src="images/Icons/unity_icon.webp">
-            <p>UNITY</p>
-          </div>
+                <div class="skill">
+                    <img src="images/Icons/unity_icon.webp">
+                    <p>UNITY</p>
+                </div>
 
-          <div class="skill">
-            <img src="images/Icons/blend_icon.webp">
-            <p>BLENDER</p>
-          </div>
+                <div class="skill">
+                    <img src="images/Icons/blend_icon.webp">
+                    <p>BLENDER</p>
+                </div>
 
-          <div class="skill">
-            <p>3D Modeling</p>
-          </div>
-          
-          <div class="skill">
-            <p>TECH ART</p>
-          </div>
-        </section>
+                <div class="skill">
+                    <p>3D Modeling</p>
+                </div>
+
+                <div class="skill">
+                    <p>TECH ART</p>
+                </div>
+            </section>
         </div>
 
     </section>
-
-    <section class="wavy-both" style="background-image:url(gradient-bgs/gradient-1.webp); color:var(--base-color);">
+    <!-- 3d models -->
+    <section class="fade-section">
         <div class="wrapper">
-            <h2>Hello</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nisi facilis recusandae quam totam laborum
-                aperiam in consectetur tenetur laboriosam quos optio quod asperiores, reprehenderit illum ea assumenda
-                debitis nobis!</p>
+            <h2>3D models</h2>
+            <p>The art style limited the texturing and color choices for the models. They were kept low-poly with the textures to replicate the hand-drawn look to the original reference from Blanche McManus</p>
+            <div class="masonry-grid" style="--columns:2;">
+                <img src="images/TechArt01/bookshelf-render.webp" class="zoomable">
+                <img src="images/TechArt01/cake-render.webp" class="zoomable">     
+                <img src="images/TechArt01/pilla-wire.webp" class="zoomable">           
+                <img src="images/TechArt01/bookshelf-wire.webp" class="zoomable">   
+                <img src="images/TechArt01/cake-wire.webp" class="zoomable">
+                <img src="images/TechArt01/pilla-render.webp" class="zoomable">
+                
+                
+            
+            </div>
+        </div>
+    </section>
+
+    <section class="wavy-both" style="background-image:url(gradient-bgs/gradient-6-rev.webp); color:var(--base-color);">
+        <div class="wrapper">
+            <h2>Screenshots</h2>
+        </div>
+        <div class="masonry-grid" style="--columns:3;">
+            <img src="images/TechArt01/sc_1.webp" class="zoomable">
+            <img src="images/TechArt01/sc_2.webp" class="zoomable">
+            <img src="images/TechArt01/sc_3.webp" class="zoomable">
+            <img src="images/TechArt01/sc_4.webp" class="zoomable">
+            <img src="images/TechArt01/sc_5.webp" class="zoomable">
+            <img src="images/TechArt01/sc_wire_1.webp" class="zoomable">
+            <img src="images/TechArt01/sc_wire_2.webp" class="zoomable">
         </div>
     </section>
 
 
-<!-- Scroll to top -->
-<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
+    <!-- Scroll to top -->
+    <a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
 
 
-<script>
-height = 1500;
+    <script>
+        height = 1500;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollBtn = document.getElementById("scrollToTop");
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollBtn = document.getElementById("scrollToTop");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > height) {
-      scrollBtn.classList.add("visible");
-    } else {
-      scrollBtn.classList.remove("visible");
-    }
-  });
-});
-</script>
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > height) {
+                    scrollBtn.classList.add("visible");
+                } else {
+                    scrollBtn.classList.remove("visible");
+                }
+            });
+        });
+    </script>
     <!-- ✅ Lightbox overlay -->
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
@@ -148,51 +177,51 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     </script>
-  <!-- fade section script v2-->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".fade-section");
+    <!-- fade section script v2-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".fade-section");
 
-  // Pick a threshold based on screen width
-  function getThreshold() {
-    if (window.innerWidth < 600) return 0.1;   // phones
-    if (window.innerWidth < 1024) return 0.2;  // tablets
-    return 0.5;                                // desktops
-  }
+            // Pick a threshold based on screen width
+            function getThreshold() {
+                if (window.innerWidth < 600) return 0.1;   // phones
+                if (window.innerWidth < 1024) return 0.2;  // tablets
+                return 0.5;                                // desktops
+            }
 
-  let observer = createObserver();
+            let observer = createObserver();
 
-  function createObserver() {
-    return new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: getThreshold() });
-  }
+            function createObserver() {
+                return new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: getThreshold() });
+            }
 
-  // Observe all sections
-  sections.forEach(section => observer.observe(section));
+            // Observe all sections
+            sections.forEach(section => observer.observe(section));
 
-  // Optional: Re-create observer on resize
-  window.addEventListener("resize", () => {
-    const newThreshold = getThreshold();
+            // Optional: Re-create observer on resize
+            window.addEventListener("resize", () => {
+                const newThreshold = getThreshold();
 
-    // Rebuild observer only if threshold changed
-    if (observer.threshold !== newThreshold) {
-      observer.disconnect();
-      observer = createObserver();
-      sections.forEach(section => {
-        if (!section.classList.contains("visible")) {
-          observer.observe(section);
-        }
-      });
-    }
-  });
-});
-</script>
+                // Rebuild observer only if threshold changed
+                if (observer.threshold !== newThreshold) {
+                    observer.disconnect();
+                    observer = createObserver();
+                    sections.forEach(section => {
+                        if (!section.classList.contains("visible")) {
+                            observer.observe(section);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 
     <!-- contact section -->
     <section id="contact">

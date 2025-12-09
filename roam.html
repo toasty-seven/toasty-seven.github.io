@@ -105,6 +105,29 @@
     </div>
   </section>
 
+  <section class="spiky-both" style="background-image:url(gradient-bgs/gradient-1.webp);">
+    <div class="wrapper">
+      <h2>Exhibition</h2>
+      <div class="text-img">
+      <p>ROAM has been exhibited at two different events. The RMIT School of Design's Grad Show on 13th November 2025 and during the ACMI Audience Lab exhibition on the 29th November 2025.
+
+      <br><br>
+      For the exhibitions, the key-art poster and a foldable origami design of the main character were made by me to promote the game at the event.
+      </p>
+      <img src="images/ROAM/exhibition/IMG_1584.webp" class="zoomable" data-caption="Booth at the ACMI exhibition">
+      </div>
+
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="images/ROAM/exhibition/040a19cf0f2d5aff689de4cb7e55e842.jpeg" class="zoomable" data-caption="Booth at the RMIT Games' Grad Show">
+        <img src="images/ROAM/exhibition/4d179ee66bb48dd45287fd9f7d1ebc81.jpeg" class="zoomable" data-caption="Booth at the RMIT Games' Grad Show">
+        <img src="images/ROAM/exhibition/IMG_1521.webp" class="zoomable" data-caption="Origami Nuggets">
+        <img src="images/ROAM/exhibition/IMG_1544.webp" class="zoomable" data-caption="Booth at the ACMI exhibition">
+        <img src="images/ROAM/exhibition/poster.webp" class="zoomable" data-caption="Key art poster made for the exhibitions">
+      </div>
+    
+    </div>
+  </section>
+
   <!-- Display for Main characters -->
   <section class="wavy-both"
     style="background:url('gradient-bgs/gradient-6-rev.webp'); color:var(--base-color); background-size:cover;">
@@ -116,8 +139,8 @@
     </div>
 
     <div class="masonry-grid" style="--columns:2;">
-      <img src="images/ROAM/sino_render.webp" class="zoomable">
-      <img src="images/ROAM/sino_wire.webp" class="zoomable">
+      <img src="images/ROAM/sino_render.webp" class="zoomable" data-caption="Render of Nuggets">
+      <img src="images/ROAM/sino_wire.webp" class="zoomable"data-caption="Wireframe of Nuggets">
     </div>
 
     <div class="masonry-grid" style="--columns:2;">
@@ -167,8 +190,8 @@
         from the player then a loop: <code>for (int i = 0; i < hopCount; i++)</code> to hop away from the player through
         a lerp and sine wave.<br><br> </p>
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/hopcode.webp" class="zoomable">
-        <img src="images/ROAM/flycode.webp" class="zoomable">
+        <img src="images/ROAM/hopcode.webp" class="zoomable" data-caption="Script for the hop function for the birds">
+        <img src="images/ROAM/flycode.webp" class="zoomable" data-caption="Script for the flying function for the birds">
       </div>
     </div>
   </section>
@@ -189,7 +212,7 @@
   <section class="fade-section">
     <div class="wrapper">
       <div class="text-img">
-        <img src="images/ROAM/code-jump.webp" class="zoomable">
+        <img src="images/ROAM/code-jump.webp" class="zoomable" data-caption="Script for the player jump interaction">
         <p>The jump script runs the coroutine <code>JumpPlayer</code> with player input. This first disables the character controller to stop the player from moving whilst jumping.<br><br> Then the script lerps between the start position and end jump point with a parabola for the jump motion. The <code>switch(jumpType)</code> is used to change the jumpState which changes with jumping animation the player uses: one for jumping up and the other for falling down. Then after landing it reenables movement and plays a dust visual effect and sound.</p>
       </div>
     </div>
@@ -221,8 +244,8 @@
         object. This then reduces health and then runs the coroutine <code>SpawnReplacementAfterDelay</code> to
         instantiate destroyed variant of the GameObject and turns off the UI and collectable.</p>
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/code-interact-1.webp" class="zoomable">
-        <img src="images/ROAM/code-interact-2.webp" class="zoomable">
+        <img src="images/ROAM/code-interact-1.webp" class="zoomable" data-caption="Script for the collectable">
+        <img src="images/ROAM/code-interact-2.webp" class="zoomable" data-caption="Script for the collectable being consumed">
       </div>
     </div>
   </section>
@@ -237,25 +260,25 @@
       </p>
       <h3>Borealopelta</h3>
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/boreal-render.webp" class="zoomable">
-        <img src="images/ROAM/boreal-wire.webp" class="zoomable">
+        <img src="images/ROAM/boreal-render.webp" class="zoomable" data-caption="Render model of the Borealopelta">
+        <img src="images/ROAM/boreal-wire.webp" class="zoomable" data-caption="Wireframe model of the Borealopelta">
       </div>
 
       <h3>Beetle</h3>
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/bettle-render.webp" class="zoomable">
-        <img src="images/ROAM/bettle-wire.webp" class="zoomable">
+        <img src="images/ROAM/bettle-render.webp" class="zoomable" data-caption="Render model of the collectable Beetle">
+        <img src="images/ROAM/bettle-wire.webp" class="zoomable" data-caption="Wireframe model of the collectable Beetle">
       </div>
       <h3 style="color:var(--base-color);">Dromaeosaurus</h3>
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/drom-render.webp" class="zoomable">
-        <img src="images/ROAM/drom-wire.webp" class="zoomable">
+        <img src="images/ROAM/drom-render.webp" class="zoomable" data-caption="Render model of the Dromaeosaurus">
+        <img src="images/ROAM/drom-wire.webp" class="zoomable" data-caption="Wireframe model of the Dromaeosaurus">
       </div>
 
       <h3 style="color:var(--base-color);">Ichthyovenator</h3>
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/ichthy-render.webp" class="zoomable">
-        <img src="images/ROAM/ichthy-wire.webp" class="zoomable">
+        <img src="images/ROAM/ichthy-render.webp" class="zoomable" data-caption="Render model of the Ichthyovenator">
+        <img src="images/ROAM/ichthy-wire.webp" class="zoomable" data-caption="Wireframe model of the Ichthyovenator">
       </div>
     </div>
 
