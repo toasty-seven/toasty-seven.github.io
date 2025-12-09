@@ -67,7 +67,21 @@ h3 {
 
 /* navs */
 img {
-    border-radius: 10px;
+    border-radius: 25px;
+}
+
+#video {
+    border-radius: 25px;
+    pointer-events: none;   /* disables clicks/taps */
+    height:auto;
+    width: 30rem;
+}
+
+code {
+    background-color: var(--blend-grey);
+    color: var(--base-color);
+    padding: 5px 5px;
+    border-radius:5px;
 }
 
 .wrapper {
@@ -291,6 +305,7 @@ nav a {
 
 .wavy-video-showcase video,
 .wavy-video-showcase img {
+    pointer-events: none;   /* disables clicks/taps */
     position: absolute;
     top: 0;
     left: 0;
@@ -299,6 +314,7 @@ nav a {
     object-fit: cover;
     /* ensures video fills the section */
 }
+
 
 
 
@@ -524,6 +540,7 @@ footer {
 
 
 .iframe-container {
+    
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -531,14 +548,6 @@ footer {
     align-items: center;
     /* vertical center */
 }
-
-.iframe-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
 
 #contact {
     display: block;
@@ -973,6 +982,10 @@ footer {
 
     .wavy-video-showcase {
         height: 30rem;
+    }
+
+    #video {
+        width:80%;
     }
 }
 

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kean Ngooi | ROAM</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/images/Icons/web_icon.webp">
 </head>
 
 <body>
@@ -33,7 +34,8 @@
   </header>
   <!-- Main Video -->
   <section class="wavy-video-showcase">
-    <video src="images/ROAM/roam-video-showcase.mp4" autoplay muted loop></video>
+    <video src="images/ROAM/roam-video-showcase.mp4" autoplay muted loop playsinline>Your browser does not support the
+      video tag.</video>
   </section>
 
   <!-- About  game section -->
@@ -47,7 +49,8 @@
           in hues of gold and amber.<br></br>
           Help Nuggets explore an environment where they will jump, crouch and weave through dense forest, feast on
           fruits and insects and encounter other dinosaurs along the way</p>
-        <img src="images/ROAM/screenshot_00.webp" class="zoomable" data-caption="Screenshot of the game">
+        <video src="images/ROAM/roam-intro.webm" autoplay loop muted playsinline id="video">Your browser does not
+          support the video tag.</video>
       </div>
     </div>
     </div>
@@ -129,28 +132,109 @@
   <!-- microrwaptor -->
   <section class="fade-section">
     <div class="wrapper">
-      <h2>NPC Characters</h2>
-      <p>These characters appear throughout the game for the player to find and interact with. As with all models in the game they were modelled, textured and rigged in Blender and set up in Unity. The dinosaurs were chosen to fill out different niches in the environment, including having a piscivore in the river area and herbivores in the forest plains.
-      </p>
+      <h2>Coding interactions.</h2>
+      <p>I was the programmer and did the implementations of the interactables in the game. The main scripts I worked on
+        add in collectables, jumping & dragging and adding cutscenes to the game. Additionally I added in the sound
+        effects and music functionality through scripting.</p>
     </div>
   </section>
-      </p>
+  </p>
   <section class="fade-section">
     <div class="wrapper">
-      <h3>Microraptor</h3>
-      <p>These small bird dinosaurs were commonplace in the game. They would sit around on the ground and hop and fly away when the player got close. This was done to make the player feel like they were in the environment and interacted with the characters in the scene. <br><br></p>
+      <h3>Coding Microraptor</h3>
+      <div class="text-img">
+        <p>These small bird dinosaurs were commonplace in the game. They would sit around on the ground and hop and fly
+          away when the player got close. This was done to make the player feel like they were in the environment and
+          interacted with the characters in the scene.
+        </p>
+        <video src="images/ROAM/roam-jump.webm" autoplay muted loop playsinline id="video">Your browser does not support
+          the video tag.</video>
+      </div>
       <div class="masonry-grid" style="--columns:2;">
         <img src="images/ROAM/microraptor_fly_render.webp" class="zoomable">
         <img src="images/ROAM/microraptor_fly_wire.webp" class="zoomable">
         <img src="images/ROAM/microraptor_sit_render.webp" class="zoomable">
         <img src="images/ROAM/microraptor_sit_wire.webp" class="zoomable">
       </div>
+  </section>
+  <!-- Code images -->
+  <section class="fade-section">
+    <div class="wrapper">
+      <p>
+        These were made interactable with the player through scripting. Through the <code>void OnTriggerEnter</code>, it
+        would run a coroutine for the bird to hop then fly.<br><br>The coroutine begins with hopping away from the
+        player using <code>Quaternion rotation = Quaternion.LookRotation(awayDir, Vector3.up);</code> to rotate it away
+        from the player then a loop: <code>for (int i = 0; i < hopCount; i++)</code> to hop away from the player through
+        a lerp and sine wave.<br><br> </p>
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="images/ROAM/hopcode.webp" class="zoomable">
+        <img src="images/ROAM/flycode.webp" class="zoomable">
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="wrapper">
+      <h3>Jumping</h3>
+      <div class="text-img">
+        <p>In the game, the player can jump in certain places to go over obstacles. It uses the Jumping script to jump the player to jump point GameObject locations. 
+        </p>
+        <video src="images/ROAM/roam-jump-2.webm" autoplay muted loop playsinline id="video">Your browser does not
+          support
+          the video tag.</video>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="wrapper">
+      <div class="text-img">
+        <img src="images/ROAM/code-jump.webp" class="zoomable">
+        <p>The jump script runs the coroutine <code>JumpPlayer</code> with player input. This first disables the character controller to stop the player from moving whilst jumping.<br><br> Then the script lerps between the start position and end jump point with a parabola for the jump motion. The <code>switch(jumpType)</code> is used to change the jumpState which changes with jumping animation the player uses: one for jumping up and the other for falling down. Then after landing it reenables movement and plays a dust visual effect and sound.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="fade-section">
+    <div class="wrapper">
+      <h3>Interactables</h3>
+      <div class="text-img">
+        <p>There were two interactable scripts in the scene - cutscene and collectables. This cutscene script runs a
+          coroutine that plays a timeline when the player is interacting or entering the trigger of the script. This
+          plays an animation, vfx and sound - letting the player destroy obstacles & interact with the environment.</p>
+        <video src="images/ROAM/roam-interact.webm" autoplay muted loop playsinline id="video">Your browser does not
+          support the video tag.</video>
+      </div>
+
+      <div class="text-img">
+        <video src="images/ROAM/roam-dragonfly.webm" autoplay muted loop playsinline id="video">Your browser does not
+          support the video tag.</video>
+        <p>Another type of interactable is the collectable - it has a certain health amount and uses the same input to
+          interact. After interacting it adds to the counter to show how many collectables the player has gotten.</p>
+      </div>
+  </section>
+
+  <section class="fade-section">
+    <div class="wrapper">
+      <p>The interactable script uses function <code>TryHit</code> whenever there is player input on a collectable
+        object. This then reduces health and then runs the coroutine <code>SpawnReplacementAfterDelay</code> to
+        instantiate destroyed variant of the GameObject and turns off the UI and collectable.</p>
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="images/ROAM/code-interact-1.webp" class="zoomable">
+        <img src="images/ROAM/code-interact-2.webp" class="zoomable">
+      </div>
     </div>
   </section>
 
   <section class="wavy-both" style="background-image:url(gradient-bgs/gradient-6.webp);">
     <div class="wrapper">
-
+      <h2>NPC Models</h2>
+      <p>These characters appear throughout the game for the player to find and interact with. As with all models in the
+        game they were modelled, textured and rigged in Blender and set up in Unity. The dinosaurs were chosen to fill
+        out different niches in the environment, including having a piscivore in the river area and herbivores in the
+        forest plains.
+      </p>
       <h3>Borealopelta</h3>
       <div class="masonry-grid" style="--columns:2;">
         <img src="images/ROAM/boreal-render.webp" class="zoomable">
@@ -198,25 +282,25 @@
 
   </section>
 
-<!-- Scroll to top -->
-<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
+  <!-- Scroll to top -->
+  <a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
 
 
-<script>
-height = 1500;
+  <script>
+    height = 1500;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollBtn = document.getElementById("scrollToTop");
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollBtn = document.getElementById("scrollToTop");
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > height) {
-      scrollBtn.classList.add("visible");
-    } else {
-      scrollBtn.classList.remove("visible");
-    }
-  });
-});
-</script>
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > height) {
+          scrollBtn.classList.add("visible");
+        } else {
+          scrollBtn.classList.remove("visible");
+        }
+      });
+    });
+  </script>
 
 
   <!-- ✅ Lightbox overlay -->
@@ -263,50 +347,50 @@ document.addEventListener("DOMContentLoaded", () => {
   </script>
 
   <!-- fade section script v2-->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".fade-section");
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll(".fade-section");
 
-  // Pick a threshold based on screen width
-  function getThreshold() {
-    if (window.innerWidth < 600) return 0.1;   // phones
-    if (window.innerWidth < 1024) return 0.2;  // tablets
-    return 0.5;                                // desktops
-  }
+      // Pick a threshold based on screen width
+      function getThreshold() {
+        if (window.innerWidth < 600) return 0.1;   // phones
+        if (window.innerWidth < 1024) return 0.2;  // tablets
+        return 0.5;                                // desktops
+      }
 
-  let observer = createObserver();
+      let observer = createObserver();
 
-  function createObserver() {
-    return new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+      function createObserver() {
+        return new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: getThreshold() });
+      }
+
+      // Observe all sections
+      sections.forEach(section => observer.observe(section));
+
+      // Optional: Re-create observer on resize
+      window.addEventListener("resize", () => {
+        const newThreshold = getThreshold();
+
+        // Rebuild observer only if threshold changed
+        if (observer.threshold !== newThreshold) {
+          observer.disconnect();
+          observer = createObserver();
+          sections.forEach(section => {
+            if (!section.classList.contains("visible")) {
+              observer.observe(section);
+            }
+          });
         }
       });
-    }, { threshold: getThreshold() });
-  }
-
-  // Observe all sections
-  sections.forEach(section => observer.observe(section));
-
-  // Optional: Re-create observer on resize
-  window.addEventListener("resize", () => {
-    const newThreshold = getThreshold();
-
-    // Rebuild observer only if threshold changed
-    if (observer.threshold !== newThreshold) {
-      observer.disconnect();
-      observer = createObserver();
-      sections.forEach(section => {
-        if (!section.classList.contains("visible")) {
-          observer.observe(section);
-        }
-      });
-    }
-  });
-});
-</script>
+    });
+  </script>
 
 
   <!-- contact section -->
