@@ -167,7 +167,25 @@
   <footer>
     <p>© 2025 | Kean Ngooi</p>
   </footer>
+<!-- Scroll to top -->
+<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
 
+
+<script>
+height = 1500;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > height) {
+      scrollBtn.classList.add("visible");
+    } else {
+      scrollBtn.classList.remove("visible");
+    }
+  });
+});
+</script>
   <!-- ✅ Lightbox overlay -->
   <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
@@ -212,27 +230,51 @@
   </script>
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sections = document.querySelectorAll(".fade-section");
+  <!-- fade section script v2-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".fade-section");
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            // If you only want it to fade in once:
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.3 // trigger when 10% of section is visible
+  // Pick a threshold based on screen width
+  function getThreshold() {
+    if (window.innerWidth < 600) return 0.1;   // phones
+    if (window.innerWidth < 1024) return 0.2;  // tablets
+    return 0.5;                                // desktops
+  }
+
+  let observer = createObserver();
+
+  function createObserver() {
+    return new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
       });
+    }, { threshold: getThreshold() });
+  }
 
+  // Observe all sections
+  sections.forEach(section => observer.observe(section));
+
+  // Optional: Re-create observer on resize
+  window.addEventListener("resize", () => {
+    const newThreshold = getThreshold();
+
+    // Rebuild observer only if threshold changed
+    if (observer.threshold !== newThreshold) {
+      observer.disconnect();
+      observer = createObserver();
       sections.forEach(section => {
-        observer.observe(section);
+        if (!section.classList.contains("visible")) {
+          observer.observe(section);
+        }
       });
-    });
-  </script>
+    }
+  });
+});
+</script>
 
 </body>
 

@@ -32,17 +32,12 @@
   </header>
 
   <main>
-    <section id="contact" class="fade-section">
+    <section class="fade-section">
       <div class="wrapper">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch either email me or text my phone:</p>
-
-        <div class="link-box">
-          <a href="mailto:keanngooi@gmail.com">keanngooi@gmail.com</a>
-        </div>
-
-        <div class="link-box">
-          <a href="tel:+61468902470">+61 468 902 470</a>
+        <h2>About</h2>
+        <div class="text-img">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, error totam maxime in maiores aut incidunt eligendi, laudantium tempora odit eos, illum minima expedita facere. Laudantium cumque consequuntur hic possimus.</p>
+            <img src="images/Personal/IMG_3691.JPG">
         </div>
       </div>
     </section>
@@ -83,10 +78,37 @@
       </div>
     </section>
 
-
+<footer>
+    <p>© 2025 | Kean Ngooi</p>
+</footer>
   </main>
 
+<!-- Scroll to top -->
+<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
 
+
+<script>
+height = 1500;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > height) {
+      scrollBtn.classList.add("visible");
+    } else {
+      scrollBtn.classList.remove("visible");
+    }
+  });
+});
+</script>
+  <!-- ✅ Lightbox overlay -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <img src="" alt="Zoomed image" id="lightbox-img">
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
  <!-- fade section script v2-->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -133,9 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<footer>
-    <p>© 2025 | Kean Ngooi</p>
-</footer>
 
 </body>
 

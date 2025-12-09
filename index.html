@@ -48,7 +48,7 @@
 <section class="fade-section">
     <div class="wrapper">
         <h2>hello</h2>
-        <p style="text-align: center; font-size: 2rem;">I'm <b>Kean</b> - an Artist and Designer.</p> 
+        <p style="text-align: center; font-size: 2rem;">I'm <b>Kean</b> - an Artist and Designer.</p>
     </div>
 </section>
 
@@ -126,12 +126,9 @@
 </section>
 
 
-<section class="wavy-both">
+<section class="wavy-both" style="background-image:url(gradient-bgs/gradient-7.webp); color:var(--base-color);">
     <div class="wrapper">
-        <h2>Other Projects</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta voluptatem fuga voluptatibus
-            distinctio incidunt veritatis quis, inventore nesciunt suscipit, reiciendis assumenda ipsam ullam
-            consequuntur dolorem atque officia hic culpa.</p>
+        <h2>Other Projects</h2>    
     </div>
 
 
@@ -194,7 +191,7 @@
 
 
         <section id="about" class="wavy-both"
-            style="background:url(gradient-bgs/gradient-6-rev.webp); color:var(--base-color); background-size:cover;">
+            style="background-image:url(gradient-bgs/gradient-6-rev.webp); color:var(--base-color);">
             <div class="wrapper">
                 <h2> About the Project </h2>
                 <p>3D modeling project for an RMIT University elective. The theme is an island that is only accessible
@@ -321,7 +318,7 @@
         </div>
 
         <section id="about" class="wavy-both"
-            style="background:url(gradient-bgs/gradient-6-rev.webp); background-size:cover; color:var(--base-color);">
+            style="background-image:url(gradient-bgs/gradient-6-rev.webp); color:var(--base-color);">
             <div class="wrapper">
                 <h2>About the project</h2>
                 <p>This was an exercise in 3D modeling and animation to create an animation.
@@ -341,18 +338,20 @@
                     <div class="skill">
                         <p>3D Animation</p>
                     </div>
+                </section>
             </div>
-        </section>
+
+
+            <section class="wavy-video-showcase">
+                <video autoplay muted loop playsinline>
+                    <source src="images/BAGELTOWN/Bagelmachine2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </section>
         </section>
 
-        <section class="wavy-video-showcase">
-            <video autoplay muted loop playsinline>
-                <source src="images/BAGELTOWN/Bagelmachine2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
 
-        <section class="wavy-both" style="background:url(gradient-bgs/gradient-6.webp);">
+        <section class="wavy-both" style="background-image:url(gradient-bgs/gradient-6.webp);">
             <h2>Screenshots</h2>
             <div class="masonry-grid" style="--columns:2;">
                 <img src="images/BAGELTOWN/BagelMachine1.webp" class="zoomable" data-caption="Screenshot 1">
@@ -375,7 +374,7 @@
         </div>
 
         <section id="about" class="wavy-both"
-            style="background:url(gradient-bgs/gradient-6-rev.webp); background-size:cover; color:var(--base-color);">
+            style="background-image:url(gradient-bgs/gradient-6-rev.webp); color:var(--base-color);">
             <div class="wrapper">
                 <h2>About the project</h2>
                 <p>This was an short exercise in 3D modeling and animation to create an animation.
@@ -397,14 +396,15 @@
                     </div>
                 </section>
             </div>
-        </section>
 
-        <div class="wavy-video-showcase">
-            <video autoplay muted loop playsinline>
-                <source src="images/gas-city/Gascity6.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+
+            <section class="wavy-video-showcase">
+                <video autoplay muted loop playsinline>
+                    <source src="images/gas-city/Gascity6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </section>
+        </section>
 
         <h2>Screenshots</h2>
         <div class="masonry-grid" style="--columns:2;">
@@ -425,7 +425,7 @@
 
 
         <section id="about" class="wavy-both"
-            style="background:url(gradient-bgs/gradient-6-rev.webp); background-size:cover; color:var(--base-color);">
+            style="background-image:url(gradient-bgs/gradient-6-rev.webp);color:var(--base-color);">
             <div class="wrapper">
                 <h2>About the project</h2>
                 <p>Procedural city generation project using Geometry Nodes in Blender. The project focuses on creating
@@ -450,19 +450,19 @@
                     <div class="skill">
                         <p>3D Modeling</p>
                     </div>
-
+                </section>
 
             </div>
 
-        </section>
-        </section>
-        <div class="wavy-video-showcase">
-            <video autoplay muted loop playsinline>
-                <source src="images/geonodecity/geonode_showcase.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
 
+
+            <div class="wavy-video-showcase">
+                <video autoplay muted loop playsinline>
+                    <source src="images/geonodecity/geonode_showcase.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
 
         <div class="masonry-grid" style="--columns: 2;">
             <img src="images/geonodecity/banner.webp" alt="Geo Node City 1" class="zoomable" data-caption="Render">
@@ -500,7 +500,7 @@
 <!-- contact section -->
 <section id="contact">
     <h2>Links</h2>
-    
+
 
     <!-- email link with icon -->
     <div class="link">
@@ -535,7 +535,25 @@
 <footer>
     <p>© 2025 | Kean Ngooi</p>
 </footer>
+<!-- Scroll to top -->
+<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
 
+
+<script>
+height = 1500;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scrollToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > height) {
+      scrollBtn.classList.add("visible");
+    } else {
+      scrollBtn.classList.remove("visible");
+    }
+  });
+});
+</script>
 <!-- ✅ Lightbox overlay -->
 <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
@@ -688,24 +706,48 @@
 </script>
 
 
+<!-- fade section script v2-->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const sections = document.querySelectorAll(".fade-section");
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    // If you only want it to fade in once:
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.4 // trigger when 10% of section is visible
-        });
+        // Pick a threshold based on screen width
+        function getThreshold() {
+            if (window.innerWidth < 600) return 0.1;   // phones
+            if (window.innerWidth < 1024) return 0.2;  // tablets
+            return 0.5;                                // desktops
+        }
 
-        sections.forEach(section => {
-            observer.observe(section);
+        let observer = createObserver();
+
+        function createObserver() {
+            return new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: getThreshold() });
+        }
+
+        // Observe all sections
+        sections.forEach(section => observer.observe(section));
+
+        // Optional: Re-create observer on resize
+        window.addEventListener("resize", () => {
+            const newThreshold = getThreshold();
+
+            // Rebuild observer only if threshold changed
+            if (observer.threshold !== newThreshold) {
+                observer.disconnect();
+                observer = createObserver();
+                sections.forEach(section => {
+                    if (!section.classList.contains("visible")) {
+                        observer.observe(section);
+                    }
+                });
+            }
         });
     });
 </script>
