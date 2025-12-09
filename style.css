@@ -34,7 +34,7 @@ html {
 
     --blend-grey: #32302f;
     --blend-darkgrey: #282828;
-    --blend-text: #dfd5b1;
+    --blend-text: #ffe78e;
 }
 
 body {
@@ -945,6 +945,30 @@ footer {
     transform: translateY(0%);
     filter: brightness(80%);
 }
+
+#expertise-box {
+    text-align:left;
+    color: var(--base-color);
+    padding: 2rem 2rem;
+    background-image:url(gradient-bgs/gradient-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50px;
+}
+
+#expertise-box a {
+    text-decoration: none;
+    color: var(--blend-text);
+    font-weight: bold;
+}
+
+#expertise-box h4 {
+    font-family: LEMONMILK;
+    font-size: 2rem;
+}
+
+
 /* adjust per media */
 
 @media (max-width:900px) {
