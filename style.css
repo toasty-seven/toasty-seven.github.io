@@ -37,6 +37,11 @@ html {
     --blend-text: #ffe78e;
 }
 
+main {
+    width: min(65ch, 100% - 4rem);
+    margin-inline: auto;
+}
+
 body {
     font-family: system-ui;
     color: var(--blend-grey);
@@ -68,6 +73,7 @@ h3 {
 /* navs */
 img {
     border-radius: 25px;
+    max-width: 100%;
 }
 
 #video {
@@ -90,6 +96,8 @@ code {
     padding-inline: auto;
     text-align:center;
 }
+
+
 
 header {
     display: flex;
@@ -493,9 +501,6 @@ footer {
     color: #ddd;
 }
 
-.image-grid {
-    padding-inline: 5rem;
-}
 
 .title-img-container img {
     width: 100%;
@@ -806,10 +811,17 @@ footer {
     animation-fill-mode: forwards;
 }
 
+.modal-title {
+    display:block;
+    text-align: right;
+    width: auto;
+}
+
+
 /* Close button */
 .close {
-    float: right;
-    font-size: 1.8rem;
+    padding: 2rem 2rem;
+    font-size: 3rem;
     cursor: pointer;
     color: #999;
     margin-top: -0.5rem;
@@ -1045,4 +1057,7 @@ footer {
         font-size: 5rem;
     }
 
+    .modal-content h1 {
+        font-size: 3.5rem;
+    }
 }

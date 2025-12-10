@@ -914,6 +914,10 @@ footer {
     header h1{
         font-size: 3rem;
     }
+
+    h1 {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
