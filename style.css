@@ -6,14 +6,28 @@
 
 @font-face {
     font-family: 'LEMONMILK';
-    src: url('fonts/LEMONMILK-Bold.otf') format('opentype');
+    src: url('/fonts/LEMONMILK-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LEMONMILK';
-    src: url('fonts/LEMONMILK-Regular.otf') format('opentype');
+    src: url('/fonts/LEMONMILK-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('/fonts/Mont-HeavyDEMO.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('/fonts/Mont-ExtraLightDEMO.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -37,10 +51,6 @@ html {
     --blend-text: #ffe78e;
 }
 
-main {
-    width: min(65ch, 100% - 4rem);
-    margin-inline: auto;
-}
 
 body {
     font-family: system-ui;
@@ -114,7 +124,8 @@ header {
     font-family: LEMONMILK;
     font-size: 6rem;
     text-align: center;
-    color: var(--base-color);
+    color: white;
+    margin-top:5rem;
 
     transition: all 1s ease;
     border-right: 5px solid;
@@ -122,10 +133,28 @@ header {
     white-space: nowrap;
     overflow: hidden;
     animation:
-        typing 2s steps(10),
+        typing 2s steps(11),
         cursor .4s step-end infinite alternate,
         fade-in-bottom 1s ease;
+    background-position: center;
 
+    margin-bottom: 0;
+}
+
+.tagline {
+    font-size: 2rem;
+    font-family: Mont;
+    font-weight: normal;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 5rem;
+    transition: all 1s ease;
+    animation: fade-in-bottom 1s ease;
+
+}
+
+.site-title:hover {
+    cursor: pointer;
 }
 
 @keyframes cursor {
@@ -210,7 +239,7 @@ nav a {
     text-decoration: none;
     font-size: 2rem;
     font-family: LEMONMILK;
-    color: var(--base-color);
+    color: white;
     padding-inline: 1rem;
     transition: all 0.3s ease;
 }
@@ -223,7 +252,7 @@ nav a {
 }
 
 .navlink:hover {
-    transform: scale(1.02);
+    transform: translateY(-10%);
 }
 
 
@@ -235,7 +264,7 @@ nav a {
     background-position: center top 25%;
     background-attachment: fixed;
 
-    height: 35rem;
+    height: 45rem;
 
 
 
@@ -989,10 +1018,16 @@ footer {
 @media (max-width:900px) {
     .site-title {
         font-size: 4rem;
+        margin-top: 2rem;
+    }
+
+    .tagline {
+        margin-bottom:0;
+        font-size: 1.2rem;
     }
 
     .wavy-header {
-        height: 20rem;
+        height: 20rem !important;
     }
 
         .wrapper 
@@ -1042,8 +1077,13 @@ footer {
         font-size: 2rem;
     }
 
+    .tagline {
+        margin-bottom: 0;
+        font-size: 0rem;
+    }
+
     .wavy-header {
-        height: 15rem;
+        height: 15rem !important;
     }
 
     nav a {
