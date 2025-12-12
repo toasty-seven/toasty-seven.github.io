@@ -233,6 +233,8 @@ nav a {
         url('images/ConceptArtA03/keyart_01_full.webp');
     background-size: cover;
     background-position: center top 25%;
+    background-attachment: fixed;
+
     height: 35rem;
 
 
@@ -276,7 +278,6 @@ nav a {
         radial-gradient(59.44px at 50% calc(100% + 44.85px), #0000 99%, #000 101%) 50% calc(100% - 39px)/156px calc(51% - 39px) repeat-x;
     -webkit-mask: var(--mask);
     mask: var(--mask);
-
 
 }
 
@@ -538,7 +539,7 @@ footer {
 }
 
 .text-img img {
-    width: 30rem;
+    width: 20rem;
     height: auto;
     /* control image size */
 }
@@ -889,6 +890,7 @@ footer {
     transition: filter 0.5s ease;
 }
 
+/* Scroll to top button */
 .scrollToTop {
     font-size: 2rem;
     opacity:0;
@@ -900,12 +902,13 @@ footer {
         /* padding */
         padding: .5rem 6rem;
         border-radius: 5rem;
-
+        bottom:0;
+        right: 0;
+        margin-inline: 1rem;
+        margin-bottom: 1rem;
         /* center button */
         position: fixed;
-        left: 50%;             /* start at the horizontal center */
-        transform: translateX(-50%) translateY(-50%);
-        bottom: 2%;
+        transform:translateY(-50%);
         z-index: 9999;
         pointer-events: none;
 
@@ -916,7 +919,7 @@ footer {
 .scrollToTop.visible {
     /* animation */
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
     pointer-events: all;
 }
 
