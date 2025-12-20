@@ -85,17 +85,15 @@
     <section class="fade-section">
         <div class="wrapper">
             <h2>3D models</h2>
-            <p>The art style limited the texturing and color choices for the models. They were kept low-poly with the textures to replicate the hand-drawn look to the original reference from Blanche McManus</p>
-            <div class="masonry-grid" style="--columns:2;">
-                <img src="images/TechArt01/bookshelf-render.webp" class="zoomable">
-                <img src="images/TechArt01/cake-render.webp" class="zoomable">     
-                <img src="images/TechArt01/pilla-wire.webp" class="zoomable">           
-                <img src="images/TechArt01/bookshelf-wire.webp" class="zoomable">   
-                <img src="images/TechArt01/cake-wire.webp" class="zoomable">
-                <img src="images/TechArt01/pilla-render.webp" class="zoomable">
-                
-                
-            
+            <p>The art style limited the texturing and color choices for the models. They were kept low-poly with the
+                textures to replicate the hand-drawn look to the original reference from Blanche McManus</p>
+            <div class="masonry-grid" style="--columns:3;">
+                <img src="images/TechArt01/bookshelf-render.webp" class="zoomable" data-gallery="/images/TechArt01/bookshelf-wire.webp">
+                <img src="images/TechArt01/cake-render.webp" class="zoomable" data-gallery="/images/TechArt01/cake-wire.webp">
+                <img src="images/TechArt01/pilla-render.webp" class="zoomable" data-gallery="/images/TechArt01/pilla-wire.webp">
+
+
+
             </div>
         </div>
     </section>
@@ -110,8 +108,14 @@
             <img src="images/TechArt01/sc_3.webp" class="zoomable">
             <img src="images/TechArt01/sc_4.webp" class="zoomable">
             <img src="images/TechArt01/sc_5.webp" class="zoomable">
-            <img src="images/TechArt01/sc_wire_1.webp" class="zoomable">
-            <img src="images/TechArt01/sc_wire_2.webp" class="zoomable">
+        </div>
+        <div class="wrapper">
+            <div class="image-container">
+                <img src="images/TechArt01/sc_wire_1.webp" class="zoomable" data-gallery="/images/TechArt01/sc_wire_2.webp">
+                <div class="overlay">
+                    <h3>Wireframes</h3>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -135,48 +139,115 @@
             });
         });
     </script>
-    <!-- ✅ Lightbox overlay -->
+    <!-- ✅ Lightbox overlay v2 -->
     <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <img src="" alt="Zoomed image" id="lightbox-img">
-            <p id="lightbox-caption"></p>
+        <div class="lightbox-layout">
+
+            <!-- Close button -->
+            <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+
+            <!-- Scrollable image stack -->
+            <div class="lightbox-content" id="lightbox-stack"></div>
+
+            <!-- Sticky side text (optional) -->
+            <aside class="lightbox-side" id="lightbox-side"></aside>
+
+
         </div>
     </div>
 
 
+
     <!-- Lightbox Functionality Script -->
     <script>
+        const layout = document.querySelector('.lightbox-layout');
         const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
+        const stack = document.getElementById('lightbox-stack');
+        const sidePanel = document.getElementById('lightbox-side');
+        const closeBtn = document.getElementById('lightbox-close');
         const zoomables = document.querySelectorAll('.zoomable');
 
+        // Open lightbox function
+        function openLightbox() {
+            lightbox.style.display = 'block';
+            void lightbox.offsetWidth; // force reflow
+            lightbox.classList.add('show');
+            document.body.style.overflow = 'hidden'; // lock page scroll
+        }
+
+        // Close lightbox function
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                stack.innerHTML = '';
+                sidePanel.innerHTML = '';
+                document.body.style.overflow = ''; // restore page scroll
+                layout.classList.remove('no-side');
+            }, 400); // match fade-out transition
+        }
+
+        // Open lightbox on click
         zoomables.forEach(img => {
             img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxCaption.textContent = img.dataset.caption || '';
+                stack.innerHTML = '';
+                sidePanel.innerHTML = '';
 
-                // Always set display before adding .show for fade-in
-                lightbox.style.display = 'flex';
-                // Force reflow to ensure transition works
-                void lightbox.offsetWidth;
-                lightbox.classList.add('show');
+                // Main image
+                const mainImg = document.createElement('img');
+                mainImg.src = img.src;
+                stack.appendChild(mainImg);
+
+                // Optional caption
+                if (img.dataset.caption) {
+                    const caption = document.createElement('p');
+                    caption.className = 'lightbox-caption';
+                    caption.textContent = img.dataset.caption;
+                    stack.appendChild(caption);
+                }
+
+                // WIP images
+                if (img.dataset.gallery) {
+                    img.dataset.gallery.split(',').forEach(src => {
+                        const extraImg = document.createElement('img');
+                        extraImg.src = src.trim();
+                        stack.appendChild(extraImg);
+                    });
+                }
+
+                // Side panel logic
+                if (img.dataset.side && img.dataset.side.trim() !== '') {
+                    sidePanel.innerHTML = img.dataset.side;
+                    sidePanel.style.display = '';
+                    layout.classList.remove('no-side');
+                    stack.classList.remove('no-side');
+                } else {
+                    sidePanel.innerHTML = '';
+                    sidePanel.style.display = 'none';
+                    layout.classList.add('no-side');
+                    stack.classList.add('no-side');
+                }
+
+                openLightbox();
             });
         });
 
-        // Close when clicking outside the image
+        // Close on background click
         lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                lightbox.classList.remove('show');
-                // Wait for fade-out transition, then hide
-                setTimeout(() => {
-                    lightbox.style.display = 'none';
-                    lightboxImg.src = '';
-                    lightboxCaption.textContent = '';
-                }, 400); // match the CSS transition duration
+            if (!layout.contains(e.target)) closeLightbox();
+        });
+
+        // Close on X button click
+        closeBtn.addEventListener('click', closeLightbox);
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                closeLightbox();
             }
         });
     </script>
+
     <!-- fade section script v2-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {

@@ -100,7 +100,16 @@
   <section class="fade-section">
     <div class="wrapper">
       <div class="masonry-grid" style="--columns:1;">
-        <img src="images/ROAM/dino_roam_keyart_01.webp" class="zoomable">
+        <div class="image-container">
+          <img src="images/ROAM/dino_roam_keyart_01.webp" class="zoomable" style="height:auto;"
+            data-caption="Main keyart for the game"
+            data-gallery="/images/ROAM/roam_illustration_wip1.webp,/images/ROAM/exhibition/poster.webp"
+            data-side="<h2>Key Art</h2> 
+        <p>This is the main keyart illustration used for web and poster formats, the character 3D Model was used as a paint-over for a quick production. <br><br>The illustration was made with Photoshop.</p>">
+          <div class="overlay">
+            <h3 style="font-size:3rem;">Key Art</h3>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -109,22 +118,27 @@
     <div class="wrapper">
       <h2>Exhibition</h2>
       <div class="text-img">
-      <p>ROAM has been exhibited at two different events. The RMIT School of Design's Grad Show on 13th November 2025 and during the ACMI Audience Lab exhibition on the 29th November 2025.
+        <p>ROAM has been exhibited at two different events. The RMIT School of Design's Grad Show on 13th November 2025
+          and during the ACMI Audience Lab exhibition on the 29th November 2025.
 
-      <br><br>
-      For the exhibitions, the key-art poster and a foldable origami design of the main character were made by me to promote the game at the event.
-      </p>
-      <img src="images/ROAM/exhibition/IMG_1584.webp" class="zoomable" data-caption="Booth at the ACMI exhibition">
+          <br><br>
+          For the exhibitions, the key-art poster and a foldable origami design of the main character were made by me to
+          promote the game at the event.
+        </p>
+        <img src="images/ROAM/exhibition/IMG_1584.webp" class="zoomable" data-caption="Booth at the ACMI exhibition">
       </div>
 
       <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/exhibition/040a19cf0f2d5aff689de4cb7e55e842.jpeg" class="zoomable" data-caption="Booth at the RMIT Games' Grad Show">
-        <img src="images/ROAM/exhibition/4d179ee66bb48dd45287fd9f7d1ebc81.jpeg" class="zoomable" data-caption="Booth at the RMIT Games' Grad Show">
-        <img src="images/ROAM/exhibition/IMG_1521.webp" class="zoomable" data-caption="Origami Nuggets">
+        <img src="images/ROAM/exhibition/040a19cf0f2d5aff689de4cb7e55e842.jpeg" class="zoomable"
+          data-caption="Booth at the RMIT Games' Grad Show">
+        <img src="images/ROAM/exhibition/4d179ee66bb48dd45287fd9f7d1ebc81.jpeg" class="zoomable"
+          data-caption="Booth at the RMIT Games' Grad Show">
+        <img src="images/ROAM/exhibition/IMG_1521.webp" class="zoomable" data-caption="Origami Nuggets"
+          data-gallery="/images/ROAM/exhibition/origami.webp"
+          data-side="<h2>Origami</h2><p>This was a custom textured design for an origami model of the main character in our game.<br><br> The original origami design gives credit to <a href='https://www.papernautic.com/easy-origami-paper-dinosaur-video/'>Papernautic</a> for their origami dinosaur design. These were distributed at the events and had people engage and take home flyers that promoted our game.</p>">
         <img src="images/ROAM/exhibition/IMG_1544.webp" class="zoomable" data-caption="Booth at the ACMI exhibition">
-        <img src="images/ROAM/exhibition/poster.webp" class="zoomable" data-caption="Key art poster made for the exhibitions">
       </div>
-    
+
     </div>
   </section>
 
@@ -138,14 +152,21 @@
         The model was created with a low-poly target in mind and to get detail out of alpha cards and textures.</p>
     </div>
 
-    <div class="masonry-grid" style="--columns:2;">
-      <img src="images/ROAM/sino_render.webp" class="zoomable" data-caption="Render of Nuggets">
-      <img src="images/ROAM/sino_wire.webp" class="zoomable"data-caption="Wireframe of Nuggets">
-    </div>
-
-    <div class="masonry-grid" style="--columns:2;">
-      <img src="images/ROAM/sino-spin-clay.gif" class="zoomable">
-      <img src="images/ROAM/sino-spin-render.gif" class="zoomable">
+    <div class="wrapper">
+      <img src="/images/ROAM/Artboard 2.webp" class="zoomable" data-caption="Nuggets' Concept art & references">
+      <div class="masonry-grid" style="--columns:2;">
+        <img src="/images/ROAM/sino_render.webp" class="zoomable"
+          data-gallery="images/ROAM/sino_wire.webp, images/ROAM/nuggets-sc-1.webp, images/ROAM/nuggets-sc-2.webp, images/ROAM/nuggets-sc-3.webp"
+          data-side="
+    <h2>Nuggets' Character Model</h2>
+    <p>This is the 3D model for Nuggets, the controllable protagonist in ROAM. They were modelled, textured and rigged in Blender.</p>
+  ">
+        <img src="images/ROAM/sino-spin-render.gif" class="zoomable" data-gallery="images/ROAM/sino-spin-clay.gif"
+          data-side="
+    <h2>Nuggets' Rig</h2>
+    <p>The character rigging was done in Blender, it is a relatively simple rig with inverse kinematics for the head and legs. The eyes were rigged using control bones that would change shape keys on the character.</p>
+  ">
+      </div>
     </div>
 
 
@@ -173,11 +194,18 @@
         <video src="images/ROAM/roam-jump.webm" autoplay muted loop playsinline id="video">Your browser does not support
           the video tag.</video>
       </div>
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/microraptor_fly_render.webp" class="zoomable">
-        <img src="images/ROAM/microraptor_fly_wire.webp" class="zoomable">
-        <img src="images/ROAM/microraptor_sit_render.webp" class="zoomable">
-        <img src="images/ROAM/microraptor_sit_wire.webp" class="zoomable">
+      <div class="masonry-grid" style="--columns:1;">
+        <div class="image-container">
+        <img src="images/ROAM/microraptor_fly_render.webp" class="zoomable"
+          data-gallery="images/ROAM/microraptor_sit_render.webp, images/ROAM/microraptor_fly_wire.webp,images/ROAM/microraptor_sit_wire.webp"
+          data-side="
+        <h2>Microraptor</h2>
+        <p>This consisted of two models for the dinosaur that would dynamically swap between the sitting and flying poses from the script. <br><br>The flying animation was done without a rig - it used weight painting and a vertex displacement shader in Unity to get the flapping effect.</p>">
+        <div class="overlay">
+          <h3>Microraptor</h3>
+          <p class="caption">Interactable NPC Model</p>
+        </div>
+        </div>
       </div>
   </section>
   <!-- Code images -->
@@ -191,7 +219,8 @@
         a lerp and sine wave.<br><br> </p>
       <div class="masonry-grid" style="--columns:2;">
         <img src="images/ROAM/hopcode.webp" class="zoomable" data-caption="Script for the hop function for the birds">
-        <img src="images/ROAM/flycode.webp" class="zoomable" data-caption="Script for the flying function for the birds">
+        <img src="images/ROAM/flycode.webp" class="zoomable"
+          data-caption="Script for the flying function for the birds">
       </div>
     </div>
   </section>
@@ -200,7 +229,8 @@
     <div class="wrapper">
       <h3>Jumping</h3>
       <div class="text-img">
-        <p>In the game, the player can jump in certain places to go over obstacles. It uses the Jumping script to jump the player to jump point GameObject locations. 
+        <p>In the game, the player can jump in certain places to go over obstacles. It uses the Jumping script to jump
+          the player to jump point GameObject locations.
         </p>
         <video src="images/ROAM/roam-jump-2.webm" autoplay muted loop playsinline id="video">Your browser does not
           support
@@ -213,7 +243,11 @@
     <div class="wrapper">
       <div class="text-img">
         <img src="images/ROAM/code-jump.webp" class="zoomable" data-caption="Script for the player jump interaction">
-        <p>The jump script runs the coroutine <code>JumpPlayer</code> with player input. This first disables the character controller to stop the player from moving whilst jumping.<br><br> Then the script lerps between the start position and end jump point with a parabola for the jump motion. The <code>switch(jumpType)</code> is used to change the jumpState which changes with jumping animation the player uses: one for jumping up and the other for falling down. Then after landing it reenables movement and plays a dust visual effect and sound.</p>
+        <p>The jump script runs the coroutine <code>JumpPlayer</code> with player input. This first disables the
+          character controller to stop the player from moving whilst jumping.<br><br> Then the script lerps between the
+          start position and end jump point with a parabola for the jump motion. The <code>switch(jumpType)</code> is
+          used to change the jumpState which changes with jumping animation the player uses: one for jumping up and the
+          other for falling down. Then after landing it reenables movement and plays a dust visual effect and sound.</p>
       </div>
     </div>
   </section>
@@ -245,7 +279,8 @@
         instantiate destroyed variant of the GameObject and turns off the UI and collectable.</p>
       <div class="masonry-grid" style="--columns:2;">
         <img src="images/ROAM/code-interact-1.webp" class="zoomable" data-caption="Script for the collectable">
-        <img src="images/ROAM/code-interact-2.webp" class="zoomable" data-caption="Script for the collectable being consumed">
+        <img src="images/ROAM/code-interact-2.webp" class="zoomable"
+          data-caption="Script for the collectable being consumed">
       </div>
     </div>
   </section>
@@ -258,28 +293,54 @@
         out different niches in the environment, including having a piscivore in the river area and herbivores in the
         forest plains.
       </p>
-      <h3>Borealopelta</h3>
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/boreal-render.webp" class="zoomable" data-caption="Render model of the Borealopelta">
-        <img src="images/ROAM/boreal-wire.webp" class="zoomable" data-caption="Wireframe model of the Borealopelta">
+    </div>
+    <div class="masonry-grid" style="--columns:2;">
+      <div class="image-container">
+      <img src="images/ROAM/boreal-render.webp" class="zoomable" data-caption="Render model of the Borealopelta"
+        data-gallery="images/ROAM/boreal-wire.webp" data-side="<h2>Borealopelta</h2><p>This is the model for an NPC Character based on <i>Borealopelta markmitchelli</i>. In the game, they are placed around the scene as static characters the player can see in the background. <br><br>
+        Modelled, textured and rigged in Blender.    </p>">
+
+        <div class="overlay">
+          <h3>Borealopelta</h3>
+          <p class="caption">NPC Character</p>
+        </div>
       </div>
 
-      <h3>Beetle</h3>
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/bettle-render.webp" class="zoomable" data-caption="Render model of the collectable Beetle">
-        <img src="images/ROAM/bettle-wire.webp" class="zoomable" data-caption="Wireframe model of the collectable Beetle">
-      </div>
-      <h3 style="color:var(--base-color);">Dromaeosaurus</h3>
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/drom-render.webp" class="zoomable" data-caption="Render model of the Dromaeosaurus">
-        <img src="images/ROAM/drom-wire.webp" class="zoomable" data-caption="Wireframe model of the Dromaeosaurus">
+
+      <div class="image-container">
+      <img src="images/ROAM/bettle-render.webp" class="zoomable" data-caption="Render model of the collectable Beetle"
+        data-gallery="images/ROAM/bettle-wire.webp" data-side="<h2>Beetle</h2><p>This is the 3D model for the beetle collectable in the game. The player can find these scattered around the scene to collect.<br><br>
+        Modelled and textured in Blender.
+        </p>">
+        <div class="overlay">
+          <h3>Beetle</h3>
+          <p class="caption">Collectable</p>
+        </div>
       </div>
 
-      <h3 style="color:var(--base-color);">Ichthyovenator</h3>
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/ichthy-render.webp" class="zoomable" data-caption="Render model of the Ichthyovenator">
-        <img src="images/ROAM/ichthy-wire.webp" class="zoomable" data-caption="Wireframe model of the Ichthyovenator">
+
+      <div class="image-container">
+      <img src="images/ROAM/drom-render.webp" class="zoomable" data-caption="Render model of the Dromaeosaurus"
+        data-gallery="/images/ROAM/drom-wire.webp, /images/ROAM/Artboard 4.webp" data-side="<h2>Dromaeosaurus</h2><p>This is the model and concept for a <i>Dromaeosaurus albertensis</i> and it appears in the game as a static NPC that the player can find.<br><br>
+        Modelled, textured and rigged in Blender.</p>">
+        <div class="overlay">
+          <h3>Dromaeosaurus</h3>
+          <p class="caption">NPC Character</p>
+        </div>
       </div>
+
+
+      <div class="image-container">
+      <img src="images/ROAM/ichthy-render.webp" class="zoomable" data-caption="Render model of the Ichthyovenator"
+        data-gallery="/images/ROAM/ichthy-wire.webp, /images/ROAM/dino_concept_board1.webp" data-side="<h2>Ichthyovenator</h2><p>This is the model and concept for a <i>Ichthyovenator laoensis</i> and it appears around the river and water areas in the game as a static NPC the player can find. <br><br>
+        Modelled, textured and rigged in Blender.</p>">
+        <div class="overlay">
+        <h3>Ichthyovenator</h3>
+        <p class="caption">NPC Character</p>
+        </div>
+      </div>
+
+
     </div>
 
   </section>
@@ -287,21 +348,24 @@
   <section class="spiky-both" style="background-image:url(gradient-bgs/gradient-4.webp)">
     <div class="wrapper">
       <h2>Environment 3D Models</h2>
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/fruittree-render.webp" class="zoomable">
-        <img src="images/ROAM/fruittree-wire.webp" class="zoomable">
-      </div>
-
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/foliage-render.webp" class="zoomable">
-        <img src="images/ROAM/foliage-wire.webp" class="zoomable">
-      </div>
-
-      <div class="masonry-grid" style="--columns:2;">
-        <img src="images/ROAM/bones-render.webp" class="zoomable">
-        <img src="images/ROAM/bones-wire.webp" class="zoomable">
-      </div>
     </div>
+    <div class="masonry-grid" style="--columns:3;">
+      <img src="images/ROAM/fruittree-render.webp" class="zoomable" data-gallery="/images/ROAM/fruittree-wire.webp"
+        data-side="<h2>Fruit Tree</h2><p>This is the model for a fruit tree, in the game it is a collectable for the player to interact with.
+          <br><br>
+          Modelled and textured in Blender.
+        </p>">
+
+      <img src="images/ROAM/foliage-render.webp" class="zoomable"
+        data-gallery="/images/ROAM/foliage-wire.webp, /images/ROAM/foliage_atlas.webp" data-side="<h2>Foliage</h2><p>Various models of the foliage made for the game. Uses a single texture atlas to create the plants with variations.
+        <br><br>
+        Texture created using Photoshop and then made into 3D with Blender.
+        </p>">
+
+      <img src="images/ROAM/bones-render.webp" class="zoomable" data-gallery="/images/ROAM/bones-wire.webp"
+        data-side="<h2>Bones</h2><p>This are models for a dinosaur skeleton that would fill out the canyon area of the map. <br><br> Textured and modelled in Blender. </p>">
+    </div>
+
 
   </section>
 
@@ -326,48 +390,116 @@
   </script>
 
 
-  <!-- ✅ Lightbox overlay -->
+  <!-- ✅ Lightbox overlay v2 -->
   <div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-      <img src="" alt="Zoomed image" id="lightbox-img">
-      <p id="lightbox-caption"></p>
+    <div class="lightbox-layout">
+
+      <!-- Close button -->
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+
+      <!-- Scrollable image stack -->
+      <div class="lightbox-content" id="lightbox-stack"></div>
+
+      <!-- Sticky side text (optional) -->
+      <aside class="lightbox-side" id="lightbox-side"></aside>
+
+
     </div>
   </div>
 
 
+
   <!-- Lightbox Functionality Script -->
   <script>
+    const layout = document.querySelector('.lightbox-layout');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
+    const stack = document.getElementById('lightbox-stack');
+    const sidePanel = document.getElementById('lightbox-side');
+    const closeBtn = document.getElementById('lightbox-close');
     const zoomables = document.querySelectorAll('.zoomable');
 
+    // Open lightbox function
+    function openLightbox() {
+      lightbox.style.display = 'block';
+      void lightbox.offsetWidth; // force reflow
+      lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden'; // lock page scroll
+    }
+
+    // Close lightbox function
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+        stack.innerHTML = '';
+        sidePanel.innerHTML = '';
+        document.body.style.overflow = ''; // restore page scroll
+        layout.classList.remove('no-side');
+      }, 400); // match fade-out transition
+    }
+
+    // Open lightbox on click
     zoomables.forEach(img => {
       img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxCaption.textContent = img.dataset.caption || '';
+        stack.innerHTML = '';
+        sidePanel.innerHTML = '';
 
-        // Always set display before adding .show for fade-in
-        lightbox.style.display = 'flex';
-        // Force reflow to ensure transition works
-        void lightbox.offsetWidth;
-        lightbox.classList.add('show');
+        // Main image
+        const mainImg = document.createElement('img');
+        mainImg.src = img.src;
+        stack.appendChild(mainImg);
+
+        // Optional caption
+        if (img.dataset.caption) {
+          const caption = document.createElement('p');
+          caption.className = 'lightbox-caption';
+          caption.textContent = img.dataset.caption;
+          stack.appendChild(caption);
+        }
+
+        // WIP images
+        if (img.dataset.gallery) {
+          img.dataset.gallery.split(',').forEach(src => {
+            const extraImg = document.createElement('img');
+            extraImg.src = src.trim();
+            stack.appendChild(extraImg);
+          });
+        }
+
+        // Side panel logic
+        if (img.dataset.side && img.dataset.side.trim() !== '') {
+          sidePanel.innerHTML = img.dataset.side;
+          sidePanel.style.display = '';
+          layout.classList.remove('no-side');
+          stack.classList.remove('no-side');
+        } else {
+          sidePanel.innerHTML = '';
+          sidePanel.style.display = 'none';
+          layout.classList.add('no-side');
+          stack.classList.add('no-side');
+        }
+
+        openLightbox();
       });
     });
 
-    // Close when clicking outside the image
+    // Close on background click
     lightbox.addEventListener('click', (e) => {
-      if (e.target !== lightboxImg) {
-        lightbox.classList.remove('show');
-        // Wait for fade-out transition, then hide
-        setTimeout(() => {
-          lightbox.style.display = 'none';
-          lightboxImg.src = '';
-          lightboxCaption.textContent = '';
-        }, 400); // match the CSS transition duration
+      if (!layout.contains(e.target)) closeLightbox();
+    });
+
+    // Close on X button click
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display === 'block') {
+        closeLightbox();
       }
     });
   </script>
+
+
 
   <!-- fade section script v2-->
   <script>

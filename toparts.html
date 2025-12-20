@@ -54,7 +54,7 @@
                     into a different setting. I leveraged use of photo textures and 3D scanning to replicate the city's
                     environment.
                 </p>
-                <img src="images/TopArts/SpecialDeliveryStill2 copy.webp" class="zoomable">
+                <img src="images/TopArts/SpecialDeliveryStill2 copy.webp" class="zoomable" data-caption="Still of the artwork">
             </div>
             <section id="skill-box">
 
@@ -82,7 +82,7 @@
             <div class="text-img">
                 <p>My animation was featured in the National Gallery of Victoria, Melbourne as part of the Top Arts 2023
                     exhibition. Inside the gallery, it was projected onto the wall where the animation would play. </p>
-                <img src="./images/TopArts/Screenshot 2025-11-01 003907.webp" class="zoomable">
+                <img src="./images/TopArts/Screenshot 2025-11-01 003907.webp" class="zoomable" data-caption="Exhibition area my artwork was showcased in - NGV Ian Potter Centre, Melbourne.">
             </div>
         </div>
     </section>
@@ -90,7 +90,7 @@
     <section class="fade-section">
         <div class="wrapper">
             <div class="text-img">
-                <img src="images/TopArts/IMG_4123.webp">
+                <img src="images/TopArts/IMG_4123.webp" class="zoomable" data-caption="Printed poster using my artwork for the promotional image">
                 <p>Additionally, stills of my artwork were used for the promotional material for the exhibition - it was
                     mainly featured for posters as well as website and other promotional material.</p>
             </div>
@@ -99,13 +99,13 @@
 
     <section class="wavy-both" style="background-image:url(gradient-bgs/gradient-3.webp); color:var(--base-color);">
         <div class="wrapper">
-            <h2>Early Progress</h2>
+            <h2>Progress Development</h2>
             <div class="text-img">
-                <img src="./images/TopArts/early_wip_00.webp" class="zoomable">
+                <img src="/images/TopArts/early_wip_00.webp" class="zoomable" data-caption="Early render of the scene with blocked out areas">
                 <p>The environment was constructed in Blender and mainly used 3D models with realistic photo textures
                     and a realistic rendering workflow to get a gritty look. It uses many 3D scans and photo textures of
                     buildings from Melbourne to capture the realistic look to the animation. Additional short renders
-                    were made for the background advertisements that play throughout the short animation.</p>
+                    were made for the background advertisements that play throughout the short animation. <br><br> The main inspiration for the visual style was from Ian Hubert and his Dynamo Dream series of short films</p>
             </div>
             <div class="masonry-grid" style="--columns:2;">
                 <img src="./images/TopArts/early_wip.webp" class="zoomable">
@@ -113,11 +113,12 @@
                 <img src="./images/TopArts/TheNewCyberHotness4.jpg" class="zoomable">
                 <img src="./images/TopArts/sc-03.webp" class="zoomable">
             </div>
-            <div class="masonry-grid" style="--columns:2;">
-                <img src="images/TopArts/wireframe.webp" class="zoomable">
-                <img src="images/TopArts/sc-02.webp" class="zoomable">
-                <img src="images/TopArts/sc-04.webp" class="zoomable">
-            </div>
+        <div class="image-container">
+        <img src="/images/TopArts/sc-02.webp" class="zoomable" data-gallery="/images/TopArts/sc-04.webp, /images/TopArts/wireframe.webp" data-side="<h2>Wireframes</h2><p>This environment relied heavily on 3D scans and PBR materials to get a realistic sci-fi look. The scans were pretty high-poly and could've been better optimised, the scene ended up being 5 million polys.</p>">
+        <div class="overlay">
+            <h3>Wireframes</h3>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -142,48 +143,115 @@
             });
         });
     </script>
-    <!-- ✅ Lightbox overlay -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <img src="" alt="Zoomed image" id="lightbox-img">
-            <p id="lightbox-caption"></p>
-        </div>
+<!-- ✅ Lightbox overlay v2 -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-layout">
+
+      <!-- Close button -->
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+
+      <!-- Scrollable image stack -->
+      <div class="lightbox-content" id="lightbox-stack"></div>
+
+      <!-- Sticky side text (optional) -->
+      <aside class="lightbox-side" id="lightbox-side"></aside>
+
+
     </div>
+  </div>
 
 
-    <!-- Lightbox Functionality Script -->
-    <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const zoomables = document.querySelectorAll('.zoomable');
 
-        zoomables.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxCaption.textContent = img.dataset.caption || '';
+  <!-- Lightbox Functionality Script -->
+  <script>
+    const layout = document.querySelector('.lightbox-layout');
+    const lightbox = document.getElementById('lightbox');
+    const stack = document.getElementById('lightbox-stack');
+    const sidePanel = document.getElementById('lightbox-side');
+    const closeBtn = document.getElementById('lightbox-close');
+    const zoomables = document.querySelectorAll('.zoomable');
 
-                // Always set display before adding .show for fade-in
-                lightbox.style.display = 'flex';
-                // Force reflow to ensure transition works
-                void lightbox.offsetWidth;
-                lightbox.classList.add('show');
-            });
-        });
+    // Open lightbox function
+    function openLightbox() {
+      lightbox.style.display = 'block';
+      void lightbox.offsetWidth; // force reflow
+      lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden'; // lock page scroll
+    }
 
-        // Close when clicking outside the image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                lightbox.classList.remove('show');
-                // Wait for fade-out transition, then hide
-                setTimeout(() => {
-                    lightbox.style.display = 'none';
-                    lightboxImg.src = '';
-                    lightboxCaption.textContent = '';
-                }, 400); // match the CSS transition duration
-            }
-        });
-    </script>
+    // Close lightbox function
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+        stack.innerHTML = '';
+        sidePanel.innerHTML = '';
+        document.body.style.overflow = ''; // restore page scroll
+        layout.classList.remove('no-side');
+      }, 400); // match fade-out transition
+    }
+
+    // Open lightbox on click
+    zoomables.forEach(img => {
+      img.addEventListener('click', () => {
+        stack.innerHTML = '';
+        sidePanel.innerHTML = '';
+
+        // Main image
+        const mainImg = document.createElement('img');
+        mainImg.src = img.src;
+        stack.appendChild(mainImg);
+
+        // Optional caption
+        if (img.dataset.caption) {
+          const caption = document.createElement('p');
+          caption.className = 'lightbox-caption';
+          caption.textContent = img.dataset.caption;
+          stack.appendChild(caption);
+        }
+
+        // WIP images
+        if (img.dataset.gallery) {
+          img.dataset.gallery.split(',').forEach(src => {
+            const extraImg = document.createElement('img');
+            extraImg.src = src.trim();
+            stack.appendChild(extraImg);
+          });
+        }
+
+        // Side panel logic
+        if (img.dataset.side && img.dataset.side.trim() !== '') {
+          sidePanel.innerHTML = img.dataset.side;
+          sidePanel.style.display = '';
+          layout.classList.remove('no-side');
+          stack.classList.remove('no-side');
+        } else {
+          sidePanel.innerHTML = '';
+          sidePanel.style.display = 'none';
+          layout.classList.add('no-side');
+          stack.classList.add('no-side');
+        }
+
+        openLightbox();
+      });
+    });
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (!layout.contains(e.target)) closeLightbox();
+    });
+
+    // Close on X button click
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display === 'block') {
+        closeLightbox();
+      }
+    });
+  </script>
+
     <!-- fade section script v2-->
     <script>
         document.addEventListener("DOMContentLoaded", () => {

@@ -67,7 +67,7 @@ body {
 h2 {
     font-family: LEMONMILK;
     text-align: center;
-    font-size: 3rem;
+    font-size: 200%;
 }
 
 h3 {
@@ -77,7 +77,7 @@ h3 {
 }
 
 .overlay h3 {
-    font-weight:bold;
+    font-weight: bold;
 }
 
 /* navs */
@@ -88,8 +88,9 @@ img {
 
 #video {
     border-radius: 25px;
-    pointer-events: none;   /* disables clicks/taps */
-    height:auto;
+    pointer-events: none;
+    /* disables clicks/taps */
+    height: auto;
     width: 30rem;
 }
 
@@ -97,14 +98,14 @@ code {
     background-color: var(--blend-grey);
     color: var(--base-color);
     padding: 5px 5px;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 .wrapper {
     max-width: 60rem;
     margin-inline: auto;
     padding-inline: auto;
-    text-align:center;
+    text-align: center;
 }
 
 
@@ -125,7 +126,7 @@ header {
     font-size: 6rem;
     text-align: center;
     color: white;
-    margin-top:5rem;
+    margin-top: 5rem;
 
     transition: all 1s ease;
     border-right: 5px solid;
@@ -343,7 +344,8 @@ nav a {
 
 .wavy-video-showcase video,
 .wavy-video-showcase img {
-    pointer-events: none;   /* disables clicks/taps */
+    pointer-events: none;
+    /* disables clicks/taps */
     position: absolute;
     top: 0;
     left: 0;
@@ -495,6 +497,8 @@ footer {
     align-items: center;
     text-align: center;
     padding: 1rem;
+
+    pointer-events: none;
 }
 
 /* --- Show overlay on hover --- */
@@ -575,7 +579,7 @@ footer {
 
 
 .iframe-container {
-    
+
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -604,56 +608,149 @@ footer {
 /* Lightbox overlay */
 .lightbox {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
     z-index: 9999;
-
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: auto;
+    overflow: hidden;
+    /* important: prevents the page behind from scrolling */
 }
 
-#lightbox.show {
-    display: flex;
-    /* make visible */
-    opacity: 1;
-    /* fade in */
-}
 
-/* Centered content */
-.lightbox-content {
-    text-align: center;
-    max-width: 90%;
-}
 
-/* Image styling */
-.lightbox-content img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+
+
+.lightbox.show {
     display: block;
-    margin: 0 auto;
-
-
-    animation: tilt-in-fwd-tr 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    opacity: 1;
 }
 
-/* Caption styling */
-#lightbox-caption {
-    color: #fff;
+/* Scrollable content stack */
+
+/* Images in stack */
+.lightbox-content img {
+    max-height: 700px;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* Optional caption under first image */
+.lightbox-caption {
+    text-align: center;
+    color: var(--base-color);
     font-size: 1rem;
-    margin-top: 10px;
-    font-family: 'Roboto Italic', sans-serif;
+    margin: auto;
     font-style: italic;
-    opacity: 0.85;
+    opacity: 1;
+    margin-bottom: 3rem;
 }
+
+/* Layout container */
+
+.lightbox-layout {
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 2rem;
+    align-items: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin: auto;
+    margin-top: 3rem;
+    height: calc(100vh - 80px);
+    /* constrain height */
+    pointer-events: auto;
+
+}
+
+.lightbox-layout.no-side {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 3rem;
+
+}
+
+#lightbox-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* scrollable */
+    max-height: 90vh;
+    max-width: 90%;
+    /* must match layout height */
+    -webkit-overflow-scrolling: touch;
+    /* smooth scrolling on iOS */
+}
+
+#lightbox-stack.no-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* horizontal centering */
+    overflow-y: auto;
+    margin:auto;
+}
+
+.lightbox-side {
+    position: sticky;
+    top: 40px;
+    align-self: start;
+    color: var(--base-color);
+    text-align: center;
+}
+
+.lightbox-side.hidden {
+    display: none;
+}
+
+.lightbox-side a {
+    color: var(--color-5);
+    transition: all 0.3s ease;
+}
+
+.lightbox-side a:hover {
+    color: var(--color-2);
+    font-size: 1.2rem;
+}
+
+.lightbox-side.hidden+.lightbox-content {
+    display: none;
+    grid-column: 1 / -1;
+}
+
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
 
 /* skills */
 
@@ -663,7 +760,7 @@ footer {
     display: inline-block;
     background: var(--color-2-dark);
     color: #fff;
-    margin-top: .2rem;
+    margin-top: 1rem;
     margin-bottom: .2rem;
     border-radius: 12px;
     margin-inline: 0.5rem;
@@ -699,7 +796,7 @@ footer {
 
 #skill-box {
     display: inline-block;
-    text-align:center;
+    text-align: center;
     margin: auto;
     padding-top: 2rem;
     padding-bottom: 4rem;
@@ -725,6 +822,30 @@ footer {
 
     100% {
         transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2025-12-21 1:36:15
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation flip-in-hor-bottom
+ * ----------------------------------------
+ */
+@keyframes flip-in-hor-bottom {
+    0% {
+        transform: rotateX(80deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(0);
         opacity: 1;
     }
 }
@@ -842,7 +963,7 @@ footer {
 }
 
 .modal-title {
-    display:block;
+    display: block;
     text-align: right;
     width: auto;
 }
@@ -922,27 +1043,27 @@ footer {
 /* Scroll to top button */
 .scrollToTop {
     font-size: 2rem;
-    opacity:0;
-    
+    opacity: 0;
+
     /* colors */
-    color:var(--base-color);
+    color: var(--base-color);
     background-color: var(--color-2-dark);
 
-        /* padding */
-        padding: .5rem 6rem;
-        border-radius: 5rem;
-        bottom:0;
-        right: 0;
-        margin-inline: 1rem;
-        margin-bottom: 1rem;
-        /* center button */
-        position: fixed;
-        transform:translateY(-50%);
-        z-index: 9999;
-        pointer-events: none;
+    /* padding */
+    padding: .5rem 6rem;
+    border-radius: 5rem;
+    bottom: 0;
+    right: 0;
+    margin-inline: 1rem;
+    margin-bottom: 1rem;
+    /* center button */
+    position: fixed;
+    transform: translateY(-50%);
+    z-index: 9999;
+    pointer-events: none;
 
-        /* transition */
-        transition: all 0.5s ease;
+    /* transition */
+    transition: all 0.5s ease;
 }
 
 .scrollToTop.visible {
@@ -967,7 +1088,7 @@ footer {
     background-color: var(--color-2);
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .link-box a {
@@ -991,10 +1112,10 @@ footer {
 }
 
 #expertise-box {
-    text-align:left;
+    text-align: left;
     color: var(--base-color);
     padding: 2rem 2rem;
-    background-image:url(gradient-bgs/gradient-1.webp);
+    background-image: url(gradient-bgs/gradient-1.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -1022,7 +1143,7 @@ footer {
     }
 
     .tagline {
-        margin-bottom:0;
+        margin-bottom: 0;
         font-size: 1.2rem;
     }
 
@@ -1030,14 +1151,13 @@ footer {
         height: 20rem !important;
     }
 
-        .wrapper 
-    {
+    .wrapper {
         max-width: 80%;
     }
 
     .text-img {
         display: inline-block;
-        text-align:center;
+        text-align: center;
     }
 
     .text-img img {
@@ -1054,7 +1174,7 @@ footer {
     }
 
     .masonry-grid {
-        column-count: 2;
+        column-count: 1;
         /* fewer columns on tablets */
     }
 
@@ -1063,7 +1183,7 @@ footer {
     }
 
     #video {
-        width:80%;
+        width: 80%;
     }
 }
 
@@ -1102,5 +1222,16 @@ footer {
 
     .modal-content h1 {
         font-size: 3.5rem;
+    }
+}
+
+/* Hide side panel on mobile */
+@media (max-width: 768px) {
+    .lightbox-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .lightbox-side {
+        display: none;
     }
 }
