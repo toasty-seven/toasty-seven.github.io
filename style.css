@@ -249,6 +249,7 @@ nav a {
     display: inline-block;
     transition: all .3s ease;
     animation: fade-in-bottom 1s ease;
+    color: var(--base-color);
 
 }
 
@@ -256,6 +257,7 @@ nav a {
     transform: translateY(-10%);
     text-decoration: underline;
     text-decoration-thickness: 0.2rem;
+    text-underline-offset: 8px;
 }
 
 
@@ -267,7 +269,7 @@ nav a {
     background-position: center top 25%;
     background-attachment: fixed;
 
-    height: 45rem;
+    height: 55rem;
 
 
 
@@ -1175,6 +1177,25 @@ footer {
   color: white;
 }
 /* adjust per media */
+
+button.view {
+    font-family: LEMONMILK;
+    font-size: 1.6rem;
+    color: var(--base-color);
+    background-color: #f1f1f100;
+    border: none;
+    transition: all 0.3s ease;
+    padding-top: 5rem;
+    animation: fade-in-bottom 1s ease;
+}
+
+button.view:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 8px;
+    transform: translateY(10%);
+    
+}
 
 @media (max-width:900px) {
     .site-title {
