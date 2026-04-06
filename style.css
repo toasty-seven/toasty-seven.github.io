@@ -1169,6 +1169,7 @@ footer {
   cursor: pointer;
 
   font-family: LEMONMILK;
+  transition: all 0.3s ease;
 }
 
 /* Add a light grey background on mouse-over */
