@@ -269,9 +269,9 @@ nav a {
 .wavy-header {
     color: var(--base-color);
     background: url('gradient-bgs/gradient-6.webp'),
-        url('images/ConceptArtA03/keyart_01_full.webp');
+        url('/images/FoodCreatures/key_art_2 copy.webp');
     background-size: cover;
-    background-position: center top 35%;
+    background-position: center top 20%;
     background-attachment: fixed;
 
     height: 40rem;
