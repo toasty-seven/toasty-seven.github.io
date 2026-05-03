@@ -268,7 +268,8 @@ nav a {
 
 .wavy-header {
     color: var(--base-color);
-    background: url('gradient-bgs/gradient-6.webp'),
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('gradient-bgs/gradient-6.webp'),
         url('/images/FoodCreatures/key_art_2 copy.webp');
     background-size: cover;
     background-position: center top 20%;
@@ -446,18 +447,16 @@ footer {
 /* --- Masonry Layout --- */
 .masonry-grid {
     --columns: 3;
-    /* default */
-    column-count: var(--columns);
-    column-gap: 1rem;
-    margin-top: 1.5rem;
-    padding-inline: 2rem;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: 1rem;
+    margin-inline: 2rem;
 }
 
-.masonry-grid>img {
+.masonry-grid > img {
     width: 100%;
-    display: inline-block;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    display: block;
 }
 
 
@@ -475,7 +474,6 @@ footer {
     transform: scale(1.03);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
-
 
 .image-container img {
     width: 100%;
@@ -520,7 +518,7 @@ footer {
 }
 
 .image-container:active {
-    transform: translateY(3%);
+    transform: translateY(1%);
 }
 
 .image-container:hover img {
@@ -640,14 +638,6 @@ footer {
 /* Scrollable content stack */
 
 /* Images in stack */
-.lightbox-content img {
-    max-height: 700px;
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
 
 /* Optional caption under first image */
 .lightbox-caption {
@@ -675,37 +665,45 @@ footer {
     height: calc(100vh - 80px);
     /* constrain height */
     pointer-events: auto;
+}
 
+
+
+#lightbox-stack {
+    display: grid;
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: 90vh;
+    max-width: 1000px;
+    -webkit-overflow-scrolling: touch;
+    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .lightbox-layout.no-side {
     grid-template-columns: 1fr;
     gap: 0;
     margin-top: 3rem;
-
 }
 
-#lightbox-stack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-    overflow-x: hidden;
-    /* scrollable */
-    max-height: 90vh;
-    max-width: 90%;
-    /* must match layout height */
-    -webkit-overflow-scrolling: touch;
-    /* smooth scrolling on iOS */
+/* Column modes */
+#lightbox-stack.cols-1 {
+    grid-template-columns: 1fr;
 }
 
-#lightbox-stack.no-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* horizontal centering */
-    overflow-y: auto;
-    margin:auto;
+#lightbox-stack.cols-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+#lightbox-stack.cols-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Make the main image span all columns */
+#lightbox-stack .main-image {
+    grid-column: 1 / -1;   /* span all columns */
+    justify-self: center;  /* center inside the grid */
+    max-width: 90%;        /* optional: prevent it from touching edges */
+    margin: 0 auto;        /* fallback centering */
 }
 
 .lightbox-side {
@@ -756,6 +754,30 @@ footer {
     background: rgba(0, 0, 0, 0.8);
 }
 
+
+.project {
+  position: relative;
+  display: inline-block; /* or block, depending on layout */
+  margin: 0.5rem;
+}
+
+.project .zoomable{
+    height:400px;
+    object-fit:cover;
+}
+
+.icon-row {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 20px; /* spacing between icons */
+}
+
+.icon {
+  width: 60px;
+  pointer-events: none;
+}
 
 
 
@@ -1239,8 +1261,7 @@ button.view:hover {
     }
 
     .masonry-grid {
-        column-count: 1;
-        /* fewer columns on tablets */
+        --columns: 2;
     }
 
     .wavy-video-showcase {
@@ -1281,8 +1302,7 @@ button.view:hover {
     }
 
     .masonry-grid {
-        column-count: 1;
-        /* fewer columns on tablets */
+        --columns: 1;
     }
 
     .title-img-container h1 {
