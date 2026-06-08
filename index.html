@@ -9,319 +9,127 @@
     <link rel="icon" href="/images/Icons/web_icon.webp">
 </head>
 
-<header class="wavy-header">
+<header>
+    <div class="header-block">
+        <h1>Kean Ngooi</h1>
 
-    <div class="container">
-        <h1 class="site-title">Kean Ngooi.</h1>
-        <h2 class="tagline">artist | 3d modeller | game designer</h2>
-    </div>
-    <div class="container">
-        <img src="images/Icons/star.webp" width=50>
-    </div>
-    <div class="container">
+        <img src="/images/Icons/star.webp" class="icon">
+
+
         <nav>
-            <div class='navlink'>
-                <button onclick="location.href='#gallery'" class="view">GALLERY</button>
+            <div class="navlink">
+                <a>Design</a>
             </div>
 
-            <!--<div class='navlink'>
-                <a href="projects.html">Projects</a>
-            </div>-->
+            <div class="navlink">
+                <a>Projects</a>
+            </div>
 
-            <div class='navlink'>
-                <a href="about.html">About</a>
+            <div class="navlink">
+                <a>Artworks</a>
             </div>
         </nav>
+
     </div>
-
-
 </header>
 
-<section class="fade-section">
-    <div class="wrapper">
+
+<div class="site-title">
+    <img src="/images/Icons/portfolio-banner.webp" class="jitter">
+</div>
+
+<button onclick="location.href='#gallery'" class="hyperlink jitter">view gallery</button>
+
+
+
+
+<section class="wavy-both" style="background-image:url(gradient-bgs/gradient-8.webp);" id="gallery">
+    <!-- <div class="wrapper">
         <div class="text-img">
-            <h2 style="text-align: left;">Hello! I am KEAN, a game designer from Melbourne</h2>
-            <img src="images/Personal/IMG_3691.JPG" style="border-radius: 500px">
+            <img src="/images/Personal/IMG_3691.JPG">
+            <p>Hello! I am KEAN, a game designer from Melbourne</p>
+        </div>
+    </div> -->
+
+    <div class="wrapper">
+        <div class="gc-wrap">
+            <div class="gc-header">
+                <span class="gc-title">Featured</span>
+                <span class="gc-count" id="gcCount"></span>
+            </div>
+
+            <div class="gc-row">
+                <button class="nav-btn" id="gcPrev" aria-label="Previous">
+                    <p class="ti ti-arrow-left">&lArr;</p>
+                </button>
+                <div class="gc-stage" id="gcStage"></div>
+                <button class="nav-btn" id="gcNext" aria-label="Next">
+                    <p class="ti ti-arrow-right">&rArr;</p>
+                </button>
+            </div>
+
+            <div class="gc-dots" id="gcDots"></div>
         </div>
     </div>
 </section>
 
-<section class="spiky-both" style="color:var(--blend-grey); background-image:url(gradient-bgs/gradient-6.webp);"
-    id="gallery">
-    <!-- Control buttons -->
-    <!--<div id="btncontainer">
-        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-        <button class="btn" onclick="filterSelection('3D')"> 3D Art</button>
-        <button class="btn" onclick="filterSelection('2D')"> Illustration</button>
-        <button class="btn" onclick="filterSelection('concept')"> Concept Art</button>
-        <button class="btn" onclick="filterSelection('design')"> Design</button>
-    </div> -->
 
 
 
 
 
-    <div class="container">
-        <div class="masonry-grid">
-
-
-
-            <div class="project">
-                <img class="zoomable" src="images/RamenHustle/banner.webp" data-gallery="
-                            /images/RamenHustle/gallery_hustle.gif,
-                            /images/RamenHustle/gallery_fox.gif,
-                            /images/RamenHustle/gallery_wolf.gif,
-                            /images/RamenHustle/gallery_boss.gif,
-                            /images/RamenHustle/gallery_01.webp,
-                            /images/RamenHustle/gallery_02.webp,
-                            /images/RamenHustle/concept_capybara.webp,
-                            /images/RamenHustle/fox_concept.webp" data-hide-main="true"
-                    data-side="<h2>Ramen Hustle</h2><p>Game project done at RMIT University. The game features the protagonist John Hustler, as they work to pay off their debt by working in the titular Ramen Shop. Players serve ramen and clean bowls of ramen to various customers. <br><br> My role for the game was the main Artist. I worked on the 2D character animations, sprites and 3D models for the game.</p>">
-                <div class="icon-row">
-                    <img class="icon" src="./images/Icons/unity_icon.webp">
-                </div>
-            </div>
-
-
-            <div class="project">
-                <img class="zoomable" src="/images/ROAM/dino_roam_keyart_web_lowres.webp" data-gallery="
-                            /images/ROAM/roam_gallery_01.webp,
-                            /images/ROAM/roam_gallery_02.webp,
-                            /images/ROAM/roam_gallery_03.webp,
-                            /images/ROAM/roam_gallery_04.webp,
-                            /images/ROAM/roam_gallery_05.webp,
-                            /images/ROAM/roam_gallery_06.webp,
-                            /images/ROAM/roam_gallery_07.webp" data-side="
-                            <h2>ROAM</h2>
-                            <p>
-                                ROAM follows Nuggets – a small, feathered Sinosauropteryx prima – on a heartfelt journey to find its elusive mate’s nest. Watch as Nuggets travels through a beautifully stylised Cretaceous birch forest, painted in hues of gold and amber.
-                                <br><br>I worked as the main Artist and Game Designer on this project - I handled the 3D modeling, rigging and texturing of characters, did the 2D artwork including the Key art and programmed the interactions in the game in Unity using C#.   
-                            </p>">
-
-                <div class="icon-row">
-                    <img class="icon" src="./images/Icons/unity_icon.webp">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/FoodCreatures/cafe-interior-conceptart.webp" data-gallery="
-                    /images/FoodCreatures/Bacon.gif,
-                    /images/FoodCreatures/Cherry.gif,
-                    /images/FoodCreatures/cafe.webp,
-                    /images/FoodCreatures/cafe-interior-conceptart.webp,
-                    /images/FoodCreatures/key_art_sketch.webp,
-                    /images/FoodCreatures/keyart_progress.webp,
-                    /images/FoodCreatures/buildings.webp,
-                    /images/FoodCreatures/waffle.webp" data-side="
-                    <h2>Food Animals Game</h2>
-                    <p>Work in progress game project.</p>">
-                <div class="icon-row">
-                    <img class="icon" src="/images/Icons/blend_icon.webp">
-                    <img class="icon" src="/images/Icons/ps_icon.webp">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/ConceptArtA03/keyart_02_full.webp" data-gallery="
-                    /images/ConceptArtA03/gallery_01.webp,
-                    /images/ConceptArtA03/gallery_02.webp,
-                    /images/ConceptArtA03/gallery_03.webp,
-                    /images/ConceptArtA03/CA_08.webp," data-side="
-                    <h2>Homesick at Space Camp</h2>">
-                <div class="icon-row">
-                    <img class="icon" src="/images/Icons/ps_icon.webp">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/TechArt01/banner.webp" data-gallery="
-                    /images/TechArt01/gallery_01.webp,
-                    /images/TechArt01/gallery_02.webp,
-                    /images/TechArt01/gallery_03.webp,
-                    /images/TechArt01/gallery_04.webp" data-side="
-                    <h2>Tea Party</h2>">
-                <div class="icon-row">
-                    <img class="icon" src="/images/Icons/unity_icon.webp">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/WorldBuilding/banner.webp" data-gallery="
-                    /images/WorldBuilding/wip_keyart_01.webp,
-                    /images/WorldBuilding/wip_keyart_02.webp,
-                    /images/WorldBuilding/gallery_01.webp,
-                    /images/WorldBuilding/gallery_02.webp,
-                    /images/WorldBuilding/gallery_03.webp,
-                    /images/WorldBuilding/wip_sketch_gallery.webp,
-                    " data-side="
-                    <h2>Sleepy Fish Town</h2>">
-
-                <div class="icon-row">
-                    <img src="/images/Icons/unity_icon.webp" class="icon">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/Misc/pkm_gallery.webp" data-gallery="
-                /images/Misc/gougingfire.webp,
-                /images/Misc/walkingwake.webp,
-                /images/Misc/ragingbolt.webp,
-                /images/Misc/roaringmoon.webp,
-                /images/Misc/ironbundle.webp,
-                /images/Misc/tatsugiri.webp" data-hide-main="true">
-
-                <div class="icon-row">
-                    <img src="/images/Icons/ps_icon.webp" class="icon">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/Misc/blend_gallery.webp" data-hide-main="true" data-gallery="
-                    /images/Misc/BigCircleOfDoom.webp,
-                    /images/Misc/MegaBuilding.webp,
-                    /images/Misc/CubeClouds.webp,
-                    /images/Misc/TheTwistedBuildings3.webp,
-                    /images/geonodecity/banner.webp,
-                    /images/BAGELTOWN/BagelMachine1.webp,">
-
-                <div class="icon-row">
-                    <img src="/images/Icons/blend_icon.webp" class="icon">
-                </div>
-            </div>
-
-            <div class="project">
-                <img class="zoomable" src="/images/3DModelElective/banner.webp" data-gallery="
-                    /images/3DModelElective/gallery_01.webp,
-                    /images/3DModelElective/gallery_05.webp,
-                    /images/3DModelElective/gallery_02.webp,
-                    /images/3DModelElective/gallery_03.webp,
-                    /images/3DModelElective/gallery_04.webp,
-                    " data-side="
-                    <h2>Shrimp Island</h2>" data-hide-main="true">
-
-                <div class="icon-row">
-                    <img src="/images/Icons/ue_icon.webp" class="icon">
-                    <img src="/images/Icons/zbrush_icon.webp" class="icon">
-                </div>
-            </div>
-
-            <div class="project">
-                <img src="/images/TopArts/banner_02.webp" class="zoomable" data-gallery="
-                    /images/TopArts/IMG_4123.webp,
-                    /images/TopArts/Screenshot 2025-11-01 003907.webp,
-                    /images/TopArts/sc-01.webp,
-                    /images/TopArts/sc-02.webp,
-                    /images/TopArts/sc-03.webp,
-                    /images/TopArts/sc-04.webp,">
-
-                <div class="icon-row">
-                    <img src="/images/Icons/blend_icon.webp" class="icon">
-                </div>
-            </div>
-
-            <div class="project">
-                <img src="/images/gds3/banner.webp" class="zoomable" data-gallery="
-                /images/gds3/sc1.webp,
-                /images/gds3/sc2.webp,
-                /images/gds3/sc3.webp,
-                /images/gds3/sc4.webp,">
-
-
-
-                <div class="icon-row">
-                    <img src="/images/Icons/unity_icon.webp" class="icon">
-                </div>
-            </div>
-        </div>
-</section>
 <!-- contact section -->
 <section id="contact">
-    <h2>Links</h2>
 
 
     <!-- email link with icon -->
     <div class="link">
-        <a href="mailto:keanngooi@gmail.com"><img src="images/Icons/mail_icon.webp"></a>
+        <a href="mailto:keanngooi@gmail.com"><img src="images/Icons/mail.svg"></a>
         <p class="caption"> EMAIL </p>
     </div>
 
     <!-- social media links -->
     <div class='link'>
-        <a href="https://instagram.com/toaste7"><img src="images/Icons/inst_icon.webp"></a>
+        <a href="https://instagram.com/toaste7"><img src="images/Icons/instagram.svg"></a>
         <p class="caption"> INSTAGRAM </p>
     </div>
     <div class='link'>
-        <p><a href="https://toaste7.artstation.com"><img src="images/Icons/art_icon.webp"></a>
+        <p><a href="https://toaste7.artstation.com"><img src="images/Icons/artstation.svg"></a>
         <p class="caption"> ARTSTATION </p>
     </div>
 
     <div class='link'>
 
-        <a href="https://toasteeer.itch.io/"><img src="images/Icons/itch_icon.webp"></a>
+        <a href="https://toasteeer.itch.io/"><img src="images/Icons/itchio.svg"></a>
         <p class="caption"> ITCH.IO </p>
     </div>
     <div class="link">
 
-        <a href="https://sketchfab.com/toaste76"><img src="images/Icons/sketch_icon.webp"></a>
+        <a href="https://sketchfab.com/toaste76"><img src="images/Icons/sketchfab.svg"></a>
         <p class='caption'> SKETCHFAB </p>
+
+    </div>
+
+    <div class="link">
+
+        <a href="https://www.linkedin.com/in/kean-ngooi-1425313b6/"><img src="images/Icons/linkedin.svg"></a>
+        <p class='caption'> LINKEDIN </p>
 
     </div>
 </section>
 
 
+
+
+
 <footer>
     <p>© 2026 | Kean Ngooi</p>
 </footer>
+
 <!-- Scroll to top -->
-<a href="#" class="scrollToTop" id="scrollToTop">&uarr;</a>
-
-<!--<script>
-    filterSelection("all")
-    function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("filterDiv");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
-    }
-
-    function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-        }
-    }
-
-    function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-                arr1.splice(arr1.indexOf(arr2[i]), 1);
-            }
-        }
-        element.className = arr1.join(" ");
-    }
-
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("btncontainer");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
-</script>-->
-
+<a href="#" class="scrollToTop" id="scrollToTop">&uArr;</a>
 <script>
-    height = 1500;
+    height = 500;
 
     document.addEventListener("DOMContentLoaded", () => {
         const scrollBtn = document.getElementById("scrollToTop");
@@ -336,278 +144,135 @@
     });
 </script>
 
-<div id="morph-overlay">
-    <img id="morph-overlay-img" alt="">
-</div>
 
-<!-- Modal Functionality Script -->
+
 <script>
-    function openModal(id, event) {
-        const project = event.currentTarget;
-        const img = project.querySelector('img');
-        const rect = img.getBoundingClientRect();
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ADD YOUR IMAGES HERE
+       Each entry: "path/to/image.jpg"
+       or a full URL. Leave "" for
+       a placeholder.
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const images = [
+        "/images/FoodCreatures/cafe-interior-conceptart.webp",
+        "/images/FoodCreatures/key_art_2 copy.webp",
+        "/images/ConceptArtA03/keyart_01_full.webp",
+        "/images/ConceptArtA03/keyart_02_full.webp",
+        "/images/ROAM/dino_roam_keyart_01.webp",
+    ];
 
-        const morphDuration = 200;
-        const fadeDelay = 500;
-        const fadeDuration = 1000;
+    /* tilt per slot — alternates so each card feels unique */
+    const tilts = [-4, 3, -2, 5, -3, 4, -5, 2, -3, 4];
 
-        const overlay = document.getElementById('morph-overlay');
-        const overlayImg = document.getElementById('morph-overlay-img');
-        const modal = document.getElementById(id);
-        const modalContent = modal.querySelector('.modal-content');
+    const total = images.length;
+    let cur = 0;
+    let animating = false;
 
-        // Morph overlay logic (unchanged)
-        overlayImg.src = img.src;
-        overlay.style.display = 'block';
-        overlay.style.left = rect.left + 'px';
-        overlay.style.top = rect.top + 'px';
-        overlay.style.width = rect.width + 'px';
-        overlay.style.height = rect.height + 'px';
-        overlay.style.backgroundColor = '#202024';
-        overlay.style.opacity = '1';
+    const stage = document.getElementById('gcStage');
+    const prevBtn = document.getElementById('gcPrev');
+    const nextBtn = document.getElementById('gcNext');
+    const countEl = document.getElementById('gcCount');
+    const dotsWrap = document.getElementById('gcDots');
 
-        // Show modal, reset opacity and transition
-        modal.style.display = 'flex';
-        modal.scrollTop = 0;
-        modal.style.opacity = '1';
-        modal.style.transition = '';
-        modalContent.classList.remove('visible');
-
-        void overlay.offsetWidth; // force reflow
-
-        setTimeout(() => {
-            const modalRect = modalContent.getBoundingClientRect();
-            const padding = 16;
-            const visibleTop = Math.max(modalRect.top + padding, 0);
-            const visibleBottom = Math.min(modalRect.bottom - padding, window.innerHeight);
-            const visibleHeight = visibleBottom - visibleTop;
-            overlay.style.left = modalRect.left + 'px';
-            overlay.style.top = visibleTop + 'px';
-            overlay.style.width = modalRect.width + 'px';
-            overlay.style.height = visibleHeight + 'px';
-            overlay.style.borderRadius = '12px';
-        }, morphDuration);
-
-        setTimeout(() => {
-            overlay.style.opacity = '0';
-            modalContent.classList.add('visible');
-        }, fadeDelay);
-
-        setTimeout(() => {
-            overlay.style.display = 'none';
-            overlayImg.style.opacity = '1';
-        }, fadeDelay + fadeDuration);
-
-        // Attach click-outside handler only once
-        function handleClickOutside(e) {
-            if (e.target === modal) {
-                closeModal(id);
-            }
-        }
-        modal._handleClickOutside = handleClickOutside;
-        modal.addEventListener('click', handleClickOutside);
-    }
-
-    function closeModal(id) {
-        const modal = document.getElementById(id);
-        const modalContent = modal.querySelector('.modal-content');
-
-        // Fade out modal-content
-        modalContent.classList.remove('visible');
-
-        // Remove click-outside handler
-        if (modal._handleClickOutside) {
-            modal.removeEventListener('click', modal._handleClickOutside);
-            delete modal._handleClickOutside;
-        }
-
-        // After fade, hide modal container
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 100); // match the CSS transition duration
-    }
-</script>
-
-<!-- Auto-open modal based on URL parameter -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Check if the URL contains ?openModal=modalName
-        const params = new URLSearchParams(window.location.search);
-        const modalToOpen = params.get("openModal");
-
-        if (modalToOpen) {
-            // Wait a brief moment to ensure layout is ready
-            setTimeout(() => {
-                const fakeEvent = { currentTarget: document.querySelector(`[onclick*="${modalToOpen}"]`) };
-                openModal(modalToOpen, fakeEvent);
-            }, 300);
-        }
+    /* build one card per image */
+    const cards = images.map((src, i) => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.innerHTML = src
+            ? `<img src="${src}" alt="Gallery image ${i + 1}">`
+            : `<div class="img-placeholder"><i class="ti ti-photo"></i><span>Your image here</span></div>`;
+        card.addEventListener('click', () => { if (i !== cur) goTo(i > cur ? cur + 1 : cur - 1); });
+        stage.appendChild(card);
+        return card;
     });
-</script>
 
-<!-- ✅ Lightbox overlay v2 -->
-<div id="lightbox" class="lightbox">
-    <div class="lightbox-layout">
+    /* dot per image */
+    images.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot';
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+    });
 
-        <!-- Close button -->
-        <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+    /* slot definitions — how many cards visible each side */
+    const SLOTS = [-2, -1, 0, 1, 2];
+    const slotCfg = {
+        '-2': { x: -0.40, s: 0.54, z: 1, o: 0.35 },
+        '-1': { x: -0.21, s: 0.72, z: 3, o: 0.65 },
+        '0': { x: 0, s: 1.00, z: 5, o: 1.00 },
+        '1': { x: 0.21, s: 0.72, z: 3, o: 0.65 },
+        '2': { x: 0.40, s: 0.54, z: 1, o: 0.35 },
+    };
 
-        <!-- Scrollable image stack -->
-        <div class="lightbox-content" id="lightbox-stack"></div>
+    /* wrap index for infinite loop */
+    function wrap(n) { return ((n % total) + total) % total; }
 
-        <!-- Sticky side text (optional) -->
-        <aside class="lightbox-side" id="lightbox-side"></aside>
+    function layout() {
+        const w = stage.offsetWidth;
+        cards.forEach((card, i) => {
+            /* find shortest circular distance from cur to i */
+            let offset = i - cur;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
 
+            const cfg = slotCfg[String(offset)];
 
-    </div>
-</div>
-
-
-
-<!-- Lightbox Functionality Script -->
-<script>
-    const layout = document.querySelector('.lightbox-layout');
-    const lightbox = document.getElementById('lightbox');
-    const stack = document.getElementById('lightbox-stack');
-    const sidePanel = document.getElementById('lightbox-side');
-    const closeBtn = document.getElementById('lightbox-close');
-    const zoomables = document.querySelectorAll('.zoomable');
-
-    // Open lightbox function
-    function openLightbox() {
-        lightbox.style.display = 'block';
-        void lightbox.offsetWidth; // force reflow
-        lightbox.classList.add('show');
-        document.body.style.overflow = 'hidden'; // lock page scroll
-    }
-
-    // Close lightbox function
-    function closeLightbox() {
-        lightbox.classList.remove('show');
-        setTimeout(() => {
-            lightbox.style.display = 'none';
-            stack.innerHTML = '';
-            sidePanel.innerHTML = '';
-            document.body.style.overflow = ''; // restore page scroll
-            layout.classList.remove('no-side');
-        }, 400); // match fade-out transition
-    }
-
-    // Open lightbox on click
-    zoomables.forEach(img => {
-        img.addEventListener('click', () => {
-            stack.innerHTML = '';
-            sidePanel.innerHTML = '';
-
-            stack.className = 'cols-2';
-
-            // Add main image only if not disabled
-            if (img.dataset.hideMain !== "true") {
-                const mainImg = document.createElement('img');
-                mainImg.src = img.src;
-                mainImg.classList.add('main-image');
-                stack.appendChild(mainImg);
+            if (!cfg) {
+                card.style.opacity = '0';
+                card.style.pointerEvents = 'none';
+                card.style.zIndex = '0';
+                return;
             }
 
-            // Optional caption
-            if (img.dataset.caption) {
-                const caption = document.createElement('p');
-                caption.className = 'lightbox-caption';
-                caption.textContent = img.dataset.caption;
-                stack.appendChild(caption);
-            }
+            /* pick tilt: base tilt from tilts array + slot lean */
+            const slotLean = offset * 2.5;
+            const rot = tilts[i % tilts.length] + slotLean;
 
-            // WIP images
-            if (img.dataset.gallery) {
-                img.dataset.gallery.split(',').forEach(src => {
-                    const extraImg = document.createElement('img');
-                    extraImg.src = src.trim();
-                    stack.appendChild(extraImg);
-                });
-            }
-
-            // Side panel logic
-            if (img.dataset.side && img.dataset.side.trim() !== '') {
-                sidePanel.innerHTML = img.dataset.side;
-                sidePanel.style.display = '';
-                layout.classList.remove('no-side');
-                stack.classList.remove('no-side');
-            } else {
-                sidePanel.innerHTML = '';
-                sidePanel.style.display = 'none';
-                layout.classList.add('no-side');
-                stack.classList.add('no-side');
-            }
-
-            openLightbox();
+            card.style.opacity = cfg.o;
+            card.style.zIndex = cfg.z;
+            card.style.pointerEvents = offset === 0 ? 'none' : 'auto';
+            card.style.boxShadow = offset === 0 ? '6px 6px 0 rgba(28,18,8,0.55)' : '3px 3px 0 rgba(28,18,8,0.3)';
+            card.style.transform = `translateX(${cfg.x * w}px) scale(${cfg.s}) rotate(${rot}deg)`;
         });
+    }
+
+    function updateUI() {
+        countEl.textContent = (cur + 1) + ' / ' + total;
+        dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+    }
+
+    function goTo(n) {
+        if (animating) return;
+        animating = true;
+        cur = wrap(n);
+        updateUI();
+        layout();
+        setTimeout(() => { animating = false; }, 520);
+    }
+
+    prevBtn.onclick = () => goTo(cur - 1);
+    nextBtn.onclick = () => goTo(cur + 1);
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') goTo(cur - 1);
+        if (e.key === 'ArrowRight') goTo(cur + 1);
     });
 
-    // Close on background click
-    lightbox.addEventListener('click', (e) => {
-        if (!layout.contains(e.target)) closeLightbox();
+    let dragX = null;
+    stage.addEventListener('pointerdown', e => { dragX = e.clientX; });
+    window.addEventListener('pointerup', e => {
+        if (dragX === null) return;
+        const dx = e.clientX - dragX;
+        dragX = null;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
     });
 
-    // Close on X button click
-    closeBtn.addEventListener('click', closeLightbox);
-
-    // Close on ESC key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.style.display === 'block') {
-            closeLightbox();
-        }
-    });
+    /* init */
+    updateUI();
+    layout();
+    window.addEventListener('resize', layout);
 </script>
 
-
-
-<!-- fade section script v2-->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const sections = document.querySelectorAll(".fade-section");
-
-        // Pick a threshold based on screen width
-        function getThreshold() {
-            if (window.innerWidth < 600) return 0.1;   // phones
-            if (window.innerWidth < 1024) return 0.2;  // tablets
-            return 0.5;                                // desktops
-        }
-
-        let observer = createObserver();
-
-        function createObserver() {
-            return new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: getThreshold() });
-        }
-
-        // Observe all sections
-        sections.forEach(section => observer.observe(section));
-
-        // Optional: Re-create observer on resize
-        window.addEventListener("resize", () => {
-            const newThreshold = getThreshold();
-
-            // Rebuild observer only if threshold changed
-            if (observer.threshold !== newThreshold) {
-                observer.disconnect();
-                observer = createObserver();
-                sections.forEach(section => {
-                    if (!section.classList.contains("visible")) {
-                        observer.observe(section);
-                    }
-                });
-            }
-        });
-    });
-</script>
-
-
-</body>
 
 </html>
