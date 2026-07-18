@@ -18,6 +18,7 @@
     --surface: rgba(255,255,255,0.94);
     --surface-strong: #ffffff;
     --text: #1d1d27;
+    --text_light: #bcbcbc;
     --muted: #5a5a6d;
     --shadow: rgba(0,0,0,0.12);
 }
@@ -65,6 +66,7 @@ background-position: 0 0, 0 0, 0 -0.2px, -0.2px 0;
 h2 {
     font-family: Alagard;
 }
+
 
    /*  */
 
@@ -377,7 +379,7 @@ button.hyperlink:active {
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
     transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
     display: grid;
-    grid-template-rows: 220px auto;
+    grid-template-rows: 250px auto;
     min-height: 100%;
     text-align: left;
 }
@@ -391,6 +393,32 @@ button.hyperlink:active {
 .project-card__thumb {
     position: relative;
     overflow: hidden;
+}
+
+.project-card__badges {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.badge-icon {
+    width: 48px !important;
+    height: 48px !important;
+    background: rgba(0, 0, 0, .35);
+    border-radius: 8px;
+    padding: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.badge-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .project-card__thumb img {
@@ -519,6 +547,12 @@ button.hyperlink:active {
     border-radius: 20px;
     min-height: 180px;
     background: #f6f6f9;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.project-modal__photo:hover {
+    transform: scale(1.02);
 }
 
 .project-modal__photo img {
@@ -537,7 +571,50 @@ button.hyperlink:active {
     color: var(--text);
     font-size: 1rem;
     line-height: 1.7;
-    white-space: pre-line;
+}
+
+.project-modal__tools {
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--light);
+}
+
+.project-modal__tools h4 {
+    font-family: Alagard;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+    letter-spacing: 1px;
+}
+
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tool-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--yellow);
+    border: 1px solid var(--light);
+    border-radius: 20px;
+    padding: 0.6rem 1rem;
+    font-family: PixelOperator;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-pill:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: var(--text);
+}
+
+.tool-pill__icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .lightbox {
@@ -599,7 +676,7 @@ button.hyperlink:active {
 .lightbox__caption {
     margin-top: 1rem;
     font-family: PixelOperator;
-    color: var(--text);
+    color: var(--text_light);
     font-size: 1rem;
     text-align: center;
     letter-spacing: 0.02em;
@@ -650,6 +727,111 @@ button.hyperlink:active {
 .lightbox__close:hover {
     transform: scale(1.08);
     background: rgba(0,0,0,0.12);
+}
+
+/* Project Lightbox (for modal photos) */
+.project-lightbox {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 11000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.project-lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-lightbox__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+}
+
+.project-lightbox__content {
+    position: relative;
+    width: min(95vw, 1400px);
+    height: min(95vh, 900px);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.project-lightbox__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.project-lightbox__close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.project-lightbox__close:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.2);
+}
+
+.project-lightbox__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s ease, transform 0.2s ease;
+    padding: 0;
+}
+
+.project-lightbox__nav:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.project-lightbox__nav svg {
+    width: 28px;
+    height: 28px;
+}
+
+.project-lightbox__nav--prev {
+    left: 2rem;
+}
+
+.project-lightbox__nav--next {
+    right: 2rem;
 }
 
 @media (max-width: 1100px) {

@@ -28,10 +28,10 @@
                     <a href="/design/">Design</a>
                 </div>
                 <div class="navlink">
-                    <a href="/artwork">Artworks</a>
+                    <a href="/artwork/">Artworks</a>
                 </div>
                 <div class="navlink">
-                    <a>About</a>
+                    <a href="/about/">About</a>
                 </div>
             </div>
         </nav>
@@ -95,6 +95,25 @@
            <div class="project-modal__gallery" id="projectModalGallery"></div>
            <div class="project-modal__details" id="projectModalDetails"></div>
        </div>
+   </div>
+</div>
+
+<!-- Lightbox for modal photos -->
+<div class="project-lightbox" id="projectLightbox" aria-hidden="true">
+   <div class="project-lightbox__overlay" id="projectLightboxOverlay"></div>
+   <div class="project-lightbox__content">
+       <button class="project-lightbox__close" id="lightboxClose" aria-label="Close lightbox">×</button>
+       <button class="project-lightbox__nav project-lightbox__nav--prev" id="lightboxPrev" aria-label="Previous photo">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <polyline points="15 18 9 12 15 6"></polyline>
+           </svg>
+       </button>
+       <img src="" alt="Full size photo" class="project-lightbox__img" id="lightboxImg">
+       <button class="project-lightbox__nav project-lightbox__nav--next" id="lightboxNext" aria-label="Next photo">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <polyline points="9 18 15 12 9 6"></polyline>
+           </svg>
+       </button>
    </div>
 </div>
 
@@ -296,36 +315,90 @@
 </script>
 
 <script>
+    const programIcons = {
+        'blender': '/images/Icons/blend_icon.webp',
+        'photoshop': '/images/Icons/ps_icon.webp',
+        'zbrush': '/images/Icons/zbrush_icon.webp',
+        'substance': '/images/Icons/substance_icon.webp',
+        'sketch': '/images/Icons/sketch_icon.webp',
+        'unreal': '/images/Icons/ue_icon.webp',
+        'unity': '/images/Icons/unity_icon.webp',
+        'art': '/images/Icons/art_icon.webp'
+    };
+
     const projects = [
         {
-            title: 'Food Creatures Cafe',
+           title: 'Spirit Cafe',
             thumbnail: '/images/FoodCreatures/cafe-interior-conceptart.webp',
             summary: 'A cozy concept art installation for a whimsical cafe environment.',
             description: 'A vibrant world-building concept project that showcases mood, lighting, and atmosphere through interior design and character-driven detail. This project explores playful shapes, warm palettes, and immersive storytelling through visual composition.',
             photos: [
                 '/images/FoodCreatures/cafe-interior-conceptart.webp',
                 '/images/FoodCreatures/key_art_2 copy.webp'
-            ]
+            ],
+           programs: ['photoshop']
         },
         {
-            title: 'Concept Art A03',
+           title: 'Homesick At Space Camp',
             thumbnail: '/images/ConceptArtA03/keyart_01_full.webp',
             summary: 'An atmospheric sci-fi landscape study with bold color and scale.',
             description: 'This piece investigates light, environment, and narrative tension in a cinematic setting. It combines dramatic silhouettes, sweeping vistas, and textural detail to establish a strong sense of place.',
             photos: [
                 '/images/ConceptArtA03/keyart_01_full.webp',
-                '/images/ConceptArtA03/keyart_02_full.webp'
-            ]
+                '/images/ConceptArtA03/keyart_02_full.webp',
+                '/images/ConceptArtA03/gallery_03.webp',
+                '/images/ConceptArtA03/gallery_02.webp'
+            ],
+           programs: ['photoshop']
         },
         {
-            title: 'ROAM Dino Escape',
+           title: 'ROAM',
             thumbnail: '/images/ROAM/dino_roam_keyart_01.webp',
             summary: 'A dynamic game key art concept featuring a daring dinosaur chase.',
             description: 'A fast-paced visual exploration for a game concept, focusing on action, creature design, and atmospheric motion. The project emphasizes dramatic color contrast and bold compositions to heighten excitement.',
             photos: [
-                '/images/ROAM/dino_roam_keyart_01.webp'
-            ]
+                '/images/ROAM/roam_gallery_01.webp',
+                '/images/ROAM/roam_gallery_02.webp',
+                '/images/ROAM/roam_gallery_03.webp'
+            ],
+           programs: ['photoshop', 'unity', 'blender']
+        },
+        {
+           title: 'Ramen Hustle In Tomi City',
+            thumbnail: '/images/RamenHustle/banner.webp',
+            summary: 'A fast-paced ramen-serving game with a dark twist.',
+            description: 'Character design and animation in a 2.5D visual style.',
+            photos: [
+                '/images/RamenHustle/concept_capybara.webp',
+                '/images/RamenHustle/fox_concept.webp',
+                '/images/RamenHustle/sc_1.webp',
+                '/images/RamenHustle/gallery_boss.gif',
+                '/images/RamenHustle/gallery_fox.gif',
+                '/images/RamenHustle/gallery_hustle.gif',
+
+            ],
+           programs: ['photoshop', 'unity']
+        },
+        {
+            title: 'Sleepy Fish Town',
+            thumbnail: '/images/WorldBuilding/banner.webp',
+            summary:'A futuristic cyberpunk world where sushi trucks are run by fish...?',
+            description:'An exploration of a stylized Cyberpunk environment done in Unity.',
+            photos: [
+                '/images/WorldBuilding/gallery_01.webp',
+                '/images/WorldBuilding/gallery_02.webp',
+                '/images/WorldBuilding/gallery_03.webp',
+                '/images/WorldBuilding/wip_keyart_01.webp',
+                '/images/WorldBuilding/wip_keyart_02.webp',
+                '/images/WorldBuilding/banner.webp',
+                '/images/WorldBuilding/wip_sketch_01.webp',
+                '/images/WorldBuilding/wip_sketch_02.webp',
+                '/images/WorldBuilding/wip_sketch_03.webp',
+            ],
+            programs: ['unity','blender'],
         }
+
+
     ];
 
     const projectGrid = document.getElementById('projectGrid');
@@ -343,9 +416,22 @@
 
         modalTitle.textContent = project.title;
         modalSummary.textContent = project.summary;
-        modalDetails.textContent = project.description;
-        modalGallery.innerHTML = project.photos.map(photo => `
-            <div class="project-modal__photo">
+        modalDetails.innerHTML = `
+            <p>${project.description}</p>
+            <div class="project-modal__tools">
+                <h4>Programs Used</h4>
+                <div class="tools-container">
+                    ${project.programs.map(prog => `
+                        <div class="tool-pill">
+                            <img src="${programIcons[prog]}" alt="${prog}" class="tool-pill__icon">
+                            <span>${prog.charAt(0).toUpperCase() + prog.slice(1)}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        modalGallery.innerHTML = project.photos.map((photo, photoIndex) => `
+            <div class="project-modal__photo" data-photo-index="${photoIndex}" data-photo-src="${photo}">
                 <img src="${photo}" alt="${project.title} photo">
             </div>
         `).join('');
@@ -353,6 +439,14 @@
         projectModal.classList.add('open');
         projectModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        // Add click handlers to photos for lightbox
+        document.querySelectorAll('.project-modal__photo').forEach(photo => {
+            photo.addEventListener('click', (e) => {
+                const photoIndex = parseInt(e.currentTarget.dataset.photoIndex);
+                openLightbox(project.photos, photoIndex);
+            });
+        });
     }
 
     function closeProjectModal() {
@@ -361,6 +455,54 @@
         document.body.style.overflow = '';
     }
 
+    // Lightbox functionality
+    const projectLightbox = document.getElementById('projectLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxOverlay = document.getElementById('projectLightboxOverlay');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    
+    let currentLightboxPhotos = [];
+    let currentLightboxIndex = 0;
+
+    function openLightbox(photos, startIndex) {
+        currentLightboxPhotos = photos;
+        currentLightboxIndex = startIndex;
+        lightboxImg.src = photos[startIndex];
+        projectLightbox.classList.add('open');
+        projectLightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+        projectLightbox.classList.remove('open');
+        projectLightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    function showLightboxPhoto(index) {
+        if (index < 0) {
+            currentLightboxIndex = currentLightboxPhotos.length - 1;
+        } else if (index >= currentLightboxPhotos.length) {
+            currentLightboxIndex = 0;
+        } else {
+            currentLightboxIndex = index;
+        }
+        lightboxImg.src = currentLightboxPhotos[currentLightboxIndex];
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxOverlay.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => showLightboxPhoto(currentLightboxIndex - 1));
+    lightboxNext.addEventListener('click', () => showLightboxPhoto(currentLightboxIndex + 1));
+
+    document.addEventListener('keydown', (e) => {
+        if (!projectLightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showLightboxPhoto(currentLightboxIndex - 1);
+        if (e.key === 'ArrowRight') showLightboxPhoto(currentLightboxIndex + 1);
+    });
+
+
     projects.forEach((project, index) => {
         const card = document.createElement('button');
         card.className = 'project-card';
@@ -368,6 +510,11 @@
         card.innerHTML = `
             <div class="project-card__thumb">
                 <img src="${project.thumbnail}" alt="${project.title} thumbnail">
+                <div class="project-card__badges">
+                    ${project.programs.map(prog => `
+                        <img src="${programIcons[prog]}" alt="${prog}" class="badge-icon" title="${prog}">
+                    `).join('')}
+                </div>
             </div>
             <div class="project-card__info">
                 <span class="project-card__title">${project.title}</span>
@@ -375,7 +522,9 @@
             </div>
         `;
         card.addEventListener('click', () => openProjectModal(index));
-        projectGrid.appendChild(card);
+        if (projectGrid) {
+            projectGrid.appendChild(card);
+        }
     });
 
     modalOverlay.addEventListener('click', closeProjectModal);
@@ -408,4 +557,5 @@
     });
 </script>
 
+</body>
 </html>

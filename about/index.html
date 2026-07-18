@@ -28,10 +28,10 @@
                     <a href="/design/">Design</a>
                 </div>
                 <div class="navlink">
-                    <a href="/artwork">Artworks</a>
+                    <a href="/artwork/">Artworks</a>
                 </div>
                 <div class="navlink">
-                    <a href="/about">About</a>
+                    <a href="/about/">About</a>
                 </div>
             </div>
         </nav>
@@ -42,10 +42,17 @@
 
 
 <section class="wavy-both" style="background-image:url(/gradient-bgs/gradient-8.webp);" id="gallery">
+    <!-- <div class="wrapper">
+        <div class="text-img">
+            <img src="/images/Personal/IMG_3691.JPG">
+            <p>Hello! I am KEAN, a game designer from Melbourne</p>
+        </div>
+    </div> -->
+
     <div class="wrapper">
         <div class="gc-wrap">
             <div class="gc-header">
-                <span class="gc-title"></span>
+                <!-- <span class="gc-title">Featured</span> -->
                 <span class="gc-count" id="gcCount"></span>
             </div>
 
@@ -64,22 +71,10 @@
     </div>
 </section>
 
-<section class="project-section">
-    <div class="wrapper">
-        <div class="project-grid" id="artworkGrid"></div>
-    </div>
-</section>
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox__overlay" id="lightboxOverlay"></div>
-    <div class="lightbox__content" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
-        <button class="project-modal__close lightbox__close" id="lightboxClose" aria-label="Close lightbox">×</button>
-        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
-        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">&#10095;</button>
-        <img src="" alt="" id="lightboxImage" class="lightbox__img">
-        <p class="lightbox__caption" id="lightboxCaption"></p>
-    </div>
-</div>
+
+
+
 
 <!-- contact section -->
 <section id="contact">
@@ -156,7 +151,7 @@
        or a full URL. Leave "" for
        a placeholder.
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    const featuredImages = [
+    const images = [
         "/images/FoodCreatures/cafe-interior-conceptart.webp",
         "/images/FoodCreatures/key_art_2 copy.webp",
         "/images/ConceptArtA03/keyart_01_full.webp",
@@ -164,64 +159,10 @@
         "/images/ROAM/dino_roam_keyart_01.webp",
     ];
 
-    const galleryItems = [
-        {
-            src: "/images/3DModelElective/banner.webp",
-            caption: "Dynamic Render of Shrimp Island in Unreal Engine",
-        },
-        {
-            src: "/images/3DModelElective/render_00.webp",
-            caption: "Dynamic Render of Shrimp Island in Unreal Engine",
-        },
-        {
-            src: "/images/3DModelElective/shrimp_render.webp",
-            caption: "Dynamic Render of Shrimp Island in Unreal Engine",
-        },
-        {
-            src: "/images/BAGELTOWN/BagelMachine2.webp",
-            caption: "Cinematic Render of Bagel Machine in Blender",
-        },
-        {
-            src: "/images/ConceptArtA03/keyart_02_full.webp",
-            caption: "Digital Illustration concept art",
-        },
-        {
-            src: "/images/ConceptArtA03/keyart_01_full.webp",
-            caption: "Digital Illustration concept art",
-        },
-        {
-            src: "/images/FoodCreatures/cafe-interior-conceptart.webp",
-            caption: "Digital Illustration concept art",
-        },
-        {
-            src: "/images/FoodCreatures/key_art_2 copy.webp",
-            caption: "Digital Illustration concept art",
-        },
-        {
-            src: "/images/geonodecity/banner.webp",
-            caption: "Cinematic Render in Blender",
-        },
-        {
-            src: "/images/ROAM/dino_roam_keyart_01.webp",
-            caption: "Digital Illustration key art",
-        },
-        {
-            src: "/images/TechArt01/banner.webp",
-            caption: "Unity shader and VFX showcase",
-        },
-        {
-            src: "/images/TopArts/banner.webp",
-            caption: "Digital Animation Render in Blender",
-        },
-        {
-            src: "/images/WorldBuilding/banner.webp",
-            caption: "Digital Environment in Unity",
-        },
-    ];
-
     /* tilt per slot — alternates so each card feels unique */
     const tilts = [-4, 3, -2, 5, -3, 4, -5, 2, -3, 4];
-    const featuredCount = featuredImages.length;
+
+    const total = images.length;
     let cur = 0;
     let animating = false;
 
@@ -230,25 +171,13 @@
     const nextBtn = document.getElementById('gcNext');
     const countEl = document.getElementById('gcCount');
     const dotsWrap = document.getElementById('gcDots');
-    const artworkGrid = document.getElementById('artworkGrid');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxOverlay = document.getElementById('lightboxOverlay');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxPrev = document.getElementById('lightboxPrev');
-    const lightboxNext = document.getElementById('lightboxNext');
-
-    function wrapIndex(n, length) {
-        return ((n % length) + length) % length;
-    }
 
     /* build one card per image */
-    const cards = featuredImages.map((src, i) => {
+    const cards = images.map((src, i) => {
         const card = document.createElement('div');
         card.className = 'photo-card';
         card.innerHTML = src
-            ? `<img src="${src}" alt="Featured artwork ${i + 1}">`
+            ? `<img src="${src}" alt="Gallery image ${i + 1}">`
             : `<div class="img-placeholder"><i class="ti ti-photo"></i><span>Your image here</span></div>`;
         card.addEventListener('click', () => { if (i !== cur) goTo(i > cur ? cur + 1 : cur - 1); });
         stage.appendChild(card);
@@ -256,7 +185,7 @@
     });
 
     /* dot per image */
-    featuredImages.forEach((_, i) => {
+    images.forEach((_, i) => {
         const d = document.createElement('button');
         d.className = 'dot';
         d.setAttribute('aria-label', 'Slide ' + (i + 1));
@@ -274,12 +203,16 @@
         '2': { x: 0.40, s: 0.54, z: 1, o: 0.35 },
     };
 
+    /* wrap index for infinite loop */
+    function wrap(n) { return ((n % total) + total) % total; }
+
     function layout() {
         const w = stage.offsetWidth;
         cards.forEach((card, i) => {
+            /* find shortest circular distance from cur to i */
             let offset = i - cur;
-            if (offset > featuredCount / 2) offset -= featuredCount;
-            if (offset < -featuredCount / 2) offset += featuredCount;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
 
             const cfg = slotCfg[String(offset)];
 
@@ -290,6 +223,7 @@
                 return;
             }
 
+            /* pick tilt: base tilt from tilts array + slot lean */
             const slotLean = offset * 2.5;
             const rot = tilts[i % tilts.length] + slotLean;
 
@@ -302,14 +236,14 @@
     }
 
     function updateUI() {
-        countEl.textContent = (cur + 1) + ' / ' + featuredCount;
+        countEl.textContent = (cur + 1) + ' / ' + total;
         dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
     }
 
     function goTo(n) {
         if (animating) return;
         animating = true;
-        cur = wrapIndex(n, featuredCount);
+        cur = wrap(n);
         updateUI();
         layout();
         setTimeout(() => { animating = false; }, 520);
@@ -319,13 +253,6 @@
     nextBtn.onclick = () => goTo(cur + 1);
 
     document.addEventListener('keydown', e => {
-        if (lightbox.classList.contains('open')) {
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showLightboxItem(activeLightboxIndex - 1, true);
-            if (e.key === 'ArrowRight') showLightboxItem(activeLightboxIndex + 1, true);
-            return;
-        }
-
         if (e.key === 'ArrowLeft') goTo(cur - 1);
         if (e.key === 'ArrowRight') goTo(cur + 1);
     });
@@ -339,72 +266,9 @@
         if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
     });
 
-    function renderArtworkGrid() {
-        galleryItems.forEach((item, index) => {
-            const card = document.createElement('button');
-            card.type = 'button';
-            card.className = 'project-card';
-            card.innerHTML = `
-                <div class="project-card__thumb">
-                    <img src="${item.src}" alt="Artwork ${index + 1}">
-                </div>
-            `;
-            card.addEventListener('click', () => openLightbox(index));
-            artworkGrid.appendChild(card);
-        });
-    }
-
-    let activeLightboxIndex = 0;
-
-    function setLightboxItem(index) {
-        activeLightboxIndex = wrapIndex(index, galleryItems.length);
-        const item = galleryItems[activeLightboxIndex];
-        lightboxImage.src = item.src;
-        lightboxImage.alt = item.caption || `Artwork ${activeLightboxIndex + 1}`;
-        lightboxCaption.textContent = item.caption;
-    }
-
-    function showLightboxItem(index, animate = false) {
-        if (!animate || !lightbox.classList.contains('open')) {
-            setLightboxItem(index);
-            return;
-        }
-
-        if (lightboxImage.classList.contains('lightbox__img--animating')) return;
-
-        lightboxImage.classList.add('lightbox__img--animating', 'lightbox__img--fade-out');
-        setTimeout(() => {
-            setLightboxItem(index);
-            lightboxImage.classList.remove('lightbox__img--fade-out');
-            lightboxImage.classList.add('lightbox__img--fade-in');
-            setTimeout(() => {
-                lightboxImage.classList.remove('lightbox__img--fade-in', 'lightbox__img--animating');
-            }, 300);
-        }, 180);
-    }
-
-    function openLightbox(index) {
-        setLightboxItem(index);
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    lightboxOverlay.addEventListener('click', closeLightbox);
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', () => showLightboxItem(activeLightboxIndex - 1, true));
-    lightboxNext.addEventListener('click', () => showLightboxItem(activeLightboxIndex + 1, true));
-
     /* init */
     updateUI();
     layout();
-    renderArtworkGrid();
     window.addEventListener('resize', layout);
 </script>
 <script>
