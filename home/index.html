@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kean Ngooi | Home</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/Icons/web_icon.webp">
+</head>
+
+<header>
+    <div class="header-block">
+        <a href="/home/" class="jitter logo-link">
+            <h1>Kean Ngooi</h1>
+        </a>
+
+        <img src="/images/Icons/star.webp" class="icon">
+
+        <nav class="site-nav" aria-label="Primary navigation">
+            <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <div class="navlink">
+                    <a href="/design/">Design</a>
+                </div>
+                <div class="navlink">
+                    <a href="/artwork">Artworks</a>
+                </div>
+                <div class="navlink">
+                    <a>About</a>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+
+<div class="site-title">
+    <img src="/images/Icons/portfolio-banner.webp" class="jitter">
+</div>
+
+<button onclick="location.href='#gallery'" class="hyperlink jitter">view gallery</button>
+
+
+
+
+<section class="wavy-both" style="background-image:url(/gradient-bgs/gradient-8.webp);" id="gallery">
+<div class="wrapper">
+        <div class="gc-wrap">
+            <div class="gc-header">
+                <!-- <span class="gc-title">Featured</span> -->
+                <span class="gc-count" id="gcCount"></span>
+            </div>
+
+            <div class="gc-row">
+                <button class="nav-btn" id="gcPrev" aria-label="Previous">
+                    <p class="ti ti-arrow-left">&lArr;</p>
+                </button>
+                <div class="gc-stage" id="gcStage"></div>
+                <button class="nav-btn" id="gcNext" aria-label="Next">
+                    <p class="ti ti-arrow-right">&rArr;</p>
+                </button>
+            </div>
+
+            <div class="gc-dots" id="gcDots"></div>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+<section id="projects" class="project-section">
+   <div class="wrapper">
+       <h2>Projects</h2>
+       <div class="project-grid" id="projectGrid"></div>
+   </div>
+</section>
+
+<div class="project-modal" id="projectModal" aria-hidden="true">
+   <div class="project-modal__overlay" id="projectModalOverlay"></div>
+   <div class="project-modal__content" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+       <button class="project-modal__close" id="modalClose" aria-label="Close project details">×</button>
+       <div class="project-modal__header">
+           <h3 id="projectModalTitle"></h3>
+           <p class="project-modal__summary" id="projectModalSummary"></p>
+       </div>
+       <div class="project-modal__body">
+           <div class="project-modal__gallery" id="projectModalGallery"></div>
+           <div class="project-modal__details" id="projectModalDetails"></div>
+       </div>
+   </div>
+</div>
+
+<!-- contact section -->
+<section id="contact">
+
+    <!-- email link with icon -->
+    <div class="link">
+        <a href="mailto:keanngooi@gmail.com"><img src="/images/Icons/mail.svg"></a>
+        <p class="caption"> EMAIL </p>
+    </div>
+
+    <!-- social media links -->
+    <div class='link'>
+        <a href="https://instagram.com/toaste7"><img src="/images/Icons/instagram.svg"></a>
+        <p class="caption"> INSTAGRAM </p>
+    </div>
+    <div class='link'>
+        <p><a href="https://toaste7.artstation.com"><img src="/images/Icons/artstation.svg"></a>
+        <p class="caption"> ARTSTATION </p>
+    </div>
+
+    <div class='link'>
+
+        <a href="https://toasteeer.itch.io/"><img src="/images/Icons/itchio.svg"></a>
+        <p class="caption"> ITCH.IO </p>
+    </div>
+    <div class="link">
+
+        <a href="https://sketchfab.com/toaste76"><img src="/images/Icons/sketchfab.svg"></a>
+        <p class='caption'> SKETCHFAB </p>
+
+    </div>
+
+    <div class="link">
+
+        <a href="https://www.linkedin.com/in/kean-ngooi-1425313b6/"><img src="/images/Icons/linkedin.svg"></a>
+        <p class='caption'> LINKEDIN </p>
+
+    </div>
+</section>
+
+
+
+
+
+<footer>
+    <p>© 2026 | Kean Ngooi</p>
+</footer>
+
+<!-- Scroll to top -->
+<a href="#" class="scrollToTop" id="scrollToTop">&uArr;</a>
+<script>
+    height = 500;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.getElementById("scrollToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > height) {
+                scrollBtn.classList.add("visible");
+            } else {
+                scrollBtn.classList.remove("visible");
+            }
+        });
+    });
+</script>
+
+
+
+
+
+<script>
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ADD YOUR IMAGES HERE
+       Each entry: "path/to/image.jpg"
+       or a full URL. Leave "" for
+       a placeholder.
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const images = [
+        "/images/FoodCreatures/cafe-interior-conceptart.webp",
+        "/images/FoodCreatures/key_art_2 copy.webp",
+        "/images/ConceptArtA03/keyart_01_full.webp",
+        "/images/ConceptArtA03/keyart_02_full.webp",
+        "/images/ROAM/dino_roam_keyart_01.webp",
+    ];
+
+    /* tilt per slot — alternates so each card feels unique */
+    const tilts = [-4, 3, -2, 5, -3, 4, -5, 2, -3, 4];
+
+    const total = images.length;
+    let cur = 0;
+    let animating = false;
+
+    const stage = document.getElementById('gcStage');
+    const prevBtn = document.getElementById('gcPrev');
+    const nextBtn = document.getElementById('gcNext');
+    const countEl = document.getElementById('gcCount');
+    const dotsWrap = document.getElementById('gcDots');
+
+    /* build one card per image */
+    const cards = images.map((src, i) => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.innerHTML = src
+            ? `<img src="${src}" alt="Gallery image ${i + 1}">`
+            : `<div class="img-placeholder"><i class="ti ti-photo"></i><span>Your image here</span></div>`;
+        card.addEventListener('click', () => { if (i !== cur) goTo(i > cur ? cur + 1 : cur - 1); });
+        stage.appendChild(card);
+        return card;
+    });
+
+    /* dot per image */
+    images.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot';
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+    });
+
+    /* slot definitions — how many cards visible each side */
+    const SLOTS = [-2, -1, 0, 1, 2];
+    const slotCfg = {
+        '-2': { x: -0.40, s: 0.54, z: 1, o: 0.35 },
+        '-1': { x: -0.21, s: 0.72, z: 3, o: 0.65 },
+        '0': { x: 0, s: 1.00, z: 5, o: 1.00 },
+        '1': { x: 0.21, s: 0.72, z: 3, o: 0.65 },
+        '2': { x: 0.40, s: 0.54, z: 1, o: 0.35 },
+    };
+
+    /* wrap index for infinite loop */
+    function wrap(n) { return ((n % total) + total) % total; }
+
+    function layout() {
+        const w = stage.offsetWidth;
+        cards.forEach((card, i) => {
+            /* find shortest circular distance from cur to i */
+            let offset = i - cur;
+            if (offset > total / 2) offset -= total;
+            if (offset < -total / 2) offset += total;
+
+            const cfg = slotCfg[String(offset)];
+
+            if (!cfg) {
+                card.style.opacity = '0';
+                card.style.pointerEvents = 'none';
+                card.style.zIndex = '0';
+                return;
+            }
+
+            /* pick tilt: base tilt from tilts array + slot lean */
+            const slotLean = offset * 2.5;
+            const rot = tilts[i % tilts.length] + slotLean;
+
+            card.style.opacity = cfg.o;
+            card.style.zIndex = cfg.z;
+            card.style.pointerEvents = offset === 0 ? 'none' : 'auto';
+            card.style.boxShadow = offset === 0 ? '6px 6px 0 rgba(28,18,8,0.55)' : '3px 3px 0 rgba(28,18,8,0.3)';
+            card.style.transform = `translateX(${cfg.x * w}px) scale(${cfg.s}) rotate(${rot}deg)`;
+        });
+    }
+
+    function updateUI() {
+        countEl.textContent = (cur + 1) + ' / ' + total;
+        dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+    }
+
+    function goTo(n) {
+        if (animating) return;
+        animating = true;
+        cur = wrap(n);
+        updateUI();
+        layout();
+        setTimeout(() => { animating = false; }, 520);
+    }
+
+    prevBtn.onclick = () => goTo(cur - 1);
+    nextBtn.onclick = () => goTo(cur + 1);
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') goTo(cur - 1);
+        if (e.key === 'ArrowRight') goTo(cur + 1);
+    });
+
+    let dragX = null;
+    stage.addEventListener('pointerdown', e => { dragX = e.clientX; });
+    window.addEventListener('pointerup', e => {
+        if (dragX === null) return;
+        const dx = e.clientX - dragX;
+        dragX = null;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
+    });
+
+    /* init */
+    updateUI();
+    layout();
+    window.addEventListener('resize', layout);
+</script>
+
+<script>
+    const projects = [
+        {
+            title: 'Food Creatures Cafe',
+            thumbnail: '/images/FoodCreatures/cafe-interior-conceptart.webp',
+            summary: 'A cozy concept art installation for a whimsical cafe environment.',
+            description: 'A vibrant world-building concept project that showcases mood, lighting, and atmosphere through interior design and character-driven detail. This project explores playful shapes, warm palettes, and immersive storytelling through visual composition.',
+            photos: [
+                '/images/FoodCreatures/cafe-interior-conceptart.webp',
+                '/images/FoodCreatures/key_art_2 copy.webp'
+            ]
+        },
+        {
+            title: 'Concept Art A03',
+            thumbnail: '/images/ConceptArtA03/keyart_01_full.webp',
+            summary: 'An atmospheric sci-fi landscape study with bold color and scale.',
+            description: 'This piece investigates light, environment, and narrative tension in a cinematic setting. It combines dramatic silhouettes, sweeping vistas, and textural detail to establish a strong sense of place.',
+            photos: [
+                '/images/ConceptArtA03/keyart_01_full.webp',
+                '/images/ConceptArtA03/keyart_02_full.webp'
+            ]
+        },
+        {
+            title: 'ROAM Dino Escape',
+            thumbnail: '/images/ROAM/dino_roam_keyart_01.webp',
+            summary: 'A dynamic game key art concept featuring a daring dinosaur chase.',
+            description: 'A fast-paced visual exploration for a game concept, focusing on action, creature design, and atmospheric motion. The project emphasizes dramatic color contrast and bold compositions to heighten excitement.',
+            photos: [
+                '/images/ROAM/dino_roam_keyart_01.webp'
+            ]
+        }
+    ];
+
+    const projectGrid = document.getElementById('projectGrid');
+    const projectModal = document.getElementById('projectModal');
+    const modalOverlay = document.getElementById('projectModalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('projectModalTitle');
+    const modalSummary = document.getElementById('projectModalSummary');
+    const modalGallery = document.getElementById('projectModalGallery');
+    const modalDetails = document.getElementById('projectModalDetails');
+
+    function openProjectModal(index) {
+        const project = projects[index];
+        if (!project) return;
+
+        modalTitle.textContent = project.title;
+        modalSummary.textContent = project.summary;
+        modalDetails.textContent = project.description;
+        modalGallery.innerHTML = project.photos.map(photo => `
+            <div class="project-modal__photo">
+                <img src="${photo}" alt="${project.title} photo">
+            </div>
+        `).join('');
+
+        projectModal.classList.add('open');
+        projectModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+        projectModal.classList.remove('open');
+        projectModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    projects.forEach((project, index) => {
+        const card = document.createElement('button');
+        card.className = 'project-card';
+        card.type = 'button';
+        card.innerHTML = `
+            <div class="project-card__thumb">
+                <img src="${project.thumbnail}" alt="${project.title} thumbnail">
+            </div>
+            <div class="project-card__info">
+                <span class="project-card__title">${project.title}</span>
+                <span class="project-card__tag">${project.summary}</span>
+            </div>
+        `;
+        card.addEventListener('click', () => openProjectModal(index));
+        projectGrid.appendChild(card);
+    });
+
+    modalOverlay.addEventListener('click', closeProjectModal);
+    modalClose.addEventListener('click', closeProjectModal);
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && projectModal.classList.contains('open')) {
+            closeProjectModal();
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        if (!navToggle || !siteNav) return;
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navToggle.classList.toggle('open');
+            siteNav.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!siteNav.classList.contains('open')) return;
+            if (siteNav.contains(event.target) || navToggle.contains(event.target)) return;
+            siteNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
+
+</html>

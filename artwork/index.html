@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kean Ngooi | Design</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/Icons/web_icon.webp">
+</head>
+
+<header>
+    <div class="header-block">
+        <a href="/home/" class="jitter logo-link">
+            <h1>Kean Ngooi</h1>
+        </a>
+
+        <img src="/images/Icons/star.webp" class="icon">
+
+        <nav class="site-nav" aria-label="Primary navigation">
+            <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <div class="navlink">
+                    <a>Design</a>
+                </div>
+                <div class="navlink">
+                    <a>Projects</a>
+                </div>
+                <div class="navlink">
+                    <a>Artworks</a>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+
+
+<section class="wavy-both" style="background-image:url(/gradient-bgs/gradient-8.webp);" id="gallery">
+    <div class="wrapper">
+        <div class="gc-wrap">
+            <div class="gc-header">
+                <span class="gc-title"></span>
+                <span class="gc-count" id="gcCount"></span>
+            </div>
+
+            <div class="gc-row">
+                <button class="nav-btn" id="gcPrev" aria-label="Previous">
+                    <p class="ti ti-arrow-left">&lArr;</p>
+                </button>
+                <div class="gc-stage" id="gcStage"></div>
+                <button class="nav-btn" id="gcNext" aria-label="Next">
+                    <p class="ti ti-arrow-right">&rArr;</p>
+                </button>
+            </div>
+
+            <div class="gc-dots" id="gcDots"></div>
+        </div>
+    </div>
+</section>
+
+<section class="project-section">
+    <div class="wrapper">
+        <h2>Artwork Gallery</h2>
+        <div class="project-grid" id="artworkGrid"></div>
+    </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__overlay" id="lightboxOverlay"></div>
+    <div class="lightbox__content" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+        <button class="project-modal__close lightbox__close" id="lightboxClose" aria-label="Close lightbox">×</button>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+        <img src="" alt="" id="lightboxImage" class="lightbox__img">
+        <p class="lightbox__caption" id="lightboxCaption"></p>
+    </div>
+</div>
+
+<!-- contact section -->
+<section id="contact">
+
+
+    <!-- email link with icon -->
+    <div class="link">
+        <a href="mailto:keanngooi@gmail.com"><img src="/images/Icons/mail.svg"></a>
+        <p class="caption"> EMAIL </p>
+    </div>
+
+    <!-- social media links -->
+    <div class='link'>
+        <a href="https://instagram.com/toaste7"><img src="/images/Icons/instagram.svg"></a>
+        <p class="caption"> INSTAGRAM </p>
+    </div>
+    <div class='link'>
+        <p><a href="https://toaste7.artstation.com"><img src="/images/Icons/artstation.svg"></a>
+        <p class="caption"> ARTSTATION </p>
+    </div>
+
+    <div class='link'>
+
+        <a href="https://toasteeer.itch.io/"><img src="/images/Icons/itchio.svg"></a>
+        <p class="caption"> ITCH.IO </p>
+    </div>
+    <div class="link">
+
+        <a href="https://sketchfab.com/toaste76"><img src="/images/Icons/sketchfab.svg"></a>
+        <p class='caption'> SKETCHFAB </p>
+
+    </div>
+
+    <div class="link">
+
+        <a href="https://www.linkedin.com/in/kean-ngooi-1425313b6/"><img src="/images/Icons/linkedin.svg"></a>
+        <p class='caption'> LINKEDIN </p>
+
+    </div>
+</section>
+
+
+
+
+
+<footer>
+    <p>© 2026 | Kean Ngooi</p>
+</footer>
+
+<!-- Scroll to top -->
+<a href="#" class="scrollToTop" id="scrollToTop">&uArr;</a>
+<script>
+    height = 500;
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const scrollBtn = document.getElementById("scrollToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > height) {
+                scrollBtn.classList.add("visible");
+            } else {
+                scrollBtn.classList.remove("visible");
+            }
+        });
+    });
+</script>
+
+
+
+<script>
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       ADD YOUR IMAGES HERE
+       Each entry: "path/to/image.jpg"
+       or a full URL. Leave "" for
+       a placeholder.
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    const featuredImages = [
+        "/images/FoodCreatures/cafe-interior-conceptart.webp",
+        "/images/FoodCreatures/key_art_2 copy.webp",
+        "/images/ConceptArtA03/keyart_01_full.webp",
+        "/images/ConceptArtA03/keyart_02_full.webp",
+        "/images/ROAM/dino_roam_keyart_01.webp",
+    ];
+
+    const galleryItems = [
+        {
+            src: "/images/FoodCreatures/cafe-interior-conceptart.webp",
+            caption: "Food Creatures cafe interior concept",
+        },
+        {
+            src: "/images/FoodCreatures/key_art_2 copy.webp",
+            caption: "Character and atmosphere study",
+        },
+        {
+            src: "/images/ConceptArtA03/keyart_01_full.webp",
+            caption: "Cinematic sci-fi landscape",
+        },
+        {
+            src: "/images/ConceptArtA03/keyart_02_full.webp",
+            caption: "Environmental detail exploration",
+        },
+        {
+            src: "/images/ROAM/dino_roam_keyart_01.webp",
+            caption: "Dynamic game key art moment",
+        },
+    ];
+
+    /* tilt per slot — alternates so each card feels unique */
+    const tilts = [-4, 3, -2, 5, -3, 4, -5, 2, -3, 4];
+    const featuredCount = featuredImages.length;
+    let cur = 0;
+    let animating = false;
+
+    const stage = document.getElementById('gcStage');
+    const prevBtn = document.getElementById('gcPrev');
+    const nextBtn = document.getElementById('gcNext');
+    const countEl = document.getElementById('gcCount');
+    const dotsWrap = document.getElementById('gcDots');
+    const artworkGrid = document.getElementById('artworkGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    function wrapIndex(n, length) {
+        return ((n % length) + length) % length;
+    }
+
+    /* build one card per image */
+    const cards = featuredImages.map((src, i) => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.innerHTML = src
+            ? `<img src="${src}" alt="Featured artwork ${i + 1}">`
+            : `<div class="img-placeholder"><i class="ti ti-photo"></i><span>Your image here</span></div>`;
+        card.addEventListener('click', () => { if (i !== cur) goTo(i > cur ? cur + 1 : cur - 1); });
+        stage.appendChild(card);
+        return card;
+    });
+
+    /* dot per image */
+    featuredImages.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot';
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(d);
+    });
+
+    /* slot definitions — how many cards visible each side */
+    const SLOTS = [-2, -1, 0, 1, 2];
+    const slotCfg = {
+        '-2': { x: -0.40, s: 0.54, z: 1, o: 0.35 },
+        '-1': { x: -0.21, s: 0.72, z: 3, o: 0.65 },
+        '0': { x: 0, s: 1.00, z: 5, o: 1.00 },
+        '1': { x: 0.21, s: 0.72, z: 3, o: 0.65 },
+        '2': { x: 0.40, s: 0.54, z: 1, o: 0.35 },
+    };
+
+    function layout() {
+        const w = stage.offsetWidth;
+        cards.forEach((card, i) => {
+            let offset = i - cur;
+            if (offset > featuredCount / 2) offset -= featuredCount;
+            if (offset < -featuredCount / 2) offset += featuredCount;
+
+            const cfg = slotCfg[String(offset)];
+
+            if (!cfg) {
+                card.style.opacity = '0';
+                card.style.pointerEvents = 'none';
+                card.style.zIndex = '0';
+                return;
+            }
+
+            const slotLean = offset * 2.5;
+            const rot = tilts[i % tilts.length] + slotLean;
+
+            card.style.opacity = cfg.o;
+            card.style.zIndex = cfg.z;
+            card.style.pointerEvents = offset === 0 ? 'none' : 'auto';
+            card.style.boxShadow = offset === 0 ? '6px 6px 0 rgba(28,18,8,0.55)' : '3px 3px 0 rgba(28,18,8,0.3)';
+            card.style.transform = `translateX(${cfg.x * w}px) scale(${cfg.s}) rotate(${rot}deg)`;
+        });
+    }
+
+    function updateUI() {
+        countEl.textContent = (cur + 1) + ' / ' + featuredCount;
+        dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
+    }
+
+    function goTo(n) {
+        if (animating) return;
+        animating = true;
+        cur = wrapIndex(n, featuredCount);
+        updateUI();
+        layout();
+        setTimeout(() => { animating = false; }, 520);
+    }
+
+    prevBtn.onclick = () => goTo(cur - 1);
+    nextBtn.onclick = () => goTo(cur + 1);
+
+    document.addEventListener('keydown', e => {
+        if (lightbox.classList.contains('open')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showLightboxItem(activeLightboxIndex - 1, true);
+            if (e.key === 'ArrowRight') showLightboxItem(activeLightboxIndex + 1, true);
+            return;
+        }
+
+        if (e.key === 'ArrowLeft') goTo(cur - 1);
+        if (e.key === 'ArrowRight') goTo(cur + 1);
+    });
+
+    let dragX = null;
+    stage.addEventListener('pointerdown', e => { dragX = e.clientX; });
+    window.addEventListener('pointerup', e => {
+        if (dragX === null) return;
+        const dx = e.clientX - dragX;
+        dragX = null;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
+    });
+
+    function renderArtworkGrid() {
+        galleryItems.forEach((item, index) => {
+            const card = document.createElement('button');
+            card.type = 'button';
+            card.className = 'project-card';
+            card.innerHTML = `
+                <div class="project-card__thumb">
+                    <img src="${item.src}" alt="Artwork ${index + 1}">
+                </div>
+            `;
+            card.addEventListener('click', () => openLightbox(index));
+            artworkGrid.appendChild(card);
+        });
+    }
+
+    let activeLightboxIndex = 0;
+
+    function setLightboxItem(index) {
+        activeLightboxIndex = wrapIndex(index, galleryItems.length);
+        const item = galleryItems[activeLightboxIndex];
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.caption || `Artwork ${activeLightboxIndex + 1}`;
+        lightboxCaption.textContent = item.caption;
+    }
+
+    function showLightboxItem(index, animate = false) {
+        if (!animate || !lightbox.classList.contains('open')) {
+            setLightboxItem(index);
+            return;
+        }
+
+        if (lightboxImage.classList.contains('lightbox__img--animating')) return;
+
+        lightboxImage.classList.add('lightbox__img--animating', 'lightbox__img--fade-out');
+        setTimeout(() => {
+            setLightboxItem(index);
+            lightboxImage.classList.remove('lightbox__img--fade-out');
+            lightboxImage.classList.add('lightbox__img--fade-in');
+            setTimeout(() => {
+                lightboxImage.classList.remove('lightbox__img--fade-in', 'lightbox__img--animating');
+            }, 300);
+        }, 180);
+    }
+
+    function openLightbox(index) {
+        setLightboxItem(index);
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    lightboxOverlay.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', () => showLightboxItem(activeLightboxIndex - 1, true));
+    lightboxNext.addEventListener('click', () => showLightboxItem(activeLightboxIndex + 1, true));
+
+    /* init */
+    updateUI();
+    layout();
+    renderArtworkGrid();
+    window.addEventListener('resize', layout);
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navToggle = document.querySelector('.nav-toggle');
+        const siteNav = document.querySelector('.site-nav');
+        if (!navToggle || !siteNav) return;
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navToggle.classList.toggle('open');
+            siteNav.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!siteNav.classList.contains('open')) return;
+            if (siteNav.contains(event.target) || navToggle.contains(event.target)) return;
+            siteNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>
+
+</html>
