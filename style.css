@@ -322,27 +322,54 @@ button.hyperlink:active {
     font-family: PixelOperator;
     font-size: 2rem;
 
-    display: flex;
+    /* use a two-column grid so image and text occupy equal width */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem; /* spacing between image and text */
     align-items: center;
-    /* vertically align text with image */
-    gap: 2rem;
-    padding-bottom: 6rem;
-    padding-top: 6rem;
-    /* space between image and text */
+    justify-content: center;
 
+    /* constrain overall width and center on page */
+    width: min(900px, 90%);
+    margin: 0 auto;
+    padding: 6rem 0;
+}
+
+/* ensure each direct child fills its column */
+.text-img > div {
+    width: 100%;
 }
 
 .text-img img {
-    width: 20vw;
+    width: 100%;            /* image fills its column */
+    max-width: 320px;      /* cap visual size */
     height: auto;
-    /* control image size */
+    object-fit: cover;
 
-    border-top-left-radius: 150vw;
-    border-top-right-radius: 150vw;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;    /* circular profile */
+    box-shadow: 12px 12px var(--red), 24px 24px var(--yellow), 36px 36px var(--blue);
+}
 
-    box-shadow: 12px 12px var(--red),24px 24px var(--yellow), 36px 36px var(--blue);
+.text-img h2,
+.text-img p {
+    margin: 0;
+}
 
+@media (max-width: 700px) {
+    /* stack on small screens */
+    .text-img {
+        grid-template-columns: 1fr;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 3rem 0;
+        gap: 1rem;
+    }
 
+    .text-img img {
+        width: 40vw;
+        max-width: 220px;
+    }
 }
 
 .wrapper {

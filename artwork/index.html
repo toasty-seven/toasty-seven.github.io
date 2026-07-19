@@ -43,24 +43,7 @@
 
 <section class="wavy-both" style="background-image:url(/gradient-bgs/gradient-8.webp);" id="gallery">
     <div class="wrapper">
-        <div class="gc-wrap">
-            <div class="gc-header">
-                <span class="gc-title"></span>
-                <span class="gc-count" id="gcCount"></span>
-            </div>
-
-            <div class="gc-row">
-                <button class="nav-btn" id="gcPrev" aria-label="Previous">
-                    <p class="ti ti-arrow-left">&lArr;</p>
-                </button>
-                <div class="gc-stage" id="gcStage"></div>
-                <button class="nav-btn" id="gcNext" aria-label="Next">
-                    <p class="ti ti-arrow-right">&rArr;</p>
-                </button>
-            </div>
-
-            <div class="gc-dots" id="gcDots"></div>
-        </div>
+        <h2 class="gallery-title">Gallery</h2>
     </div>
 </section>
 
@@ -150,20 +133,7 @@
 
 
 <script>
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       ADD YOUR IMAGES HERE
-       Each entry: "path/to/image.jpg"
-       or a full URL. Leave "" for
-       a placeholder.
-    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    const featuredImages = [
-        "/images/FoodCreatures/cafe-interior-conceptart.webp",
-        "/images/FoodCreatures/key_art_2 copy.webp",
-        "/images/ConceptArtA03/keyart_01_full.webp",
-        "/images/ConceptArtA03/keyart_02_full.webp",
-        "/images/ROAM/dino_roam_keyart_01.webp",
-    ];
-
+    /* Gallery items (kept from original file) */
     const galleryItems = [
         {
             src: "/images/3DModelElective/banner.webp",
@@ -219,17 +189,7 @@
         },
     ];
 
-    /* tilt per slot — alternates so each card feels unique */
-    const tilts = [-4, 3, -2, 5, -3, 4, -5, 2, -3, 4];
-    const featuredCount = featuredImages.length;
-    let cur = 0;
-    let animating = false;
-
-    const stage = document.getElementById('gcStage');
-    const prevBtn = document.getElementById('gcPrev');
-    const nextBtn = document.getElementById('gcNext');
-    const countEl = document.getElementById('gcCount');
-    const dotsWrap = document.getElementById('gcDots');
+    /* Select DOM elements used by the grid/lightbox (carousel elements removed) */
     const artworkGrid = document.getElementById('artworkGrid');
     const lightbox = document.getElementById('lightbox');
     const lightboxOverlay = document.getElementById('lightboxOverlay');
@@ -242,102 +202,6 @@
     function wrapIndex(n, length) {
         return ((n % length) + length) % length;
     }
-
-    /* build one card per image */
-    const cards = featuredImages.map((src, i) => {
-        const card = document.createElement('div');
-        card.className = 'photo-card';
-        card.innerHTML = src
-            ? `<img src="${src}" alt="Featured artwork ${i + 1}">`
-            : `<div class="img-placeholder"><i class="ti ti-photo"></i><span>Your image here</span></div>`;
-        card.addEventListener('click', () => { if (i !== cur) goTo(i > cur ? cur + 1 : cur - 1); });
-        stage.appendChild(card);
-        return card;
-    });
-
-    /* dot per image */
-    featuredImages.forEach((_, i) => {
-        const d = document.createElement('button');
-        d.className = 'dot';
-        d.setAttribute('aria-label', 'Slide ' + (i + 1));
-        d.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(d);
-    });
-
-    /* slot definitions — how many cards visible each side */
-    const SLOTS = [-2, -1, 0, 1, 2];
-    const slotCfg = {
-        '-2': { x: -0.40, s: 0.54, z: 1, o: 0.35 },
-        '-1': { x: -0.21, s: 0.72, z: 3, o: 0.65 },
-        '0': { x: 0, s: 1.00, z: 5, o: 1.00 },
-        '1': { x: 0.21, s: 0.72, z: 3, o: 0.65 },
-        '2': { x: 0.40, s: 0.54, z: 1, o: 0.35 },
-    };
-
-    function layout() {
-        const w = stage.offsetWidth;
-        cards.forEach((card, i) => {
-            let offset = i - cur;
-            if (offset > featuredCount / 2) offset -= featuredCount;
-            if (offset < -featuredCount / 2) offset += featuredCount;
-
-            const cfg = slotCfg[String(offset)];
-
-            if (!cfg) {
-                card.style.opacity = '0';
-                card.style.pointerEvents = 'none';
-                card.style.zIndex = '0';
-                return;
-            }
-
-            const slotLean = offset * 2.5;
-            const rot = tilts[i % tilts.length] + slotLean;
-
-            card.style.opacity = cfg.o;
-            card.style.zIndex = cfg.z;
-            card.style.pointerEvents = offset === 0 ? 'none' : 'auto';
-            card.style.boxShadow = offset === 0 ? '6px 6px 0 rgba(28,18,8,0.55)' : '3px 3px 0 rgba(28,18,8,0.3)';
-            card.style.transform = `translateX(${cfg.x * w}px) scale(${cfg.s}) rotate(${rot}deg)`;
-        });
-    }
-
-    function updateUI() {
-        countEl.textContent = (cur + 1) + ' / ' + featuredCount;
-        dotsWrap.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('on', i === cur));
-    }
-
-    function goTo(n) {
-        if (animating) return;
-        animating = true;
-        cur = wrapIndex(n, featuredCount);
-        updateUI();
-        layout();
-        setTimeout(() => { animating = false; }, 520);
-    }
-
-    prevBtn.onclick = () => goTo(cur - 1);
-    nextBtn.onclick = () => goTo(cur + 1);
-
-    document.addEventListener('keydown', e => {
-        if (lightbox.classList.contains('open')) {
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showLightboxItem(activeLightboxIndex - 1, true);
-            if (e.key === 'ArrowRight') showLightboxItem(activeLightboxIndex + 1, true);
-            return;
-        }
-
-        if (e.key === 'ArrowLeft') goTo(cur - 1);
-        if (e.key === 'ArrowRight') goTo(cur + 1);
-    });
-
-    let dragX = null;
-    stage.addEventListener('pointerdown', e => { dragX = e.clientX; });
-    window.addEventListener('pointerup', e => {
-        if (dragX === null) return;
-        const dx = e.clientX - dragX;
-        dragX = null;
-        if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
-    });
 
     function renderArtworkGrid() {
         galleryItems.forEach((item, index) => {
@@ -401,11 +265,16 @@
     lightboxPrev.addEventListener('click', () => showLightboxItem(activeLightboxIndex - 1, true));
     lightboxNext.addEventListener('click', () => showLightboxItem(activeLightboxIndex + 1, true));
 
+    document.addEventListener('keydown', e => {
+        if (lightbox.classList.contains('open')) {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showLightboxItem(activeLightboxIndex - 1, true);
+            if (e.key === 'ArrowRight') showLightboxItem(activeLightboxIndex + 1, true);
+        }
+    });
+
     /* init */
-    updateUI();
-    layout();
     renderArtworkGrid();
-    window.addEventListener('resize', layout);
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
